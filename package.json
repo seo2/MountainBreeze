@@ -32,7 +32,11 @@
   "homepage": "https://github.com/lukeraymonddowning/MountainBreeze/tree/mountainbreeze#readme",
   "dependencies": {
     "alpinejs": "^2.0.1",
-    "tailwindcss": "^1.2.0"
+    "autoprefixer": "^10.2.1",
+    "embla-carousel": "^4.1.2",
+    "flickity": "^2.2.2",
+    "postcss": "^8.2.4",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",

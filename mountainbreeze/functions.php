@@ -22,7 +22,12 @@ add_action('wp_enqueue_scripts', function () {
     if (!function_exists('enablejQuery') || !enablejQuery()) {
         wp_deregister_script('jquery');
     }
+
+    wp_enqueue_style('apercupro', get_stylesheet_directory_uri() . '/dist/fonts/apercupro.css?v=2');
+    wp_enqueue_style('festivo', get_stylesheet_directory_uri() . '/dist/fonts/festivo.css?v=2');
     wp_enqueue_style('style', get_stylesheet_uri());
+    
+    wp_enqueue_script('fontawesome', "https://kit.fontawesome.com/a0d8b6c07b.js");
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js');
 });
 
