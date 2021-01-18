@@ -5,7 +5,7 @@
             <div class="col-start-1 col-span-12 lg:col-start-2 lg:col-span-5 mb-24 lg:mb-12 -mt-24 relative z-1">
                 <img src="<?php bloginfo('template_url') ?>/dist/img/fotorara.png" alt="Herencia Colectiva" class="-ml-12 lg:ml-auto">
             </div>
-            <div class="bg-naranjo col-start-1 col-span-12 pt-12 px-4 -mt-32 lg:col-span-5 mb-8">
+            <div class="bg-naranjo col-start-1 col-span-12 pt-12 px-4 -mt-32 lg:mt-0  lg:col-span-5 mb-8">
                 <div class="relative mt-3">
                     <p class="text-beige text-lg lg:text-xl uppercase">Herencia Colectiva</p>
                     <h4 class="text-beige text-4xl lg:text-5xl font-bold leading-none my-3 font-festivo6 w-9/12 lg:w-full">Lorem ipsum dolor sit amet</h4>

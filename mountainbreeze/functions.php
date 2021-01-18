@@ -28,6 +28,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('style', get_stylesheet_uri());
     
     wp_enqueue_script('fontawesome', "https://kit.fontawesome.com/a0d8b6c07b.js");
+    wp_enqueue_script('alpine-js-defer', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js');
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js');
 });
 
@@ -98,3 +99,30 @@ function getCompiledTemplateDirectory()
 {
     return __DIR__ . '/../compiled/';
 }
+
+
+/**
+ * Esta función agrega los parámetros "async" y "defer" a recursos de Javascript.
+ * Solo se debe agregar "async" o "defer" en cualquier parte del nombre del 
+ * recurso (atributo "handle" de la función wp_register_script).
+ *
+ * @param $tag
+ * @param $handle
+ *
+ * @return mixed
+ */
+function mg_add_async_defer_attributes( $tag, $handle ) {
+
+	// Busco el valor "async"
+	if( strpos( $handle, "async" ) ):
+		$tag = str_replace(' src', ' async="async" src', $tag);
+	endif;
+
+	// Busco el valor "defer"
+	if( strpos( $handle, "defer" ) ):
+		$tag = str_replace(' src', ' defer="defer" src', $tag);
+	endif;
+
+	return $tag;
+}
+add_filter('script_loader_tag', 'mg_add_async_defer_attributes', 10, 2);

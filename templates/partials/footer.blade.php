@@ -40,5 +40,8 @@
 </div>
 
 @php(wp_footer())
+
+@yield('inline_scripts')
+
 </body>
 </html>

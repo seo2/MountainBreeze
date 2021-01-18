@@ -1,5 +1,9 @@
 
-<div class="py-32" style="background: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde.jpg') #498931 top center no-repeat; background-size: contain;">
+<div class="bg-left-top lg:bg-top bg-no-repeat bg-210% lg:bg-cover -mt-24 h-12 lg:h-32" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde.png'); ">
+
+</div>
+
+<div class="pb-32 bg-verde">
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 px-4 lg:px-0">
             <div class="col-start-1 col-span-12 text-center mb-8">

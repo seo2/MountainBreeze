@@ -129,7 +129,7 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 h-48">
             <div class="col-start-2 col-span-10 lg:col-start-5 lg:col-span-4 mb-8">
-                <a href="#" class="h-12 w-full leading-12 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200">
+                <a href="#" class="btn">
                     VER MÁS CURSOS
                 </a>
             </div>

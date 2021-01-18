@@ -1,12 +1,12 @@
  
-<div class="pt-16 bg-blanco" >
+<div class="pt-16 pb-32 bg-blanco" >
     <div class="container mx-auto mb-8">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-naranjo">
                     <span class="font-festivo8 block lg:inline-block">Grandes</span> maestres
                 </h2>
-                <img src="<?php bloginfo('template_url') ?>/dist/img/x_x_x_x.svg" alt="cachirulo" class="mx-auto my-3 lg:my-1 w-1/3 lg:w-auto">
+                <img src="<?php bloginfo('template_url') ?>/dist/img/x_x_x_x.svg" alt="x_x" class="mx-auto my-3 lg:my-1 w-1/3 lg:w-auto">
             </div>
         </div>
     </div>
