@@ -1,9 +1,9 @@
 <!-- component -->
-<div class="fixed z-50 w-full text-gris6 bg-fondooscuro dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<div class="fixed z-50 w-full text-gris6 bg-fondooscuro dark-mode:text-gray-200 dark-mode:bg-gray-800" >
   <div x-data="{ open: false }" class="flex container flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
     <div class="p-4 flex flex-row items-center justify-between">
       <button class="md:hidden rounded-none focus:outline-none focus:shadow-outline w-20" @click="open = !open">
-        <svg fill="currentColor" viewBox="0 0 20 20" class="w-12 h-6">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-12 h-6" >
           <path x-show="!open" d="M0 1L19 1M0 17L18 17M0 9L12.5 9L25 9" stroke="#FFFBEF" stroke-width="2"/>
           <path x-show="open" d="M11.416 10L20 18.584L18.584 20L10 11.416L1.41602 20L0 18.584L8.58398 10L0 1.41602L1.41602 0L10 8.58398L18.584 0L20 1.41602L11.416 10Z" fill="#FFFBEF"/>
         </svg>
@@ -17,7 +17,7 @@
         <a class="px-2 py-2 mt-2 text-gris6 text-xl font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#"><i class="fal fa-user-circle mr-1"></i></a>
       </nav>
     </div>
-    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row uppercase">
+    <nav :class="{'flex ': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row uppercase"  >
       <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 lg:hidden" href="@php bloginfo('url'); @endphp">Inicio</a>
       <div @click.away="open = false" class="relative" x-data="{ open: false }">
             <a @click="open = !open" class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
@@ -53,9 +53,19 @@
 
     </nav>
     <nav class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row uppercase">
-      <a class="px-4 py-2 mt-2 text-sm font-normal bg-rosado rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Regístrate</a>
-      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#"><i class="fal fa-user-circle mr-1"></i> Ingresar</a>
-      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#"><i class="fak fa-bolsita"></i></a>
+      @if(is_user_logged_in())
+        <div class="flex-shrink-0 h-8 w-8 self-center">
+          <img class="h-8 w-8 rounded-full border border-blanco" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="">
+        </div>
+        <span class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+          {{show_loggedin_function( $atts )}}
+        </span>
+        
+      @else
+      <a class="px-4 py-2 mt-2 text-sm font-normal bg-rosado rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/registrate/">Regístrate</a>
+      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/ingresa/"><i class="fal fa-user-circle mr-1"></i> Ingresar</a>
+      @endif
+      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/carro/"><i class="fak fa-bolsita"></i></a>
     </nav>
 
   </div>

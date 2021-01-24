@@ -5,14 +5,15 @@
     @include('partials.hero')
         
     @include('partials.talleres')
-        
-    @include('partials.sobrehc')
-
-    @include('partials.maestres')
-
-
-
     
+    @if(is_user_logged_in())
+        @include('partials.promocion')
+    @else
+        @include('partials.sobrehc')
+    @endif
+    
+    @include('partials.maestres')
+ 
 @endsection
 
 @section('footer')
