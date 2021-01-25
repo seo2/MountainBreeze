@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="fixed z-50 w-full text-gris6 bg-fondooscuro dark-mode:text-gray-200 dark-mode:bg-gray-800" >
+<div class="fixed z-50 w-full text-gris6 bg-fondooscuro dark-mode:text-gray-200 dark-mode:bg-gray-800 top-0" >
   <div x-data="{ open: false }" class="flex container flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
     <div class="p-4 flex flex-row items-center justify-between">
       <button class="md:hidden rounded-none focus:outline-none focus:shadow-outline w-20" @click="open = !open">
@@ -36,7 +36,7 @@
                 <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Cocina</a>
                 <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Arte</a>
                 <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Cultivo</a>
-                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Todos los talleres</a>
+                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/talleres">Todos los talleres</a>
                 </div>
             </div>
         </div> 
