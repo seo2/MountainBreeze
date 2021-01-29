@@ -1,7 +1,7 @@
 @php
 /*
 
-Template name: Curso
+Template name: Valoración
 
 */
 @endphp
@@ -22,14 +22,51 @@ Template name: Curso
             <h1 class="text-negro mb-4 text-4xl" >Técnicas de sustentabilidad</h1>
             <p  class="text-negro mb-12" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.</p>
             <hr>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Sobre el curso</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            <div>
-                <img src="<?php bloginfo('template_url') ?>/dist/img/foto_curso2.jpg" alt="Curso" class="w-full">
+            <div x-data="{
+                valoraciones: [
+                    {
+                        unidad: 'Unidad 1',
+                        question: 'Et has minim alitr',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 2',
+                        question: 'Lorem ipsum dolor sit amet',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 3',
+                        question: 'mea aeterno eleifend antiopam?',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    }
+                ]
+            }">
+                <template x-for="valoracion in valoraciones" :key="valoracion.question">
+                    <div>
+                        <div class="flex flex-col my-8">
+                            <div class="flex justify-between items-center mb-8">
+                                <div class="flex items-center">
+                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    <div>
+                                        <i class="fas fa-star text-naranjo"></i>
+                                        <i class="fas fa-star text-naranjo"></i>
+                                        <i class="fas fa-star text-naranjo"></i>
+                                        <i class="fas fa-star text-gris4"></i>
+                                        <i class="fas fa-star text-gris4"></i>
+                                    </div>
+                                </div>
+                                <span class="text-gris4">06/10/2020</span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
+                        </div>
+                        <hr>
+                    </div>
+                </template>
+
             </div>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Requisitos</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            
         </div>
         <div class="w-1/3 px-4">
             <div class="bg-beige py-4 px-8">
@@ -62,7 +99,6 @@ Template name: Curso
                 </ul>
             </div>
         </div>
-
     </div>
 </section>
 

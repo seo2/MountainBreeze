@@ -1,7 +1,7 @@
 @php
 /*
 
-Template name: Curso
+Template name: Proyectos
 
 */
 @endphp
@@ -22,14 +22,49 @@ Template name: Curso
             <h1 class="text-negro mb-4 text-4xl" >Técnicas de sustentabilidad</h1>
             <p  class="text-negro mb-12" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.</p>
             <hr>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Sobre el curso</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            <div>
-                <img src="<?php bloginfo('template_url') ?>/dist/img/foto_curso2.jpg" alt="Curso" class="w-full">
+            <div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12" x-data="{
+                valoraciones: [
+                    {
+                        unidad: 'plants',
+                        question: 'Et has minim alitr',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 2',
+                        question: 'Lorem ipsum dolor sit amet',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 3',
+                        question: 'mea aeterno eleifend antiopam?',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 2',
+                        question: 'Lorem ipsum dolor sit amet',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 3',
+                        question: 'mea aeterno eleifend antiopam?',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    }
+                ]
+            }">
+                <template x-for="valoracion in valoraciones" :key="valoracion.question">
+                    <div class="mb-16">
+                        <img src="https://source.unsplash.com/500x500/?plants" alt="">
+                        <span class="text-naranjo uppercase text-sm">Nombre usuario</span>
+                        <h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight">Nombre del proyecto que hizo el usuario</h3>
+                    </div>
+                </template>
+
             </div>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Requisitos</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            
         </div>
         <div class="w-1/3 px-4">
             <div class="bg-beige py-4 px-8">
@@ -62,7 +97,6 @@ Template name: Curso
                 </ul>
             </div>
         </div>
-
     </div>
 </section>
 
