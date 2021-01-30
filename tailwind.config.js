@@ -54,5 +54,11 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('tailwindcss-absolute-center')(
+    {
+        variants: ['responsive'],
+    },
+  ),
+  ],
 }

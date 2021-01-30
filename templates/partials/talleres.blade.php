@@ -18,28 +18,28 @@
         <div class="grid grid-cols-12 lg:gap-4">
             <div class="col-start-2 col-span-10 lg:col-start-2 lg:col-span-5 mb-12">
                 <div class="relative">
-                    <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
+                    <a href="/curso/"><img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan"></a>
                     <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
                         <i class="fak fa-add-bag"></i>
                     </a>
                 </div>
                 <div class="relative mt-3">
                     <p class="text-naranjo text-lg lg:text-xl">$12.990</p>
-                    <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
+                    <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="/curso/">Técnicas de Sustentabilidad</a></h4>
                     <p class="text-negro mb-4">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. </p>
                     <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
                 </div>
             </div>
             <div class="col-span-5 mb-8 hidden md:block">
                 <div class="relative">
-                    <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
+                    <a href="/curso/"><img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan"></a>
                     <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
                         <i class="fak fa-add-bag"></i>
                     </a>
                 </div>
                 <div class="relative mt-3">
                     <p class="text-naranjo text-xl">$12.990</p>
-                    <h4 class="text-negro text-2xl font-bold leading-none my-3">Técnicas de Sustentabilidad</h4>
+                    <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="/curso/">Técnicas de Sustentabilidad</a></h4>
                     <p class="text-negro mb-4">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. </p>
                     <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
                 </div>

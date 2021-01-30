@@ -19,8 +19,10 @@ Template name: Mis cursos
 <section class="mt-12">
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
 
-
-        <img src="https://source.unsplash.com/500x500/?plants" alt="">
+        <a href="#" class="relative">
+            <i class="fas fa-play-circle absolute text-blanco text-6xl left-auto top-auto"></i>
+            <img src="https://source.unsplash.com/650x340/?plants" alt="">
+        </a>
 
 
     </div>

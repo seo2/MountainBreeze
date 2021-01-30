@@ -36,7 +36,8 @@
     "autoprefixer": "^9.8.6",
     "flickity": "^2.2.2",
     "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "tailwindcss-absolute-center": "0.0.5"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
