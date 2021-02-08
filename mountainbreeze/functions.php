@@ -27,6 +27,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('festivo', get_stylesheet_directory_uri() . '/dist/fonts/festivo.css');
     wp_enqueue_style('style', get_stylesheet_uri());
     
+    wp_enqueue_script('jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js");
     wp_enqueue_script('fontawesome', "https://kit.fontawesome.com/a0d8b6c07b.js");
     wp_enqueue_script('alpine-js-defer', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js');
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js');
