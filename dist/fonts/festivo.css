@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'festivo6';
+    src: url('ahmet_altunfestivolettersno.6-webfont.woff2') format('woff2'),
+         url('ahmet_altunfestivolettersno.6-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'festivo8';
+    src: url('ahmet_altunfestivolettersno.8-webfont.woff2') format('woff2'),
+         url('ahmet_altunfestivolettersno.8-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'festivo19';
+    src: url('ahmet_altunfestivolettersno.19-webfont.woff2') format('woff2'),
+         url('ahmet_altunfestivolettersno.19-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
