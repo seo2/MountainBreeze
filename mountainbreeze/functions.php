@@ -143,3 +143,25 @@ function show_loggedin_function( $atts ) {
 add_shortcode( 'show_loggedin_as', 'show_loggedin_function' );
 
 
+function herenciacolectiva_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Cursos', 'herenciacolectiva' ),
+        'description'   => __( 'Seguimiento del curso' ),
+        'id'            => 'sidebar-1',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+ 
+    register_sidebar( array(
+        'name'          => __( 'Secondary Sidebar', 'herenciacolectiva' ),
+        'id'            => 'sidebar-2',
+        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li></ul>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+}
+
+add_action('widgets_init','herenciacolectiva_widgets_init');

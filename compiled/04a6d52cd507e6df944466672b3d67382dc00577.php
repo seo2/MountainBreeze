@@ -1,8 +1,6 @@
 <?php if(have_posts()): ?>
     <?php while(have_posts()): ?>
         <?php (the_post()); ?>
-        <?php (the_title()); ?>
-        <?php (the_content()); ?>
         <?php echo e($slot); ?>
 
     <?php endwhile; ?>
