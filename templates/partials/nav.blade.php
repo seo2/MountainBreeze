@@ -20,42 +20,53 @@
     <nav :class="{'flex ': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row uppercase"  >
       <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 lg:hidden" href="@php bloginfo('url'); @endphp">Inicio</a>
       <div @click.away="open = false" class="relative" x-data="{ open: false }">
-            <a @click="open = !open" class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
-                <span class="uppercase">Talleres</span>
-                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="hidden lg:inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-                <svg viewBox="0 0 27 32" fill="none" class="inline lg:hidden h-8 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                  <path d="M10.2248 1L24.919 15.9954L10.2248 30.9846" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
-                  <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
-                </svg>
-            </a>
-            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48">
-                <div class="px-2 py-2 bg-negro rounded-none shadow dark-mode:bg-gray-800">  
-                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Sustentabilidad</a>
-                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Cocina</a>
-                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Arte</a>
-                <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#">Cultivo</a>
+          <a @click="open = !open" class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+              <span class="uppercase">Talleres</span>
+              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="hidden lg:inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+              <svg viewBox="0 0 27 32" fill="none" class="inline lg:hidden h-8 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                <path d="M10.2248 1L24.919 15.9954L10.2248 30.9846" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+              </svg>
+          </a>
+          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48">
+              <div class="px-2 py-2 bg-negro rounded-none shadow dark-mode:bg-gray-800">  
+                @php $menu_location = 'menu-talleres'; @endphp
+                @php if ( has_nav_menu( $menu_location ) ): @endphp
+                @php $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) ); @endphp
+                @php foreach ( $menu_items as $menu_item ): @endphp   
+                <a class="@php echo esc_attr( implode( ' ', $menu_item->classes ) ) @endphp block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php echo esc_url( $menu_item->url ) @endphp" target="@php echo esc_attr( $menu_item->target ?: '_self' ) @endphp">@php echo esc_html( $menu_item->title ) @endphp</a>
+                @php endforeach; @endphp
+                @php endif; @endphp     
                 <a class="block px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/talleres">Todos los talleres</a>
-                </div>
-            </div>
-        </div> 
-        {{-- Current: text-gray-900 bg-gray-200 rounded-none dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 --}}
-      <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/el-cambio">El cambio</a>
-      <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/herencia-colectiva">Herencia Colectiva</a>
-      <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/como-funciona">Cómo funciona</a>
-      <a class="px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/">Contáctanos</a>
+              </div>
+          </div>
+      </div> 
+      {{-- Current: text-gray-900 bg-gray-200 rounded-none dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 --}}
+      @php $menu_location = 'menu-principal'; @endphp
+      @php if ( has_nav_menu( $menu_location ) ): @endphp
+      @php $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) ); @endphp
+      @php foreach ( $menu_items as $menu_item ): @endphp   
+      <a class="@php echo esc_attr( implode( ' ', $menu_item->classes ) ) @endphp px-3 py-2 mt-2 text-beige lg:text-gris6 text-3xl lg:text-sm font-festivo6 lg:font-sans bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php echo esc_url( $menu_item->url ) @endphp" target="@php echo esc_attr( $menu_item->target ?: '_self' ) @endphp">@php echo esc_html( $menu_item->title ) @endphp</a>
+      @php endforeach; @endphp
+      @php endif; @endphp      
       <div class="w-full text-center py-6 lg:hidden">
         <a href="https://www.instagram.com/herencia_colectiva/" target="_blank" class="mx-6 text-fondooscuro bg-rosado rounded-full w-8 h-8 leading-8 text-center inline-block text-xl"><i class="fab fa-instagram"></i></a></li>
         <a href="https://vimeo.com"                             target="_blank" class="mx-6 text-fondooscuro bg-rosado rounded-full w-8 h-8 leading-8 text-center inline-block text-xl"><i class="fab fa-vimeo-v"></i></a></li>
         <a href="mailto:hola@herenciacolectiva.cl"              target="_blank" class="mx-6 text-fondooscuro bg-rosado rounded-full w-8 h-8 leading-8 text-center inline-block text-xl"><i class="fas fa-envelope transform rotate-25"></i></a></li>
       </div>
-
     </nav>
     <nav class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row uppercase">
       @if(is_user_logged_in())
+
+      @php
+      global $current_user;
+      get_currentuserinfo();     
+      @endphp
+
         <div class="flex-shrink-0 h-8 w-8 self-center">
-          <img class="h-8 w-8 rounded-full border border-blanco" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="">
+          @php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'h-8 w-8 rounded-full border border-blanco' ) ) @endphp
         </div>
         <span class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
           {{show_loggedin_function( $atts )}}
@@ -65,7 +76,7 @@
       <a class="px-4 py-2 mt-2 text-sm font-normal bg-rosado rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/registrate/">Regístrate</a>
       <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/ingresa/"><i class="fal fa-user-circle mr-1"></i> Ingresar</a>
       @endif
-      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/carro/"><i class="fak fa-bolsita"></i></a>
+      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/cart/"><i class="fak fa-bolsita"></i></a>
     </nav>
 
   </div>

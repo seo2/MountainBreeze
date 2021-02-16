@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/lukeraymonddowning/MountainBreeze/tree/mountainbreeze#readme",
   "dependencies": {
+    "@splidejs/splide": "^2.4.21",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "alpinejs": "^2.0.1",
     "autoprefixer": "^9.8.6",

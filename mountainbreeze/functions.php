@@ -153,15 +153,14 @@ function herenciacolectiva_widgets_init() {
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
- 
-    register_sidebar( array(
-        'name'          => __( 'Secondary Sidebar', 'herenciacolectiva' ),
-        'id'            => 'sidebar-2',
-        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</li></ul>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
 }
 
-add_action('widgets_init','herenciacolectiva_widgets_init');
+add_action('init','herenciacolectiva_widgets_init');
+
+
+function wpb_custom_new_menu() {
+    register_nav_menu('menu-principal',__( 'Menú principal' ));
+    register_nav_menu('menu-talleres',__( 'Talleres' ));
+  }
+add_action( 'init', 'wpb_custom_new_menu' );
+  
