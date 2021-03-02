@@ -28,6 +28,17 @@ Template name: Talleres
 
 <div class="pt-16" style="background: url('@php bloginfo('template_url') @endphp/dist/img/bg_beige2.png') top center no-repeat; background-size: cover;">
     <div class="container mx-auto">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-start-2 col-span-10 text-center lg:mb-8">
+
+                @loop
+                {{ the_content() }}
+                @endloop
+                
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto">
         <div class="grid grid-cols-12 lg:gap-4">
 
             

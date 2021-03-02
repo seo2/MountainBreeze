@@ -1,9 +1,9 @@
 @include('partials.header')
-@include('partials.nav')
+{{-- @include('partials.nav') --}}
 
-@if(is_user_logged_in())
+{{-- @if(is_user_logged_in())
     @include('partials.nav-user')
-@endif
+@endif --}}
 
 @yield('content')
 @yield('footer')

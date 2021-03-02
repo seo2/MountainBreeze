@@ -1,7 +1,7 @@
 
 @if(is_user_logged_in())
 <div class="flex items-center bg-beige relative pt-24 lg:pt-0">
-    <img src="<?php bloginfo('template_url') ?>/dist/img/header_user.jpg"    class="hidden md:block" alt="Portada Herencia Colectiva">
+    <img src="<?php bloginfo('template_url') ?>/dist/img/header_user.jpg"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
     <img src="<?php bloginfo('template_url') ?>/dist/img/header_user_m.jpg"  class="md:hidden w-full" alt="Portada Herencia Colectiva">
     <div class="w-full h-80 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0"></div>
     <div class="absolute  bottom-0 left-0 mb-24 lg:mb-0 w-full px-4 lg:px-0 lg:bottom-auto lg:left-auto text-center flex items-center justify-center flex-col">
@@ -13,7 +13,7 @@
 </div>
 @else
 <div class="flex items-center bg-negro relative">
-    <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home.jpg"    class="hidden md:block" alt="Portada Herencia Colectiva">
+    <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home.jpg"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
     <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home_m.jpg"  class="md:hidden w-full" alt="Portada Herencia Colectiva">
     <img src="<?php bloginfo('template_url') ?>/dist/img/rayas.svg" alt="rayas" class="absolute w-1/3 lg:w-1/6 top-32 lg:top-auto">
     <div class="w-full h-80 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0"></div>

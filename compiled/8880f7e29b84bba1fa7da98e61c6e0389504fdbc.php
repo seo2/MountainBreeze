@@ -21,7 +21,7 @@ $redirect_to = '';
           Ingresa
         </h2>
       </div>
-      <form class="mt-6 space-y-6" action="<?php echo site_url( '/wp-login.php' ); ?>" method="POST">
+      <form class="mt-6 space-y-6" action="<?php echo site_url( '/login' ); ?>" method="POST">
           <div>
             <a href="" class="py-4 px-3 text-center block text-negro border border-gray-300 mb-3"><i class="fab fa-google mr-2 text-lg"></i> Conectarse con Google</a>
             <a href="" class="py-4 px-3 text-center block text-negro border border-gray-300 mb-3"><i class="fab fa-facebook mr-2 text-lg"></i> Conectarse con Facebook</a>

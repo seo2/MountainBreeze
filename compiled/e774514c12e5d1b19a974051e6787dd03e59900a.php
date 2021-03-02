@@ -4,7 +4,10 @@
 <section class="mt-48">
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
         <div class="w-100">
-            <?php echo $__env->make('partials.the_loop', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php $__env->startComponent('partials.the_loop'); ?>
+            <?php echo e(the_content()); ?>
+
+            <?php echo $__env->renderComponent(); ?>
         </div>
     </div>
 </section>

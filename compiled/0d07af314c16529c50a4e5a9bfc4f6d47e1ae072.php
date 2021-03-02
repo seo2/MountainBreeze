@@ -18,11 +18,11 @@ Template name: Mis cursos
 
 <section class="mt-12">
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+        <?php $__env->startComponent('partials.the_loop'); ?>
+        <?php echo e(the_content()); ?>
 
-        <a href="#" class="relative">
-            <i class="fas fa-play-circle absolute text-blanco text-6xl left-auto top-auto"></i>
-            <img src="https://source.unsplash.com/650x340/?plants" alt="">
-        </a>
+        <?php echo $__env->renderComponent(); ?>
+        
 
 
     </div>
