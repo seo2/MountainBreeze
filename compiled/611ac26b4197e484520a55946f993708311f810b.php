@@ -74,66 +74,70 @@
             <p class="text-center mb-0" style="display:block;margin:0 auto;">
             <?php _e( 'No hay Talleres disponibles' ); // (6) ?>
             </p>
-            <?php endif; ?>
-            </div>
+            <?php endif; ?> 
         </div>
     </div>
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="grid grid-cols-12 gap-2 lg:gap-4">
-                    <div class="col-span-6 lg:col-span-3 mb-8">
+                    <?php
+                    $params = array(    
+                        'posts_per_page' => 4, 
+                        'post_type' => 'product',
+                        'tax_query' => array(
+                            array (
+                                'taxonomy' => 'product_cat',
+                                'field' => 'slug',
+                                'terms' => 'destacados',
+                            ),
+                            $array_plus
+                        ),
+                    ); // (1)
+                        $wc_query = new WP_Query($params); // (2)
+                        $i=0;
+                    ?>
+                    <?php if ($wc_query->have_posts()) : // (3) ?>
+                    <?php while ($wc_query->have_posts()) : // (4)
+                        $i++;
+                        $wc_query->the_post(); // (4.1) 
+                        global $woocommerce;
+                        $product    = new WC_Product( get_the_ID() );
+                        $image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'talleres-home' );
+                    ?>            
+                    <?php if($i<3){
+                        echo '<div class="col-span-6 lg:col-span-3 mb-8">';
+                    }else{
+                        echo '<div class="col-span-3 mb-8 hidden md:block">';
+                    }
+                    ?>  
                         <div class="relative">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative mt-2 lg:mt-3">
-                            <p class="text-naranjo text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
-                    <div class="col-span-6 lg:col-span-3 mb-8">
-                        <div class="relative">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative mt-2 lg:mt-3">
-                            <p class="text-naranjo text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
-                    <div class="col-span-3 mb-8 hidden md:block">
-                        <div class="relative">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
+                            <a href="<?php the_permalink();?>"><img src="<?php  echo $image[0]; ?>" alt="<?php the_title();?>"></a>
+                            <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
+                                <a href="/?add-to-cart=<?php echo $product->get_id(); ?>" data-quantity="1" class="product_type_course add_to_cart_button ajax_add_to_cart  inline-block mr-4 mb-4 w-10 h-10 leading-10 text-center text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full " data-product_id="274" data-product_sku="" aria-label="Lee más sobre “Huerto Creativo”" rel="nofollow"><i class="fak fa-add-bag"></i></a>
+                            </p>
                         </div>
                         <div class="relative mt-3">
-                            <p class="text-naranjo text-xl">$12.990</p>
-                            <h4 class="text-negro text-2xl font-bold leading-none my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
+                            <p class="text-naranjo text-lg lg:text-xl"><?php echo $product->get_price_html();?></p>
+                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                            <p class="text-negro text-sm">
+                            <?php
+                            $terms = get_the_terms( get_the_ID(), 'product_cat' );
+                            foreach ($terms as $term) {
+                                echo '<span class="mr-4"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
+                            }
+                            ?>
+                            </p>
                         </div>
                     </div>
-                    <div class="col-span-3 mb-8 hidden md:block">
-                        <div class="relative">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative mt-3">
-                            <p class="text-naranjo text-xl">$12.990</p>
-                            <h4 class="text-negro text-2xl font-bold leading-none my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); // (5) ?>
+                    <?php else:  ?>
+                    <p class="text-center mb-0" style="display:block;margin:0 auto;">
+                    <?php _e( 'No hay Talleres disponibles' ); // (6) ?>
+                    </p>
+                    <?php endif; ?>
+                    
                 </div>
             </div>
         </div>
