@@ -18,9 +18,7 @@ Template name: Talleres
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-beige leading-none"  style="background: url('<?php bloginfo('template_url') ?>/dist/img/trazo.svg') center center no-repeat; background-size: contain;">
                     Talleres:
                 </h2>
-                <h3 class="font-festivo6 text-2xl lg:text-4xl text-negro">
-                    Técnicas y oficios
-                </h2>
+                
             </div>
         </div>
     </div>

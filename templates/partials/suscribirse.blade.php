@@ -8,12 +8,12 @@
         <div class="grid grid-cols-12 gap-4 px-4 lg:px-0">
             <div class="col-start-1 col-span-12 text-center mb-8">
                 <h2 class="font-festivo6 text-4xl text-beige leading-none mb-6">
-                    <span class="font-festivo8 block lg:inline">Súmate a</span> nuestra herencia
+                    <span class="font-festivo8 block lg:inline">Sé parte de</span> nuestra herencia
                 </h2>
                 <img src="<?php bloginfo('template_url') ?>/dist/img/cachirulo.svg" alt="cachirulo" class="mx-auto my-1">
             </div>
             <div class="col-start-1 col-span-12 lg:col-start-3 lg:col-span-4 text-lg text-center lg:text-left">
-                <p class="text-beige mb-4">Súmate al Newsletter de Herencia Colectiva y recibe noticias sobre nuevos talleres.</p>
+                <p class="text-beige mb-4">Suscríbete al newsletter de Herencia Colectiva y recibe noticias sobre los talleres y la comunidad.</p>
                 <h3 class="text-beige font-bold">¡Súmate a la Herencia!</h3>
             </div>
             <div class="col-start-1 col-span-12 lg:col-start-7 lg:col-span-4">
@@ -22,7 +22,7 @@
                     <input type="email" class="border-none w-full rounded-none px-3 py-2 col-start-2 col-span-11 placeholder-gris4" placeholder="Escribe tu email"/>
                 </div>
             
-                <button class="bg-rosado text-white px-3 py-2 rounded-none w-full mt-4 uppercase hover:bg-negro transition duration-200">Enviar</button>
+                <button class="bg-rosado text-white px-3 py-2 rounded-none w-full mt-4 uppercase hover:bg-negro transition duration-200">Suscribirme</button>
             </div>
         </div>
     </div>

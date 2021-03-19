@@ -1,13 +1,13 @@
-<div class="pt-16 -mt-8 -mb-10 z-2 relative lg:bg-cover bg-top bg-no-repeat" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige.png');">
+<div class="pt-16 -mt-16 -mb-10 z-2 relative lg:bg-cover bg-top bg-no-repeat z-10" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige.png');">
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center lg:mb-8">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-beige leading-none"  style="background: url('<?php bloginfo('template_url') ?>/dist/img/trazo.svg') center center no-repeat; background-size: contain;">
                     Talleres:
                 </h2>
-                <h3 class="font-festivo6 text-2xl lg:text-4xl text-negro">
+                {{-- <h3 class="font-festivo6 text-2xl lg:text-4xl text-negro">
                     Técnicas y oficios
-                </h2>
+                </h3> --}}
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
                 <div class="relative mt-3">
                     <p class="text-naranjo text-lg lg:text-xl"><?php echo $product->get_price_html();?></p>
                     <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                    <p class="text-negro mb-4"><?php the_excerpt();?></p>
+                    <p class="text-negro mb-4"><?php echo get_the_excerpt();?></p>
                     <p class="text-negro text-sm">
                     <?php
                     $terms = get_the_terms( get_the_ID(), 'product_cat' );
@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto">
+    {{-- <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 h-16 lg:h-24">
             <div class="col-start-5 col-span-1 mb-8 text-4xl hidden md:block">
                 <a href="#" class="h-16 w-16 leading-16 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full">
@@ -161,12 +161,12 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 h-48">
             <div class="col-start-2 col-span-10 lg:col-start-5 lg:col-span-4 mb-8">
                 <a href="#" class="btn">
-                    VER MÁS CURSOS
+                    VER MÁS TALLERES
                 </a>
             </div>
         </div>

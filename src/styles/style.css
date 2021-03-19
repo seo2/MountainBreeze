@@ -38,6 +38,19 @@ All credit goes to the authors of the respective packages for their amazing cont
     .btn:hover{
         @apply bg-naranjo border-naranjo text-blanco;
     }
+    .owl-carousel .owl-nav button{
+        position: absolute;
+        top: 50%;
+        margin-top: -32px;
+    }
+    .owl-carousel .owl-nav button.owl-prev{
+        left: -90px;
+    }
+    .owl-carousel .owl-nav button.owl-next{
+        right: -90px;
+    }
+
+
 }
 @screen lg{
 
@@ -49,4 +62,17 @@ All credit goes to the authors of the respective packages for their amazing cont
     .btn:hover{
         @apply  h-12 w-full leading-12 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200;
     }
+}
+
+@layer utilities {
+    a.added_to_cart{
+        position: absolute;
+        width: 80px;
+        left: -20px;
+        text-align: center;
+        font-size: 12px;
+        top: -30px;
+    }
+
+    
 }
