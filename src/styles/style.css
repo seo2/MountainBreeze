@@ -38,6 +38,13 @@ All credit goes to the authors of the respective packages for their amazing cont
     .btn:hover{
         @apply bg-naranjo border-naranjo text-blanco;
     }
+    .owl-dots{
+        position: absolute;
+        width: 100%;
+        bottom: 120px;   
+    } 
+
+
     .owl-carousel .owl-nav button{
         position: absolute;
         top: 50%;

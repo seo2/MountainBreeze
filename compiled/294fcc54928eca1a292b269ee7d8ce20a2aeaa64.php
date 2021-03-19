@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="container mx-auto">
-        <div class="grid grid-cols-12 gap-4">
+        <div class="grid grid-cols-12">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="owl-carousel w-full" id="talleristas">
                     <?php
@@ -25,7 +25,7 @@
                             while ( $talleristas->have_posts() ) {
                                 $talleristas->the_post();                  
                     ?> 
-                    <div class="w-full mb-8">
+                    <div class="w-full">
                         <div class="relative">
                             <?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?> 
                         </div>
@@ -43,6 +43,4 @@
             </div>
         </div>
     </div>
-    
-
 </div><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/partials/maestres.blade.php ENDPATH**/ ?>

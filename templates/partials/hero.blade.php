@@ -17,7 +17,7 @@
 
     }
 </style>
-<div class="owl-carousel w-100 bg-negro" id="hero-carousel">
+<div class="owl-carousel owl-theme w-100 bg-negro" id="hero-carousel">
     <div>
         <div class="flex items-center bg-negro relative">
             <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home.jpg"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
