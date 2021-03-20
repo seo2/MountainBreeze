@@ -7,9 +7,7 @@
             <div class="mb-8">
                 <p class="text-naranjo uppercase">Cultivo</p>
                 <h1 class="text-negro uppercase my-4 text-4xl"><?php the_title(); ?></h1>
-                <p><?php
-                    echo get_field('epigrafe');
-                ?></p>
+                <p><?php echo get_field('epigrafe'); ?></p>
             </div>
             <div class="flex justify-between">
                 <p class="text-naranjo mr-4">Valoración del maestre</p>
@@ -38,10 +36,18 @@
 <section class="w-full p-4 lg:p-0 relative lg:bg-contain bg-no-repeat bg-top -mt-32 lg:-mt-24  bg-white" >
     <div class="container max-w-screen-sm mx-auto">
         <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
-        <p class="text-negro mb-12">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
+        <p class="text-negro mb-12"><?php echo get_field('primera_persona'); ?></p>
         <img src="<?php bloginfo('template_url') ?>/dist/img/foto_maestre2.jpg" alt="Maestre" class="w-full my-12">
         <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
-        <p class="text-negro mb-12">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
+        <p class="text-negro mb-12"><?php echo get_field('motivacion'); ?></p>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <p class="text-negro mb-12"><?php echo get_field('ensena'); ?></p>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <p class="text-negro mb-12"><?php echo get_field('importancia'); ?></p>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <p class="text-negro mb-12"><?php echo get_field('bio'); ?></p>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <p class="text-negro mb-12"><?php echo get_field('invitacion'); ?></p>
     </div>
 </section>
 
