@@ -1,24 +1,18 @@
-@php
-/*
-
-Template name: Maestre
-
-*/
-@endphp
-
 @extends('layouts.app')
 
 
 @section('content') 
-
+@loop
 <section class="w-full pt-44 pb-56 lg:pb-64 lg:pt-48 relative lg:bg-100 bg-no-repeat bg-bottom -mt-12 lg:mt-auto bg-beige" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige_top_a_blanco.png');">
     <div class="container max-w-screen-lg mx-auto lg:flex lg:space-x-8 lg:content-end">
-        <img src="<?php bloginfo('template_url') ?>/dist/img/foto_maestre.jpg" alt="pan" class="w-full">
+        @php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'w-1/2' ) ); @endphp 
         <div class="p-4 lg:p-0 lg:flex lg:flex-wrap lg:content-end">
             <div class="mb-8">
                 <p class="text-naranjo uppercase">Cultivo</p>
-                <h1 class="text-negro uppercase my-4 text-4xl">Wini Walbaun</h1>
-                <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. Et has minim elitr intellegat. Mea aeterno eleifend antiopam.</p>
+                <h1 class="text-negro uppercase my-4 text-4xl">@php the_title(); @endphp</h1>
+                <p>@php
+                    echo get_field('epigrafe');
+                @endphp</p>
             </div>
             <div class="flex justify-between">
                 <p class="text-naranjo mr-4">Valoración del maestre</p>
@@ -121,7 +115,7 @@ Template name: Maestre
         </div>
     </div> 
 </section>
-
+@endloop
 
 @endsection
 

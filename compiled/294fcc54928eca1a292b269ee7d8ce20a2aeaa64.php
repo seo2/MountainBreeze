@@ -26,12 +26,12 @@
                                 $talleristas->the_post();                  
                     ?> 
                     <div class="w-full">
-                        <div class="relative">
+                        <a href="<?php the_permalink(); ?>" class="relative block cursor-pointer">
                             <?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?> 
-                        </div>
+                        </a>
                         <div class="relative mt-3">
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold lg:font-festivo6 leading-none mt-3 mb-1"><?php the_title(); ?></h4>
-                            <a href="https://instagram.com/<?php echo get_field('instagram'); ?>" target="_blank" class="text-naranjo text-sm uppercase"><span>@</span><?php echo get_field('instagram'); ?></a>
+                            <a href="<?php the_permalink(); ?>" class="text-negro block text-xl lg:text-2xl font-bold lg:font-festivo6 leading-none mt-3 hover:text-naranjo"><?php the_title(); ?></a>
+                            <a href="https://instagram.com/<?php echo get_field('instagram'); ?>" target="_blank" class="text-naranjo text-sm uppercase hover:underline"><span>@</span><?php echo get_field('instagram'); ?></a>
                         </div>
                     </div>
                     <?php
