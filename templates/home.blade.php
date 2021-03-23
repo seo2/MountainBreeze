@@ -3,7 +3,7 @@
 @section('content') 
 
     @include('partials.hero')
-        
+        lol
     @include('partials.talleres')
     
     @if(is_user_logged_in())

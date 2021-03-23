@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?> 
 
     <?php echo $__env->make('partials.hero', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        
+        lol
     <?php echo $__env->make('partials.talleres', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <?php if(is_user_logged_in()): ?>
