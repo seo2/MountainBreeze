@@ -38,18 +38,17 @@
 
 <section class="w-full p-4 lg:p-0 relative lg:bg-contain bg-no-repeat bg-top -mt-32 lg:-mt-24  bg-white" >
     <div class="container max-w-screen-sm mx-auto">
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Presentación</h2>
         <p class="text-negro mb-12">@php echo get_field('primera_persona'); @endphp</p>
-        <img src="<?php bloginfo('template_url') ?>/dist/img/foto_maestre2.jpg" alt="Maestre" class="w-full my-12">
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Motivación</h2>
         <p class="text-negro mb-12">@php echo get_field('motivacion'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Enseña</h2>
         <p class="text-negro mb-12">@php echo get_field('ensena'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Importancia</h2>
         <p class="text-negro mb-12">@php echo get_field('importancia'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Biografía</h2>
         <p class="text-negro mb-12">@php echo get_field('bio'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Formación</h2>
+        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Invitación</h2>
         <p class="text-negro mb-12">@php echo get_field('invitacion'); @endphp</p>
     </div>
 </section>

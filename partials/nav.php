@@ -8,9 +8,9 @@
           <path x-show="open" d="M11.416 10L20 18.584L18.584 20L10 11.416L1.41602 20L0 18.584L8.58398 10L0 1.41602L1.41602 0L10 8.58398L18.584 0L20 1.41602L11.416 10Z" fill="#FFFBEF"/>
         </svg>
       </button>
-      <a href="<?php bloginfo('url'); ?>" class="">
-            <img class="hidden lg:block h-14 w-auto pb-4 md:mr-5" src="<?php bloginfo('template_url'); ?>/dist/img/logo_hc.svg" alt="Herencia Colectiva">
-            <img class="block lg:hidden h-14 w-auto md:mr-5" src="<?php bloginfo('template_url'); ?>/dist/img/logo_hc_circulo.svg" alt="Herencia Colectiva">
+      <a href="<?php bloginfo('url'); ?>" class="h-14 w-auto lg:pb-4 md:mr-5">
+            <img class="hidden lg:block h-full" src="<?php bloginfo('template_url'); ?>/dist/img/logo_hc.svg" alt="Herencia Colectiva">
+            <img class="block lg:hidden h-full" src="<?php bloginfo('template_url'); ?>/dist/img/logo_hc_circulo.svg" alt="Herencia Colectiva">
       </a>
       <nav class="w-20 text-right md:hidden">
         <a class="px-2 py-2 mt-2 text-gris6 text-xl font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="#"><i class="fak fa-bolsita"></i></a>

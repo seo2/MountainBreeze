@@ -155,7 +155,3 @@ Template name: Cómo funciona
     @include('partials.suscribirse')
 
 @endsection  
-
-@section('inline_scripts')
-
-@endsection
