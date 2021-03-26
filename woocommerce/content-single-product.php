@@ -85,6 +85,19 @@ if ( post_password_required() ) {
 		</ul>
 	</div>
 
+	<!-- Ficha del sidebar:
+Disponible a partir del 15 de abril de 2021
+XX% de valoraciones positivas (esto dejarlo oculto por ahora, incluirlo cuando tengamos mínimo 10 valoraciones y que el porcentaje sea superior al 85%)
+XXX alumnos (esto dejarlo oculto por ahora, activarlo cuando tengamos más de 100)
+XXX materiales complementarios para descargar
+Audio: español
+Subtítulos: sin subtítulos. 
+Nivel: inicial (pueden ser: inicial, intermedio, experto)
+16 capítulos disponibles (2h 40m)
+Disponibilidad: 12 meses a partir del primer visionado de video. 
+Incluye clase presencial al término del taller. -->
+
+
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
