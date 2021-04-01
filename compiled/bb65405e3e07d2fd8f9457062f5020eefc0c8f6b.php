@@ -31,6 +31,17 @@ Template name: Herencia Colectiva
                 <img class="-mt-4" src="<?php bloginfo('template_url') ?>/dist/img/hc2.jpg" alt="Somos Herencia">
             </div>
             <div class="">
+
+                <div class="relative mb-8 lg:hidden">
+                    <img class="absolute z-10 right-80 top-48" src="<?php bloginfo('template_url') ?>/dist/img/scotch.png" alt="cinta adhesiva">
+                    <img class="absolute z-10 left-4 top-8" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas_horizontales.svg" alt="Rayas">
+                    <img class="absolute z-10 right-0 lg:right-4 -bottom-4 lg:-bottom-16 w-3/6 lg:w-auto" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas.svg" alt="cinta adhesiva">
+                    
+                    <img class="ml-auto relative z-1 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc1.jpg" alt="Origen">
+                    <img class="-mt-4 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc2.jpg" alt="Somos Herencia">
+                </div>
+
+
                 <h2 class="text-negro font-festivo8 text-5xl uppercase mb-4 ">Origen</h2>
                 <p class="text-negro mb-4">
                     La herencia colectiva recoge el pasado, valora lo recorrido por quienes estuvieron antes y recupera saberes ancestrales. Y, al mismo tiempo, se abre a nuevos posibles a través de la experimentación entusiasta y creativa del presente.                
@@ -41,15 +52,6 @@ Template name: Herencia Colectiva
                 <p class="text-negro mb-12">
                     Esta herencia está viva, existe en nuestro cotidiano, en conexión, cooperación y co-creación con otras personas y, también, en vínculo con otros seres, elementos y técnicas: con los animales y vegetales, con el reino funghi y las montañas, con las aguas y los vientos, con la energía calórica del sol y los ciclos lunares, con las tecnologías y los códigos abiertos, con las redes de ceros y unos y sus posibilidades. 
                 </p>
-
-                <div class="relative mb-8 lg:hidden">
-                    <img class="absolute z-10 right-80 top-48" src="<?php bloginfo('template_url') ?>/dist/img/scotch.png" alt="cinta adhesiva">
-                    <img class="absolute z-10 left-4 top-8" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas_horizontales.svg" alt="Rayas">
-                    <img class="absolute z-10 right-0 lg:right-4 -bottom-4 lg:-bottom-16 w-3/6 lg:w-auto" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas.svg" alt="cinta adhesiva">
-                    
-                    <img class="ml-auto relative z-1 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc1.jpg" alt="Origen">
-                    <img class="-mt-4 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc2.jpg" alt="Somos Herencia">
-                </div>
 
                 <h2 class="text-negro font-festivo8 text-5xl uppercase mb-4">TRANSMISIÓN</h2>
                 <p class="text-negro mb-4">En Herencia Colectiva buscamos ser un puente, ser el eslabón que conecte a personas que guardan legados y saberes con otras personas que busquen aprenderlos. </p>
@@ -62,7 +64,7 @@ Template name: Herencia Colectiva
                 <p class="text-negro mb-12">Te invitamos a compartir y creer que eso que imaginamos es posible: que los lazos están, que la conexión pulsa, que la reliquia habita en las personas y nos atraviesa; que los saberes se comparten, se nutren, se transmiten y expanden; que la herencia es colectiva. </p>
                 
                 
-                <a href="<?php bloginfo('url'); ?>/el-cambio" class="btn mb-4">El cambio</a>
+                
                 <a href="<?php bloginfo('url'); ?>/como-funciona" class="btn">Cómo funciona</a>
             </div>
         </div>

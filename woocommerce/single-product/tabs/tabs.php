@@ -55,7 +55,9 @@ if ( ! empty( $product_tabs ) ) : ?>
 			</div>
 		<?php endforeach; ?>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--unidades panel entry-content wc-tab" id="tab-unidades" role="tabpanel" aria-labelledby="tab-title-unidades">
-            
+            <p class="mt-4">
+				Estos son los contenidos que veremos en este taller.<br>Puedes revisar las unidades y sus capítulos para conocer más detalles.
+			</p>
             <?php 
              global $product; 
                 $product_id = $product->get_id(); // The product ID

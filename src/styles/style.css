@@ -56,13 +56,15 @@ All credit goes to the authors of the respective packages for their amazing cont
     .owl-carousel .owl-nav button.owl-next{
         right: -90px;
     }
-    #tallerista h2,
+    #tallerista h2{
+        @apply font-festivo8 text-3xl mt-6 mb-4 text-negro
+    }
     .woocommerce-Tabs-panel h2{
-        @apply font-festivo6 text-3xl mt-6 mb-4
+        @apply font-festivo6 text-3xl mt-6 mb-4 text-negro
     }
     #tallerista p,
     .woocommerce-Tabs-panel p{
-        @apply mb-4
+        @apply mb-4 text-negro
     } 
     #tallerista hr,
     .woocommerce-Tabs-panel hr{
@@ -72,6 +74,18 @@ All credit goes to the authors of the respective packages for their amazing cont
     .woocommerce-Tabs-panel img{
         @apply my-4
     } 
+    #faq1 p,
+    #comoFunciona1 p{
+        @apply text-beige mb-2
+    }
+
+    #herencia-colectiva h2{
+        @apply text-negro font-festivo8 text-5xl uppercase my-4 
+    }
+    #herencia-colectiva p{
+        @apply text-negro mb-4
+    }
+
 
 }
 @screen lg{
