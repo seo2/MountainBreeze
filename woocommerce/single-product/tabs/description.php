@@ -24,7 +24,7 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 ?>
 
 <?php if ( $heading ) : ?>
-	<h1 class="font-festivo6 text-4xl mb-4"><?php the_title(); ?></h1>
+	<h1 class="font-festivo6 text-4xl my-4"><?php the_title(); ?></h1>
 <?php endif; ?>
 
 <?php the_content(); ?>
