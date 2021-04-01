@@ -173,29 +173,13 @@ function mountainbreeze_theme_support() {
     add_theme_support( 'post-thumbnails' );
 
     if ( function_exists( 'add_image_size' ) ) { 
-        add_image_size( 'talleres-home', 800, 500 ); //300 pixels wide (and unlimited height)
+        add_image_size( 'talleres-home', 800, 500, true ); //300 pixels wide (and unlimited height)
     }
     
 
 
 }
 add_action( 'after_setup_theme', 'mountainbreeze_theme_support' );
-
-
-function wc_before_main_content() {
-	echo '<section class="mt-48">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
-        <div class="w-100">';
-}
-add_action( 'woocommerce_before_main_content', 'wc_before_main_content' );
-
-function wc_after_main_content() {
-	echo '
-    </div>
-</div>
-</section>';
-}
-add_action( 'woocommerce_after_main_content', 'wc_after_main_content' );
 
 
 require_once("wc_functions.php");

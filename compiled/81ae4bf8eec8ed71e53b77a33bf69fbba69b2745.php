@@ -26,4 +26,6 @@
             <i class="fak fa-acceso mr-2" ></i> Acceso ilimitado
         </li>
     </ul>
-</div><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/partials/sidebar-curso.blade.php ENDPATH**/ ?>
+</div>
+
+<?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/partials/sidebar-curso.blade.php ENDPATH**/ ?>

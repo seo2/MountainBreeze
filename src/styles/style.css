@@ -23,9 +23,9 @@ All credit goes to the authors of the respective packages for their amazing cont
 /** Tailwind */
 /* purgecss start ignore */
 @tailwind base;
-/* purgecss end ignore */
 @tailwind components;
 @tailwind utilities;
+/* purgecss end ignore */
 
 
 /** Build something amazing... */
@@ -56,7 +56,22 @@ All credit goes to the authors of the respective packages for their amazing cont
     .owl-carousel .owl-nav button.owl-next{
         right: -90px;
     }
-
+    #tallerista h2,
+    .woocommerce-Tabs-panel h2{
+        @apply font-festivo6 text-3xl mt-6 mb-4
+    }
+    #tallerista p,
+    .woocommerce-Tabs-panel p{
+        @apply mb-4
+    } 
+    #tallerista hr,
+    .woocommerce-Tabs-panel hr{
+        @apply my-4
+    }
+    #tallerista img,
+    .woocommerce-Tabs-panel img{
+        @apply my-4
+    } 
 
 }
 @screen lg{

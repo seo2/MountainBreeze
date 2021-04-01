@@ -142,26 +142,6 @@
             </div>
         </div>
     </div>
-    {{-- <div class="container mx-auto">
-        <div class="grid grid-cols-12 gap-4 h-16 lg:h-24">
-            <div class="col-start-5 col-span-1 mb-8 text-4xl hidden md:block">
-                <a href="#" class="h-16 w-16 leading-16 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full">
-                    <i class="fal fa-chevron-left -ml-1"></i>
-                </a>
-            </div>
-            <div class="col-span-12 lg:col-span-2 lg:mb-8 text-4xl text-center">
-                <span class="w-3 h-3 rounded-md inline-block bg-naranjo hover:bg-gris5 transition duration-200 mx-2"></span>
-                <span class="w-3 h-3 rounded-md inline-block bg-naranjo hover:bg-gris5 transition duration-200 mx-2"></span>
-                <span class="w-3 h-3 rounded-md inline-block bg-naranjo hover:bg-gris5 transition duration-200 mx-2"></span>
-                <span class="w-3 h-3 rounded-md inline-block bg-naranjo hover:bg-gris5 transition duration-200 mx-2"></span>
-            </div>
-            <div class="col-span-1 mb-8 text-4xl hidden md:block">
-                <a href="#" class="h-16 w-16 leading-16 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full float-right">
-                    <i class="fal fa-chevron-right -mr-1"></i>
-                </a>
-            </div>
-        </div>
-    </div> --}}
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 h-48">
             <div class="col-start-2 col-span-10 lg:col-start-5 lg:col-span-4 mb-8">

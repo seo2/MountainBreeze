@@ -46,7 +46,7 @@ get_header();
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-	<?php
+	<?php	
 		/**
 		 * woocommerce_sidebar hook.
 		 *

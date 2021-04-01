@@ -36,20 +36,9 @@
     </div>
 </section>
 
-<section class="w-full p-4 lg:p-0 relative lg:bg-contain bg-no-repeat bg-top -mt-32 lg:-mt-24  bg-white" >
+<section class="w-full p-4 lg:p-0 relative lg:bg-contain bg-no-repeat bg-top -mt-32 lg:-mt-24  bg-white" id="tallerista" >
     <div class="container max-w-screen-sm mx-auto">
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Presentación</h2>
-        <p class="text-negro mb-12">@php echo get_field('primera_persona'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Motivación</h2>
-        <p class="text-negro mb-12">@php echo get_field('motivacion'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Enseña</h2>
-        <p class="text-negro mb-12">@php echo get_field('ensena'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Importancia</h2>
-        <p class="text-negro mb-12">@php echo get_field('importancia'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Biografía</h2>
-        <p class="text-negro mb-12">@php echo get_field('bio'); @endphp</p>
-        <h2 class="font-festivo8 uppercase text-negro text-4xl my-4">Invitación</h2>
-        <p class="text-negro mb-12">@php echo get_field('invitacion'); @endphp</p>
+        @php the_content(); @endphp
     </div>
 </section>
 
@@ -58,11 +47,14 @@
   
     <div class="container mx-auto">
         <h2 class="font-festivo6 text-4xl text-negro leading-none mb-12 text-center">
-            <span class="font-festivo8 block">Talleres de</span>Wini Balbaun
+            <span class="font-festivo8 block">Talleres de</span>@php the_title(); @endphp
         </h2>
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="grid grid-cols-12 gap-2 lg:gap-4">
+                    
+                    
+
                     <div class="flex space-x-4 lg:space-x-0 lg:block col-span-12 lg:col-span-3 mb-8">
                         <div class="relative w-1/4 lg:w-auto ">
                             <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
@@ -76,45 +68,9 @@
                             <p class="hidden lg:block text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
                         </div>
                     </div>
-                    <div class="flex space-x-4 lg:space-x-0 lg:block col-span-12 lg:col-span-3 mb-8">
-                        <div class="relative w-1/4 lg:w-auto ">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="hidden lg:inline-block text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative lg:mt-3">
-                            <p class="hidden lg:block text-beige text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="hidden lg:block text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4 lg:space-x-0 lg:block col-span-12 lg:col-span-3 mb-8">
-                        <div class="relative w-1/4 lg:w-auto ">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="hidden lg:inline-block text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative lg:mt-3">
-                            <p class="hidden lg:block text-beige text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="hidden lg:block text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4 lg:space-x-0 lg:block col-span-12 lg:col-span-3 mb-8">
-                        <div class="relative w-1/4 lg:w-auto ">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="hidden lg:inline-block text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
-                        </div>
-                        <div class="relative lg:mt-3">
-                            <p class="hidden lg:block text-beige text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="hidden lg:block text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
-                        </div>
-                    </div>
+
+
+
                 </div>
             </div>
         </div>

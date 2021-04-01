@@ -16,7 +16,7 @@ test('data manipulated on component object is reactive', async () => {
 
     document.querySelector('div').__x.$data.foo = 'baz'
 
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('baz') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('baz') })
 })
 
 test('x-data attribute value is optional', async () => {
@@ -28,7 +28,7 @@ test('x-data attribute value is optional', async () => {
 
     Alpine.start()
 
-    expect(document.querySelector('span').innerText).toEqual('foo')
+    expect(document.querySelector('span').textContent).toEqual('foo')
 })
 
 test('x-data can use attributes from a reusable function', async () => {
@@ -45,7 +45,19 @@ test('x-data can use attributes from a reusable function', async () => {
 
     Alpine.start()
 
-    expect(document.querySelector('span').innerText).toEqual('bar')
+    expect(document.querySelector('span').textContent).toEqual('bar')
+})
+
+test('x-data can use $el', async () => {
+    document.body.innerHTML = `
+        <div x-data="{ text: $el.dataset.text }" data-text="test">
+          <span x-text="text"></span>
+        </div>
+    `
+
+    Alpine.start()
+
+    expect(document.querySelector('span').textContent).toEqual('test')
 })
 
 test('functions in x-data are reactive', async () => {
@@ -57,11 +69,11 @@ test('functions in x-data are reactive', async () => {
     `
     Alpine.start()
 
-    expect(document.querySelector('span').innerText).toEqual('bar')
+    expect(document.querySelector('span').textContent).toEqual('bar')
 
     document.querySelector('button').click()
 
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('baz') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('baz') })
 })
 
 test('Proxies are not nested and duplicated when manipulating an array', async () => {
@@ -77,31 +89,50 @@ test('Proxies are not nested and duplicated when manipulating an array', async (
 
     // Before this fix: https://github.com/alpinejs/alpine/pull/141
     // This test would create exponentially slower performance and eventually stall out.
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
     document.querySelector('h1').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('foo') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('foo') })
     document.querySelector('button').click()
-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
+    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
+})
+
+test('component refresh one time per update whatever the number of mutations in the update', async () => {
+    window.refreshCount = 0
+
+    document.body.innerHTML = `
+        <div x-data="{ items: ['foo', 'bar'], qux: 'quux', test() {return ++refreshCount} }">
+            <span x-text="test()"></span>
+            <button x-on:click="items.push('baz'); qux = 'corge';"></button>
+        </div>
+    `
+
+    Alpine.start()
+
+    expect(refreshCount).toEqual(1)
+
+    document.querySelector('button').click()
+
+    await wait(() => { expect(refreshCount).toEqual(2) })
 })

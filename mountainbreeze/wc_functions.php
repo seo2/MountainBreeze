@@ -118,6 +118,162 @@ function custom_action_after_single_product_title() {
     echo '<h2 class="text-sm mb-2 capitalize">' . esc_html( get_the_title($tallerista[0]) ) . '</h2>';
 }
 
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta',40 );
 
+/**
+ * Hook: woocommerce_after_single_product_summary.
+ *
+ * @hooked woocommerce_output_product_data_tabs - 10
+ * @hooked woocommerce_upsell_display - 15
+ * @hooked woocommerce_output_related_products - 20
+ */
+
+/**
+ * Hook: woocommerce_before_single_product_summary.
+ *
+ * @hooked woocommerce_show_product_sale_flash - 10
+ * @hooked woocommerce_show_product_images - 20
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs',10 );
+add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',25 );
+
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs',10 );
+add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',25 );
+
+
+
+
+function wc_before_main_content() {
+	echo '<section class="mt-48">
+    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+        <div class="w-100">';
+}
+add_action( 'woocommerce_before_main_content', 'wc_before_main_content', 10 );
+
+function wc_after_main_content() {
+	echo '
+    </div>
+</div>
+</section>';
+}
+add_action( 'woocommerce_after_main_content', 'wc_after_main_content',50 );
+
+
+/**
+ * Hook: woocommerce_after_single_product_summary.
+ *
+ * @hooked woocommerce_output_product_data_tabs - 10
+ * @hooked woocommerce_upsell_display - 15
+ * @hooked woocommerce_output_related_products - 20
+ */
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products',20 );
+add_action( 'woocommerce_after_main_content', 'woocommerce_output_related_products',60 );
+
+
+function wc_before_related() {
+	echo '<section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado" style="background-image: url('.get_stylesheet_directory_uri().'/dist/img/bg_rosado_bot_blanco_top.png");">
+		<div class="container mx-auto">
+	';
+}
+add_action( 'woocommerce_after_main_content', 'wc_before_related', 55 );
+
+function wc_after_related() {
+	echo '
+		</div>	
+	</section>';
+}
+add_action( 'woocommerce_after_main_content', 'wc_after_related', 65 );
+
+
+	/**
+	 * Hook: woocommerce_before_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 */
+	/**
+	 * Hook: woocommerce_before_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_show_product_loop_sale_flash - 10
+	 * @hooked woocommerce_template_loop_product_thumbnail - 10
+	 */
+
+	/**
+	 * Hook: woocommerce_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_product_title - 10
+	 */
+
+	/**
+	 * Hook: woocommerce_after_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_rating - 5
+	 * @hooked woocommerce_template_loop_price - 10
+	 */
+	/**
+	 * Hook: woocommerce_after_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_close - 5
+	 * @hooked woocommerce_template_loop_add_to_cart - 10
+	 */
+
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price',10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_price',20 );
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open',10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close',10 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open',5 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close',15 );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart',10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart',15 );
+
+function woocommerce_template_loop_product_title() {
+	echo '<h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">' . get_the_title() . '</h4>'; 
+ }	
+
+function wc_before_thumbnail() {
+	echo '<div class="relative w-1/4 lg:w-auto mb-2">';
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'wc_before_thumbnail', 5 );
+
+function wc_after_thumbnail() {
+	echo '</div>';
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'wc_after_thumbnail', 17 );
+
+
+	/**
+	 * Hook: woocommerce_before_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 */
+
+
+	add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 6 );
+	add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 14 );
+/**
+ * Edit default Woocommerce product loop thumbnail template
+ * As there is no dedicated Woocommerce template (eg wp-content/plugins/woocommerce/templates/loop/price.php)
+ * because it's generated using filter, we must remove Woocommerce hook, and add our own "at the same place"
+ * to edit the product loop thumbnail template
+ * tested up to (12/10/2020) : 
+ * Wordpress 5.5.1
+ * Woocommerce 3.8.1
+ * PHP 7.3.7
+ * Sage 9.0.9
+ * source: https://gist.github.com/krogsgard/3015581
+ * HOW TO USE: add in active theme functions.php file
+ */
+
+/**
+ * Remove woocommerce hooked action (method woocommerce_template_loop_product_thumbnail on woocommerce_before_shop_loop_item_title
+ * hook
+ */
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+/**
+ * Add our own action to the woocommerce_before_shop_loop_item_title hook with the same priority that woocommerce used
+ */
+add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);

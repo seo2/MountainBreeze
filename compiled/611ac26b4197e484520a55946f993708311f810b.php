@@ -140,7 +140,6 @@
             </div>
         </div>
     </div>
-    
     <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 h-48">
             <div class="col-start-2 col-span-10 lg:col-start-5 lg:col-span-4 mb-8">
