@@ -173,7 +173,9 @@ function mountainbreeze_theme_support() {
     add_theme_support( 'post-thumbnails' );
 
     if ( function_exists( 'add_image_size' ) ) { 
-        add_image_size( 'talleres-home', 800, 500, true ); //300 pixels wide (and unlimited height)
+        add_image_size( 'talleres-home', 800, 500, true ); 
+        add_image_size( 'slider-home', 2160, 1266, true ); 
+        add_image_size( 'slider-home-mobile', 375, 687  , true ); 
     }
     
 

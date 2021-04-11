@@ -33,11 +33,19 @@ All credit goes to the authors of the respective packages for their amazing cont
     .btn{
         @apply h-12 w-full leading-12 text-center inline-block border border-negro border-solid text-negro transition duration-200 uppercase;
     }
-
-
     .btn:hover{
         @apply bg-naranjo border-naranjo text-blanco;
     }
+
+    .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+        @apply bg-naranjo text-blanco;
+    }
+
+    .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+        @apply bg-verde text-blanco;
+    }
+
+
     .owl-dots{
         position: absolute;
         width: 100%;
@@ -56,20 +64,26 @@ All credit goes to the authors of the respective packages for their amazing cont
     .owl-carousel .owl-nav button.owl-next{
         right: -90px;
     }
+    #taller h2{
+        @apply font-festivo6 text-3xl mt-6 mb-4 text-negro
+    }
     #tallerista h2{
         @apply font-festivo8 text-3xl mt-6 mb-4 text-negro
     }
     .woocommerce-Tabs-panel h2{
         @apply font-festivo6 text-3xl mt-6 mb-4 text-negro
     }
+    #taller p,
     #tallerista p,
     .woocommerce-Tabs-panel p{
         @apply mb-4 text-negro
     } 
+    #taller hr,
     #tallerista hr,
     .woocommerce-Tabs-panel hr{
         @apply my-4
     }
+    #taller img,
     #tallerista img,
     .woocommerce-Tabs-panel img{
         @apply my-4

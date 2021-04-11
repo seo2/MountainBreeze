@@ -278,6 +278,20 @@ remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_l
  */
 add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
+/**
+ * woocommerce_before_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ */
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+		/**
+		 * woocommerce_sidebar hook.
+		 *
+		 * @hooked woocommerce_get_sidebar - 10
+		 */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
 
 add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
 	return array(

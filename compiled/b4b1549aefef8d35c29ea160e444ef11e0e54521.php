@@ -19,6 +19,7 @@ Template name: Herencia Colectiva
         <p class="text-negro">Son las reliquias de una herencia colectiva. </p>
     </div>
 </section>
+
 <section class="w-full lg:pt-12 pb-48 bg-beige">
     <div class="container lg:px-32">
         <div class="grid lg:grid-cols-2 gap-16 w-4/5 mx-auto lg:w-full">

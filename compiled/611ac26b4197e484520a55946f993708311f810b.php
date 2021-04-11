@@ -117,12 +117,12 @@
                         </div>
                         <div class="relative mt-3">
                             <p class="text-naranjo text-lg lg:text-xl"><?php echo $product->get_price_html();?></p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php the_permalink();?>" class="hover:underline"><?php the_title();?></a></h4>
                             <p class="text-negro text-sm">
                             <?php
                             $terms = get_the_terms( get_the_ID(), 'product_cat' );
                             foreach ($terms as $term) {
-                                echo '<span class="mr-4"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
+                                echo '<span class="mr-4 inline-block"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
                             }
                             ?>
                             </p>

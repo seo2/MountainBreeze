@@ -17,33 +17,42 @@
 
     }
 </style>
+<?php
+    $slide_params = array(    
+        'posts_per_page' => 1, 
+        'post_type' => 'carousel_home'
+    ); 
+    $slide_query = new WP_Query($slide_params); 
+?>
+<?php if ($slide_query->have_posts()) :     ?>
+<?php while ($slide_query->have_posts()) : 
+    $slide_query->the_post(); 
+?>   
 <div class="owl-carousel owl-theme w-100 bg-negro" id="hero-carousel">
+    <?php if( have_rows('slide') ): ?>
+        <?php while( have_rows('slide') ): the_row(); ?>
     <div>
         <div class="flex items-center bg-negro relative">
-            <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home.jpg"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
-            <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home_m.jpg"  class="md:hidden w-full" alt="Portada Herencia Colectiva">
+            <img src="<?php the_sub_field('imagen_de_fondo'); ?>"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
+            <img src="<?php the_sub_field('imagen_de_fondo_mobile'); ?>"  class="md:hidden w-full" alt="Portada Herencia Colectiva">
             <img src="<?php bloginfo('template_url') ?>/dist/img/rayas.svg" alt="rayas" class="absolute w-1/3 lg:w-1/6 top-32 lg:top-auto">
             <div class="w-full h-80 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0"></div>
             <div class="absolute bottom-0 left-0 mb-24 lg:mb-0 w-5/6 px-4 lg:px-0 lg:bottom-auto lg:left-auto lg:w-1/3 lg:ml-48 text-beige">
-                <h1 class="font-festivo6 uppercase mb-2 lg:mb-1 text-6xl lg:text-4xl leading-snug">Herencia Colectiva</h1>
-                <h2 class="font-festivo8 uppercase mb-2 lg:mb-5 text-6xl lg:text-4xl leading-snug">Espacio expandido de transmisión de saberes, prácticas y creación.</h2>
-                <p class="mb-8 text-lg">Aprende directamente con las personas que han sabido rescatar, guardar y cultivar saberes que son parte de nuestra Herencia Colectiva.</p>
-                <a href="" class="bg-rosado text-beige px-3 py-2 rounded-none  mt-4 uppercase hover:bg-naranjo transition duration-200">Ver los talleres</a>
+                <h1 class="font-festivo6 uppercase mb-2 lg:mb-1 text-6xl lg:text-4xl leading-snug"><?php the_sub_field('titulo'); ?></h1>
+                <h2 class="font-festivo8 uppercase mb-2 lg:mb-5 text-6xl lg:text-4xl leading-snug"><?php the_sub_field('sub_titulo'); ?></h2>
+                <p class="mb-8 text-lg"><?php the_sub_field('texto'); ?></p>
+                <a href="<?php the_sub_field('link_boton'); ?>" class="bg-rosado text-beige px-3 py-2 rounded-none  mt-4 uppercase hover:bg-naranjo transition duration-200"><?php the_sub_field('texto_boton'); ?></a>
             </div>
         </div>
     </div>
-    <div>
-        <div class="flex items-center bg-negro relative">
-            <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home.jpg"    class="hidden md:block w-full" alt="Portada Herencia Colectiva">
-            <img src="<?php bloginfo('template_url') ?>/dist/img/foto_home_m.jpg"  class="md:hidden w-full" alt="Portada Herencia Colectiva">
-            <img src="<?php bloginfo('template_url') ?>/dist/img/rayas.svg" alt="rayas" class="absolute w-1/3 lg:w-1/6 top-32 lg:top-auto">
-            <div class="w-full h-80 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0"></div>
-            <div class="absolute bottom-0 left-0 mb-24 lg:mb-0 w-5/6 px-4 lg:px-0 lg:bottom-auto lg:left-auto lg:w-1/3 lg:ml-48 text-beige">
-                <h1 class="font-festivo6 uppercase mb-2 lg:mb-5 text-6xl lg:text-5xl leading-none lg:leading-normal">Herencia Colectiva</h1>
-                <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-                <button class="bg-blanco text-negro px-3 py-2 rounded-none  mt-4 uppercase hover:bg-naranjo transition duration-200">Leer más</button>
-            </div>
-        </div>
-    </div>
+        <?php endwhile; ?>
+    <?php endif; ?>    
 </div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); // (5) ?>
+<?php else:  ?>
+<p class="text-center mb-0" style="display:block;margin:0 auto;">
+<?php _e( 'No hay Sliders disponibles' ); // (6) ?>
+</p>
+<?php endif; ?>
 <?php endif; ?><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/partials/hero.blade.php ENDPATH**/ ?>

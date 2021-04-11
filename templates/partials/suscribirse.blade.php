@@ -8,13 +8,13 @@
         <div class="grid grid-cols-12 gap-4 px-4 lg:px-0">
             <div class="col-start-1 col-span-12 text-center mb-8">
                 <h2 class="font-festivo6 text-4xl text-beige leading-none mb-6">
-                    <span class="font-festivo8 block lg:inline">Sé parte de</span> nuestra herencia
+                    <span class="font-festivo8 block lg:inline">Sé parte de</span> herencia colectiva
                 </h2>
                 <img src="<?php bloginfo('template_url') ?>/dist/img/cachirulo.svg" alt="cachirulo" class="mx-auto my-1">
             </div>
             <div class="col-start-1 col-span-12 lg:col-start-3 lg:col-span-4 text-lg text-center lg:text-left">
                 <p class="text-beige mb-4">Suscríbete al newsletter de Herencia Colectiva y recibe noticias sobre los talleres y la comunidad.</p>
-                <h3 class="text-beige font-bold">¡Súmate a la Herencia!</h3>
+                <h3 class="text-beige font-bold">¡Súmate!</h3>
             </div>
             <div class="col-start-1 col-span-12 lg:col-start-7 lg:col-span-4">
                 <div class="bg-blanco grid grid-cols-12 gap2">

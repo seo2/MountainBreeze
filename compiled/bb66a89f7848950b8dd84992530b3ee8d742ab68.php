@@ -49,25 +49,39 @@
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="grid grid-cols-12 gap-2 lg:gap-4">
-                    
-                    
-
+                    <?php
+                    $featured_posts = get_field('talleres');
+                    if( $featured_posts ): ?>
+                        <?php foreach( $featured_posts as $featured_post ): 
+                            $permalink = get_permalink( $featured_post->ID );
+                            $title = get_the_title( $featured_post->ID );
+                            $url = get_the_post_thumbnail_url( $featured_post->ID );
+                            global $woocommerce;
+                            $product    = new WC_Product( $featured_post->ID );
+                            //$custom_field = get_field( 'field_name', $featured_post->ID );
+                            ?> 
                     <div class="flex space-x-4 lg:space-x-0 lg:block col-span-12 lg:col-span-3 mb-8">
                         <div class="relative w-1/4 lg:w-auto ">
-                            <img src="<?php bloginfo('template_url') ?>/dist/img/pan.jpg" alt="pan">
-                            <a href="#" class="hidden lg:inline-block text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full absolute bottom-0 right-0 mr-4 mb-4 w-10 h-10 leading-10 text-center">
-                                <i class="fak fa-add-bag"></i>
-                            </a>
+                            <img src="<?php echo $url; ?>" alt="<?php echo esc_html( $title ); ?>">
+                            <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
+                                <a href="/?add-to-cart=<?php echo $product->get_id(); ?>" data-quantity="1" class="product_type_course add_to_cart_button ajax_add_to_cart  inline-block mr-4 mb-4 w-10 h-10 leading-10 text-center text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full " data-product_id="274" data-product_sku="" aria-label="Lee más sobre “Huerto Creativo”" rel="nofollow"><i class="fak fa-add-bag"></i></a>
+                            </p>
                         </div>
                         <div class="relative lg:mt-3">
-                            <p class="hidden lg:block text-beige text-lg lg:text-xl">$12.990</p>
-                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3">Técnicas de Sustentabilidad</h4>
-                            <p class="hidden lg:block text-negro text-sm"><i class="fak fa-espiga"></i> Lorem ipsum</p>
+                            <p class="hidden lg:block text-beige text-lg lg:text-xl"><?php echo $product->get_price_html();?></p>
+                            <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php echo esc_url( $permalink ); ?>" class="hover:underline"><?php echo esc_html( $title ); ?></a></h4>
+                            <p class="text-negro text-sm">
+                            <?php
+                            $terms = get_the_terms( $featured_post->ID , 'product_cat' );
+                            foreach ($terms as $term) {
+                                echo '<span class="mr-4 inline-block"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
+                            }
+                            ?>
+                            </p>
                         </div>
                     </div>
-
-
-
+                        <?php endforeach; ?>
+                    <?php endif; ?>   
                 </div>
             </div>
         </div>
