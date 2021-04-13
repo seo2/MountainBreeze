@@ -19,8 +19,6 @@ Template name: FAQ
 </section>
 
 <section class="w-full lg:pt-4 pb-48 relative lg:bg-contain bg-no-repeat bg-top -mt-12 lg:mt-auto" >
-    
-    
     <div class="container lg:px-32">
         <img src="<?php bloginfo('template_url') ?>/dist/img/oxoxox.svg" alt="x_x" class="lg:hidden mx-auto mt-12">
         <div class="grid lg:grid-cols-12 gap-x-16 w-5/6 mx-auto lg:w-full mt-10" >

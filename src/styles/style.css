@@ -45,6 +45,10 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply bg-verde text-blanco;
     }
 
+    .flex-control-nav{ @apply flex; }
+    .flex-control-nav li { @apply mr-2 mt-2; }
+    .precio-producto{ @apply hidden lg:block text-naranjo text-lg lg:text-xl; }
+    #interesar .precio-producto{ @apply text-beige; }
 
     .owl-dots{
         position: absolute;
