@@ -19,4 +19,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="grid grid-cols-12 gap-2 lg:gap-4 products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> w-full">
+<div class="grid grid-cols-12 gap-2 lg:gap-8 pt-8 pb-8 products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> w-full">

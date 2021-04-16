@@ -173,7 +173,7 @@ add_action( 'woocommerce_after_main_content', 'woocommerce_output_related_produc
 
 
 function wc_before_related() {
-	echo '<section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado" style="background-image: url('.get_stylesheet_directory_uri().'/dist/img/bg_rosado_bot_blanco_top.png");">
+	echo '<section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado bg-contain" style="background-image: url('.get_stylesheet_directory_uri().'/dist/img/bg_rosado_bot_blanco_top.png");">
 		<div class="container mx-auto">
 	';
 }

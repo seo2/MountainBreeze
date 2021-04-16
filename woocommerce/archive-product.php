@@ -31,7 +31,7 @@ do_action( 'woocommerce_before_main_content' );
 ?>
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="font-festivo6 text-5xl mb-4 text-negro ">Talleres de <?php woocommerce_page_title(); ?></h1>
+		<h1 class="font-festivo6 text-5xl mb-8 text-negro "><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
 
 	<?php

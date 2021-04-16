@@ -95,7 +95,7 @@
       <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url'); ?>/como-funciona">Favoritos</a>
     </nav>
     <nav class="flex-col flex-grow hidden md:flex md:justify-end md:flex-row">
-      <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url') ?>/wp-login.php?action=logout">Cerrar Sesión <i class="fal fa-power-off ml-1"></i></a>
+      <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php echo wp_logout_url( home_url() ); ?>">Cerrar Sesión <i class="fal fa-power-off ml-1"></i></a>
     </nav>
   </div>
 </div>

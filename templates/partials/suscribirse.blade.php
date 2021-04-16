@@ -16,14 +16,15 @@
                 <p class="text-beige mb-4">Suscríbete al newsletter de Herencia Colectiva y recibe noticias sobre los talleres y la comunidad.</p>
                 <h3 class="text-beige font-bold">¡Súmate!</h3>
             </div>
-            <div class="col-start-1 col-span-12 lg:col-start-7 lg:col-span-4">
+            <form class="col-start-1 col-span-12 lg:col-start-7 lg:col-span-4" action="https://seo2.us12.list-manage.com/subscribe/post?u=88d81859b6f9ce82934e29480&amp;id=801c8ebe9c" method="post" name="mc-embedded-subscribe-form"  target="_blank" novalidate>
                 <div class="bg-blanco grid grid-cols-12 gap2">
                     <span class="col-span-1 text-center py-2 text-gris4"><i class="fal fa-envelope"></i></span>
-                    <input type="email" class="border-none w-full rounded-none px-3 py-2 col-start-2 col-span-11 placeholder-gris4" placeholder="Escribe tu email"/>
+                    <input type="email" name="EMAIL" class="border-none w-full rounded-none px-3 py-2 col-start-2 col-span-11 placeholder-gris4" placeholder="Escribe tu email"/>
+                    <input type="hidden" name="TAGS" value="formulario-sitio"/>
                 </div>
-            
-                <button class="bg-rosado text-white px-3 py-2 rounded-none w-full mt-4 uppercase hover:bg-negro transition duration-200">Suscribirme</button>
-            </div>
+                <input type="hidden" name="b_88d81859b6f9ce82934e29480_801c8ebe9c" tabindex="-1" value="">
+                <button type="submit" name="subscribe" class="bg-rosado text-white px-3 py-2 rounded-none w-full mt-4 uppercase hover:bg-negro transition duration-200">Suscribirme</button>
+            </form>
         </div>
     </div>
 </div>

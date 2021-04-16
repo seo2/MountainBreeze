@@ -16,6 +16,13 @@
             <li><a href="mailto:hola@herenciacolectiva.cl"              target="_blank" class="text-sm text-beige leading-10 hover:underline"><span class="ml-2 text-fondooscuro bg-beige rounded-full text-sm w-6 h-6 leading-6 text-center inline-block mr-2"><i class="fas fa-envelope transform rotate-25"></i></span>hola@herenciacolectiva.cl</a></li>
         </ul>
     </div>
+    <div class="lg:p-4 flex flex-row lg:items-center justify-between ml-8">
+        <ul class="self-end">
+            <li><a href="/preguntas_frecuentes/preguntas-frecuentes/" target="_blank" class="text-sm text-beige leading-10 hover:underline">Preguntas Frecuentes</a></li>
+            <li><a href="/como_funciona/como-funciona/"                             target="_blank" class="text-sm text-beige leading-10 hover:underline">¿Cómo funciona?</a></li>
+            <li><a href="/herencia_colectiva/herencia-colectiva/"              target="_blank" class="text-sm text-beige leading-10 hover:underline">Herencia Colectiva</a></li>
+        </ul>
+    </div>
     
     <div class="flex-col flex-grow pb-4 md:pb-4 hidden md:flex md:justify-end md:flex-row self-end">
         <p class="text-gris3">Herencia Colectiva 2020 ®</p>
