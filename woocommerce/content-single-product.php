@@ -47,19 +47,32 @@ if ( post_password_required() ) {
     <div class="w-2/5">
 		<div class="bg-beige py-4 px-8 sticky top-40">
 			<?php
-			/**
-			 * Hook: woocommerce_single_product_summary.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked WC_Structured_Data::generate_product_data() - 60
-			 */
-			do_action( 'woocommerce_single_product_summary' );
+				$product_id = $product->get_id(); // The product ID
+				$related_courses = get_post_meta($product_id, '_related_course');
+				foreach ($related_courses as $related_course) {
+					$id = $related_course[0];
+					$url = learndash_get_course_url($id);
+				}
+				echo do_shortcode('[uo_course_resume course_id="'.$id.'"]');
+                echo do_shortcode('[uo_learndash_resume_link]');
+                echo do_shortcode('[learndash_login]');
+				// if(){
+				// 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30 );
+				// }
+				
+				/**	
+				 * Hook: woocommerce_single_product_summary.
+				 *
+				 * @hooked woocommerce_template_single_title - 5
+				 * @hooked woocommerce_template_single_rating - 10
+				 * @hooked woocommerce_template_single_price - 10
+				 * @hooked woocommerce_template_single_excerpt - 20
+				 * @hooked woocommerce_template_single_add_to_cart - 30
+				 * @hooked woocommerce_template_single_meta - 40
+				 * @hooked woocommerce_template_single_sharing - 50
+				 * @hooked WC_Structured_Data::generate_product_data() - 60
+				 */
+				do_action( 'woocommerce_single_product_summary' );
 			?>
 			<ul class="mt-4">
 				<li class="mb-2 text-sm">

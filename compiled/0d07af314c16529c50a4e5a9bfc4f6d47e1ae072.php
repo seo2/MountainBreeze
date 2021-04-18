@@ -17,14 +17,11 @@ Template name: Mis cursos
 </section>
 
 <section class="mt-12">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container w-90 mx-auto justify-between flex-row lg:px-32">
         <?php $__env->startComponent('partials.the_loop'); ?>
         <?php echo e(the_content()); ?>
 
         <?php echo $__env->renderComponent(); ?>
-        
-
-
     </div>
 </section>
 

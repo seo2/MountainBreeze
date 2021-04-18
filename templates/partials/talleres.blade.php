@@ -59,12 +59,14 @@
                     <h4 class="text-negro text-xl lg:text-2xl font-bold leading-none my-2 lg:my-3"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
                     <p class="text-negro mb-4"><?php echo get_the_excerpt();?></p>
                     <p class="text-negro text-sm">
-                    <?php
-                    $terms = get_the_terms( get_the_ID(), 'product_cat' );
-                    foreach ($terms as $term) {
-                        echo '<span class="mr-4"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
-                    }
-                    ?>
+                        <?php
+                        $terms = get_the_terms( get_the_ID(), 'product_cat' );
+                        foreach ($terms as $term) {
+                            if($term->slug!='destacados'){
+                                echo '<a href="/categoria/'.$term->slug.'" class="mr-4 inline-block hover:underline" title="Ir a la categoría '.$term->name.'"><i class="fak fa-espiga"></i> '.$term->name.'</a>';
+                            }
+                        }
+                        ?>
                     </p>
                 </div>
             </div>
@@ -124,7 +126,9 @@
                             <?php
                             $terms = get_the_terms( get_the_ID(), 'product_cat' );
                             foreach ($terms as $term) {
-                                echo '<span class="mr-4 inline-block"><i class="fak fa-espiga"></i> '.$term->name.'</span>';
+                                if($term->slug!='destacados'){
+                                    echo '<a href="/categoria/'.$term->slug.'" class="mr-4 inline-block hover:underline" title="Ir a la categoría '.$term->name.'"><i class="fak fa-espiga"></i> '.$term->name.'</a>';
+                                }
                             }
                             ?>
                             </p>

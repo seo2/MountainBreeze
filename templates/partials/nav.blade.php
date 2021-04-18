@@ -68,9 +68,9 @@
         <div class="flex-shrink-0 h-8 w-8 self-center">
           @php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'h-8 w-8 rounded-full border border-blanco' ) ) @endphp
         </div>
-        <span class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+        <a href="/perfil" class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
           {{show_loggedin_function( $atts )}}
-        </span>
+        </a>
         
       @else
       <a class="px-4 py-2 mt-2 text-sm font-normal bg-rosado rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url') @endphp/registrate/">Regístrate</a>

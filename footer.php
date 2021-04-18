@@ -18,9 +18,13 @@
     </div>
     <div class="lg:p-4 flex flex-row lg:items-center justify-between ml-8">
         <ul class="self-end">
-            <li><a href="/preguntas_frecuentes/preguntas-frecuentes/" target="_blank" class="text-sm text-beige leading-10 hover:underline">Preguntas Frecuentes</a></li>
-            <li><a href="/como_funciona/como-funciona/"                             target="_blank" class="text-sm text-beige leading-10 hover:underline">¿Cómo funciona?</a></li>
-            <li><a href="/herencia_colectiva/herencia-colectiva/"              target="_blank" class="text-sm text-beige leading-10 hover:underline">Herencia Colectiva</a></li>
+        <?php $menu_location = 'menu-footer'; ?>
+        <?php if ( has_nav_menu( $menu_location ) ): ?>
+        <?php $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) ); ?>
+        <?php foreach ( $menu_items as $menu_item ): ?>   
+        <li><a href="<?php echo esc_url( $menu_item->url ) ?>" target="<?php echo esc_attr( $menu_item->target ?: '_self' ) ?>" class="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ) ?> text-sm text-beige leading-10 hover:underline"><?php echo esc_html( $menu_item->title ) ?></a></li>
+        <?php endforeach; ?>
+        <?php endif; ?>     
         </ul>
     </div>
     

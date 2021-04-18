@@ -71,6 +71,9 @@ All credit goes to the authors of the respective packages for their amazing cont
     #taller h2{
         @apply font-festivo6 text-3xl mt-6 mb-4 text-negro
     }
+    #taller h3{
+        @apply text-2xl font-bold mt-6 mb-4 text-negro
+    }
     #tallerista h2{
         @apply font-festivo8 text-3xl mt-6 mb-4 text-negro
     }
@@ -103,7 +106,80 @@ All credit goes to the authors of the respective packages for their amazing cont
     #herencia-colectiva p{
         @apply text-negro mb-4
     }
+    .learndash-wrapper .ld-progress .ld-progress-heading .ld-progress-stats .ld-progress-percentage{
+        @apply mr-4
+    }
 
+    .learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link{
+        @apply h-12 w-full leading-12 text-center !important inline-block border !important border-negro border-solid text-negro transition duration-200 uppercase !important no-underline;
+    }
+    .learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link:hover{
+        @apply bg-negro text-beige !important; 
+    }
+
+    .ld-course-list-items div.ld_course_grid .thumbnail.course .caption, .ld_course_grid .thumbnail .caption{
+
+    }
+    .learndash-wrapper .ld-course-navigation .ld-lesson-item-preview a.ld-lesson-item-preview-heading{
+        @apply pb-0
+    }
+    .learndash-wrapper .ld-course-navigation .ld-lesson-item-preview .ld-lesson-title{
+        @apply font-festivo6 text-naranjo text-lg uppercase leading-5
+    }
+    .learndash-wrapper .ld-course-navigation .ld-lesson-item-preview .ld-expand-button{
+        @apply pl-4
+    }
+
+    .ld-icon-arrow-down:before{
+        @apply text-blanco
+    }
+
+    #bbpress-forums{
+        @apply text-base
+    }
+
+    #bbpress-forums ul.bbp-topics{
+        @apply border-t border-b border-l-0 border-r-0
+    }
+    #bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer{
+        @apply bg-white
+    }
+    #bbpress-forums fieldset.bbp-form{
+        @apply border-none p-0
+    }
+    #bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic{
+        @apply bg-white !important border-none
+    }
+    .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea,
+    #bbpress-forums fieldset.bbp-form input[type=text], #bbpress-forums fieldset.bbp-form select{
+        @apply appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
+    }
+
+    div.bbp-submit-wrapper{
+        @apply float-left
+    }
+
+    .bbp-submit-wrapper button{
+        @apply h-12 w-full text-base leading-12 px-16 text-center !important inline-block border !important border-azul bg-azul border-solid text-beige transition duration-200 uppercase !important no-underline;
+    }
+    .bbp-submit-wrapper button:hover{
+        @apply bg-naranjo border-naranjo text-beige !important cursor-pointer; 
+    }
+
+    .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+        @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-azul bg-azul border-solid text-beige transition duration-200 uppercase !important no-underline;
+    }
+    .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
+        @apply  border-naranjo !important  bg-naranjo !important no-underline;
+    }
+
+    .learndash-wrapper .ld-button, .learndash-wrapper .ld-expand-button, .learndash-wrapper .btn-join, .learndash-wrapper #btn-join, .learndash-wrapper .learndash_mark_complete_button, .learndash-wrapper #learndash_mark_complete_button, .learndash-wrapper .ld-login-modal .ld-button, .learndash-wrapper .ld-login-modal input[type=submit], .learndash-wrapper .ld-login-modal .ld-login-modal-register #wp-submit, .learndash-wrapper .ld-item-list .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button, body div.ld-course-list-items div.ld_course_grid .thumbnail.course a.btn-primary, .ldx-plugin .uo-toolkit-grid__course-action input, .learndash-resume-button input[type=submit], .learndash-wrapper .ld-login-button, .learndash-reset-form .learndash-reset-button[type=submit], .learndash-wrapper .ld-focus-comment .ld-comment-reply a.comment-reply-link, .learndash-wrapper .ld-focus-comments .form-submit #submit, .rrf-modal-content.modal .modal-navigation button, .course-reviews-section .write-a-review.not-rated, .course-reviews-section .login-to-enroll.button, button.wdm_feedback_form_pop, .wdm_feedback_form .wdm_feedback_submission, .ldgr-group-actions #ldgr-update-group-details, .wdm-tabs-wrapper #bulk_remove, .wdm-tabs-wrapper #wdm_submit, .wdm-tabs-wrapper #wdm_ldgr_show_report, .wdm-tabs-wrapper #wdm_submit_upload {
+        @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-azul bg-azul border-solid text-beige transition duration-200 uppercase !important no-underline;
+    }
+
+    .learndash-wrapper .ld-button:hover, .learndash-wrapper .ld-expand-button:hover, .learndash-wrapper .btn-join:hover, .learndash-wrapper #btn-join:hover, .learndash-wrapper .learndash_mark_complete_button:hover, .learndash-wrapper #learndash_mark_complete_button:hover, .learndash-wrapper .ld-login-modal .ld-button:hover, .learndash-wrapper .ld-login-modal input[type=submit]:hover, .learndash-wrapper .ld-login-modal .ld-login-modal-register #wp-submit:hover, .learndash-wrapper .ld-item-list .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button:hover, body div.ld-course-list-items div.ld_course_grid .thumbnail.course a.btn-primary:hover, .ldx-plugin .uo-toolkit-grid__course-action input:hover, .learndash-resume-button input[type=submit]:hover, .learndash-wrapper .ld-login-button:hover, .learndash-reset-form .learndash-reset-button[type=submit]:hover, .learndash-wrapper .ld-focus-comment .ld-comment-reply a.comment-reply-link:hover, .learndash-wrapper .ld-focus-comments .form-submit #submit:hover, .rrf-modal-content.modal .modal-navigation button:hover, .course-reviews-section .write-a-review.not-rated:hover, .course-reviews-section .login-to-enroll.button:hover, button.wdm_feedback_form_pop:hover, .wdm_feedback_form .wdm_feedback_submission:hover, .ldgr-group-actions #ldgr-update-group-details:hover, .wdm-tabs-wrapper #bulk_remove:hover, .wdm-tabs-wrapper #wdm_submit:hover, .wdm-tabs-wrapper #wdm_ldgr_show_report:hover, .wdm-tabs-wrapper #wdm_submit_upload:hover {
+        @apply  border-naranjo !important  bg-naranjo !important no-underline;
+    }
 
 }
 @screen lg{

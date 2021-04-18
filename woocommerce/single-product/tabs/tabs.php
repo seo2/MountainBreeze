@@ -33,15 +33,25 @@ if ( ! empty( $product_tabs ) ) : ?>
 	<div class="woocommerce-tabs wc-tabs-wrapper">
 		<ul class="wc-tabs flex-grow md:pb-0 flex justify-between lg:justify-start flex-row uppercase border-b" role="tablist">
 			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
-				<li class="<?php echo esc_attr( $key ); ?>_tab px-4 lg:px-12 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
+				<li class="<?php echo esc_attr( $key ); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
 					<a href="#tab-<?php echo esc_attr( $key ); ?>">
 						<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>
 					</a>
 				</li>
 			<?php endforeach; ?>
-                <li class="<?php echo esc_attr( 'unidades'); ?>_tab px-4 lg:px-12 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-unidades" role="tab" aria-controls="tab-unidades">
+                <li class="<?php echo esc_attr( 'unidades'); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-unidades" role="tab" aria-controls="tab-unidades">
 					<a href="#tab-<?php echo esc_attr(  'unidades'); ?>">
 						Unidades
+					</a>
+				</li>
+                <li class="<?php echo esc_attr( 'valoraciones'); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-valoraciones" role="tab" aria-controls="tab-valoraciones">
+					<a href="#tab-<?php echo esc_attr(  'valoraciones'); ?>">
+						Valoraciones
+					</a>
+				</li>
+                <li class="<?php echo esc_attr( 'proyectos'); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-proyectos" role="tab" aria-controls="tab-proyectos">
+					<a href="#tab-<?php echo esc_attr(  'proyectos'); ?>">
+						Proyectos
 					</a>
 				</li>
 		</ul>
@@ -55,19 +65,23 @@ if ( ! empty( $product_tabs ) ) : ?>
 			</div>
 		<?php endforeach; ?>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--unidades panel entry-content wc-tab" id="tab-unidades" role="tabpanel" aria-labelledby="tab-title-unidades">
-            <p class="mt-4">
-				Estos son los contenidos que veremos en este taller.<br>Puedes revisar las unidades y sus capítulos para conocer más detalles.
-			</p>
-            <?php 
-             global $product; 
-                $product_id = $product->get_id(); // The product ID
-                $related_courses = get_post_meta($product_id, '_related_course');
-                foreach ($related_courses as $related_course) {
-                    $id = $related_course[0];
-                    $url = learndash_get_course_url($id);
-                    echo do_shortcode('[course_content course_id="'.$id.'"]');
-                }
-             ?>
+				<p class="mt-4">
+					Estos son los contenidos que veremos en este taller.<br>Puedes revisar las unidades y sus capítulos para conocer más detalles.
+				</p>
+				<?php 
+				global $product; 
+					$product_id = $product->get_id(); // The product ID
+					$related_courses = get_post_meta($product_id, '_related_course');
+					foreach ($related_courses as $related_course) {
+						$id = $related_course[0];
+						$url = learndash_get_course_url($id);
+						echo do_shortcode('[course_content course_id="'.$id.'"]');
+					}
+				?>
+			</div>
+            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-valoraciones" role="tabpanel" aria-labelledby="tab-title-valoraciones">
+			</div>
+            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
 			</div>
 		<?php do_action( 'woocommerce_product_after_tabs' ); ?>
 	</div>

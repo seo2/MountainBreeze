@@ -22,12 +22,12 @@ $redirect_to = '';
         </h2>
       </div>
       <form class="mt-6 space-y-6" action="<?php echo site_url( '/wp-login.php' ); ?>" method="POST">
-          <div>
+          <div class="hidden">
             <a href="" class="py-4 px-3 text-center block text-negro border border-gray-300 mb-3"><i class="fab fa-google mr-2 text-lg"></i> Conectarse con Google</a>
             <a href="" class="py-4 px-3 text-center block text-negro border border-gray-300 mb-3"><i class="fab fa-facebook mr-2 text-lg"></i> Conectarse con Facebook</a>
           </div>
     
-          <hr>
+          <hr class="hidden">
         <input type="hidden" name="remember" value="true">
         <div class=" -space-y-px">
             <div class="relative">
@@ -55,8 +55,8 @@ $redirect_to = '';
         </div>
   
         <div class="text-center">
-          <input id="wp-submit" type="submit" value="Login"Ingresarname="wp-submit" class="group relative w-full flex justify-center py-2 px-4 border border-negro text-negro uppercase bg-white hover:bg-naranjo hover:border-naranjo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-naranjo"></p>
-            <a href="<?php bloginfo('url') ?>/registrate" class="font-medium text-naranjo hover:text-naranjo mt-4 inline-block text-sm underline hover:no-underline">
+          <input id="wp-submit" type="submit" value="Ingresar" name="wp-submit" class="group relative w-full flex justify-center py-2 px-4 border border-negro text-negro uppercase bg-white hover:bg-naranjo hover:border-naranjo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-naranjo"></p>
+            <a href="<?php bloginfo('url') ?>/mi-cuenta/lost-password/" class="font-medium text-naranjo hover:text-naranjo mt-4 inline-block text-sm underline hover:no-underline">
                 ¿Olvidaste tu contraseña?
             </a>
         </div>

@@ -50,7 +50,7 @@ $error= '';
 
 @section('content') 
 
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-4">
+<div class="min-h-screen flex items-center justify-center bg-gray-50 mt-10 py-8 px-4 sm:px-6 lg:px-4">
     <div class="max-w-sm w-full space-y-8">
       <div>
          <h2 class="mt-6 text-center text-4xl text-negro">

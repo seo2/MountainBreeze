@@ -63,13 +63,10 @@
       global $current_user;
       get_currentuserinfo();     
       ?>
-
-        <div class="flex-shrink-0 h-8 w-8 self-center">
-          <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'h-8 w-8 rounded-full border border-blanco' ) ); ?>
-        </div>
-        <span class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
-        <?php echo show_loggedin_function( $atts );  ?>
-        </span>
+        <a href="/perfil" class="flex flex-row px-4 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+          <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'h-8 w-8 rounded-full border border-blanco mr-4' ) ); ?>
+          <span class="self-center"><?php echo show_loggedin_function( $atts );  ?></span>
+        </a>
         <?php
          }else{  
         ?>
@@ -78,7 +75,10 @@
         <?php
         }  
         ?>
-      <a class="px-2 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 relative" href="<?php bloginfo('url') ?>/cart/"><i class="fak fa-bolsita"></i><span class="text-beige bg-naranjo absolute h-4 w-4 text-xs -top-1 text-center leading-4 rounded-full"><?php echo WC()->cart->get_cart_contents_count(); ?></span></a>
+      <a class="px-4 py-2 mt-2 text-gris6 text-sm font-normal bg-transparent rounded-none dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 relative flex" href="<?php bloginfo('url') ?>/cart/">
+        <i class="fak fa-bolsita self-center"></i>
+        <span class="text-beige bg-naranjo absolute h-4 w-4 text-xs top-1 right-1 text-center leading-4 rounded-full"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+      </a>
     </nav>
 
   </div>

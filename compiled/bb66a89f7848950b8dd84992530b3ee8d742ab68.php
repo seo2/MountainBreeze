@@ -9,26 +9,7 @@
                 <h1 class="text-negro uppercase my-4 text-4xl"><?php the_title(); ?></h1>
                 <p><?php echo get_field('epigrafe'); ?></p>
             </div>
-            <div class="flex justify-between">
-                <p class="text-naranjo mr-4">Valoración del maestre</p>
-                <ul class="">
-                    <li class="inline-block mr-1">
-                        <a href="#" class="text-naranjo hover:text-negro"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="inline-block mr-1">
-                        <a href="#" class="text-naranjo hover:text-negro"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="inline-block mr-1">
-                        <a href="#" class="text-naranjo hover:text-negro"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="inline-block mr-1">
-                        <a href="#" class="text-naranjo hover:text-negro"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="inline-block mr-1">
-                        <a href="#" class="text-naranjo hover:text-negro"><i class="fal fa-star" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </section>
