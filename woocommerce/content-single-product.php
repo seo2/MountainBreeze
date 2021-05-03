@@ -54,8 +54,8 @@ if ( post_password_required() ) {
 					$url = learndash_get_course_url($id);
 				}
 				echo do_shortcode('[uo_course_resume course_id="'.$id.'"]');
-                echo do_shortcode('[uo_learndash_resume_link]');
-                echo do_shortcode('[learndash_login]');
+                //echo do_shortcode('[learndash_login]');
+				
 				// if(){
 				// 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30 );
 				// }

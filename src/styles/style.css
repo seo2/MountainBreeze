@@ -183,6 +183,15 @@ All credit goes to the authors of the respective packages for their amazing cont
     .learndash-wrapper .ld-progress .ld-progress-heading .ld-progress-stats{
         @apply leading-6;
     }
+    .learndash-resume-button{
+        @apply mb-8 w-full inline-block
+    }
+    .learndash-resume-button input[type=submit]{
+        @apply w-full 
+    }
+    .resume-item-name{
+        @apply hidden;
+    }
 
 
 }
