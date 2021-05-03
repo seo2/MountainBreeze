@@ -180,6 +180,10 @@ All credit goes to the authors of the respective packages for their amazing cont
     .learndash-wrapper .ld-button:hover, .learndash-wrapper .ld-expand-button:hover, .learndash-wrapper .btn-join:hover, .learndash-wrapper #btn-join:hover, .learndash-wrapper .learndash_mark_complete_button:hover, .learndash-wrapper #learndash_mark_complete_button:hover, .learndash-wrapper .ld-login-modal .ld-button:hover, .learndash-wrapper .ld-login-modal input[type=submit]:hover, .learndash-wrapper .ld-login-modal .ld-login-modal-register #wp-submit:hover, .learndash-wrapper .ld-item-list .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button:hover, body div.ld-course-list-items div.ld_course_grid .thumbnail.course a.btn-primary:hover, .ldx-plugin .uo-toolkit-grid__course-action input:hover, .learndash-resume-button input[type=submit]:hover, .learndash-wrapper .ld-login-button:hover, .learndash-reset-form .learndash-reset-button[type=submit]:hover, .learndash-wrapper .ld-focus-comment .ld-comment-reply a.comment-reply-link:hover, .learndash-wrapper .ld-focus-comments .form-submit #submit:hover, .rrf-modal-content.modal .modal-navigation button:hover, .course-reviews-section .write-a-review.not-rated:hover, .course-reviews-section .login-to-enroll.button:hover, button.wdm_feedback_form_pop:hover, .wdm_feedback_form .wdm_feedback_submission:hover, .ldgr-group-actions #ldgr-update-group-details:hover, .wdm-tabs-wrapper #bulk_remove:hover, .wdm-tabs-wrapper #wdm_submit:hover, .wdm-tabs-wrapper #wdm_ldgr_show_report:hover, .wdm-tabs-wrapper #wdm_submit_upload:hover {
         @apply  border-naranjo !important  bg-naranjo !important no-underline;
     }
+    .learndash-wrapper .ld-progress .ld-progress-heading .ld-progress-stats{
+        @apply leading-6;
+    }
+
 
 }
 @screen lg{
