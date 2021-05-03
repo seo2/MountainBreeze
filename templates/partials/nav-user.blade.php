@@ -4,7 +4,7 @@
   <div class="flex container max-w-screen-xl mx-auto items-center justify-between flex-row lg:px-24">
     <nav class="flex-grow md:pb-0 flex justify-between lg:justify-start flex-row uppercase">
       <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/">Mi inicio</a>
-      <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/mis-cursos">Mis cursos</a>
+      <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/mis-talleres">Mis cursos</a>
       <a class="px-4 lg:px-12 py-4 lg:mt-2 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="@php bloginfo('url'); @endphp/como-funciona">Favoritos</a>
     </nav>
     <nav class="flex-col flex-grow hidden md:flex md:justify-end md:flex-row">
