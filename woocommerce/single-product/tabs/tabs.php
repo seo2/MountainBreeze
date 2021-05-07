@@ -168,14 +168,16 @@ if ( ! empty( $product_tabs ) ) : ?>
                         <hr>
 			</div>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
-				<div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12">
-					<?php
+			<?php
 						$args = array(    
 							'posts_per_page' => 2, 
 							'post_type' 	=> 'proyectos'
 						); 
 						$proyectos = new WP_Query($args); 
-						if ( $proyectos->have_posts() ) {
+						if ( $proyectos->have_posts() ) { 
+					?>
+				<div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12">
+					<?php
                             while ( $proyectos->have_posts() ) {
                                 $proyectos->the_post();    
 					?>
@@ -186,12 +188,12 @@ if ( ! empty( $product_tabs ) ) : ?>
 					</a>
 					<?php } ?>
 					<?php wp_reset_postdata();  ?>
+				</div>
 					<?php }else{ ?>
 					<p class="text-center mb-0" style="display:block;margin:0 auto;">
 					<?php _e( 'Aún no hay proyectos publicados para este taller.' );  ?>
 					</p>
 					<?php } ?> 
-				</div>
 			</div>
 		<?php do_action( 'woocommerce_product_after_tabs' ); ?>
 	</div>
