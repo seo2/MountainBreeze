@@ -181,7 +181,7 @@ if ( ! empty( $product_tabs ) ) : ?>
                             while ( $proyectos->have_posts() ) {
                                 $proyectos->the_post();    
 					?>
-					<a href="<?php the_permalink(); ?>" class="mb-12 block hover:cursor-pointer">
+					<a href="<?php the_permalink(); ?>" class="mb-12 block cursor-pointer">
 						<?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'w-full' ) ); ?>
 						<span class="text-naranjo uppercase text-sm"><?php the_author(); ?></span>
 						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight"><?php the_title(); ?></h3>
@@ -190,8 +190,8 @@ if ( ! empty( $product_tabs ) ) : ?>
 					<?php wp_reset_postdata();  ?>
 				</div>
 					<?php }else{ ?>
-					<p class="text-center mb-0" style="display:block;margin:0 auto;">
-					<?php _e( 'Aún no hay proyectos publicados para este taller.' );  ?>
+					<p class="text-center mt-16" >
+						<?php _e( 'Aún no hay proyectos publicados para este taller.' );  ?>
 					</p>
 					<?php } ?> 
 			</div>
