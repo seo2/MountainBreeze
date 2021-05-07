@@ -169,26 +169,28 @@ if ( ! empty( $product_tabs ) ) : ?>
 			</div>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
 				<div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12">
-					<a href="/" class="mb-12 block hover:cursor-pointer">
-						<img src="https://source.unsplash.com/500x500/?plants" alt="">
-						<span class="text-naranjo uppercase text-sm">Nombre usuario</span>
-						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight">Nombre del proyecto que hizo el usuario</h3>
+					<?php
+						$args = array(    
+							'posts_per_page' => 2, 
+							'post_type' 	=> 'proyectos'
+						); 
+						$proyectos = new WP_Query($args); 
+						if ( $proyectos->have_posts() ) {
+                            while ( $proyectos->have_posts() ) {
+                                $proyectos->the_post();    
+					?>
+					<a href="<?php the_permalink(); ?>" class="mb-12 block hover:cursor-pointer">
+						<?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'w-full' ) ); ?>
+						<span class="text-naranjo uppercase text-sm"><?php the_author(); ?></span>
+						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight"><?php the_title(); ?></h3>
 					</a>
-					<a href="/" class="mb-12 block hover:cursor-pointer">
-						<img src="https://source.unsplash.com/500x500/?plants" alt="">
-						<span class="text-naranjo uppercase text-sm">Nombre usuario</span>
-						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight">Nombre del proyecto que hizo el usuario</h3>
-					</a>
-					<a href="/" class="mb-12 block hover:cursor-pointer">
-						<img src="https://source.unsplash.com/500x500/?plants" alt="">
-						<span class="text-naranjo uppercase text-sm">Nombre usuario</span>
-						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight">Nombre del proyecto que hizo el usuario</h3>
-					</a>
-					<a href="/" class="mb-12 block hover:cursor-pointer">
-						<img src="https://source.unsplash.com/500x500/?plants" alt="">
-						<span class="text-naranjo uppercase text-sm">Nombre usuario</span>
-						<h3 class="text-negro uppercase font-festivo6 text-2xl leading-tight">Nombre del proyecto que hizo el usuario</h3>
-					</a>
+					<?php } ?>
+					<?php wp_reset_postdata();  ?>
+					<?php }else{ ?>
+					<p class="text-center mb-0" style="display:block;margin:0 auto;">
+					<?php _e( 'Aún no hay proyectos publicados para este taller.' );  ?>
+					</p>
+					<?php } ?> 
 				</div>
 			</div>
 		<?php do_action( 'woocommerce_product_after_tabs' ); ?>
