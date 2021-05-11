@@ -30,7 +30,7 @@ $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $product_tabs ) ) : ?>
 
-	<div class="woocommerce-tabs wc-tabs-wrapper">
+	<div class="woocommerce-tabs wc-tabs-wrapper pt-4">
 		<ul class="wc-tabs flex-grow md:pb-0 flex justify-between lg:justify-start flex-row uppercase border-b" role="tablist">
 			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
 				<li class="<?php echo esc_attr( $key ); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
@@ -69,7 +69,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 					Estos son los contenidos que veremos en este taller.<br>Puedes revisar las unidades y sus capítulos para conocer más detalles.
 				</p>
 				<?php 
-				global $product; 
+					global $product; 
 					$product_id = $product->get_id(); // The product ID
 					$related_courses = get_post_meta($product_id, '_related_course');
 					foreach ($related_courses as $related_course) {
@@ -114,69 +114,23 @@ if ( ! empty( $product_tabs ) ) : ?>
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
                         </div>
-                        <hr>
-                        <div class="flex flex-col my-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    <div>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                    </div>
-                                </div>
-                                <span class="text-gris4">06/10/2020</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
-                        </div>
-                        <hr>
-                        <div class="flex flex-col my-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    <div>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                    </div>
-                                </div>
-                                <span class="text-gris4">06/10/2020</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
-                        </div>
-                        <hr>
-                        <div class="flex flex-col my-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    <div>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                    </div>
-                                </div>
-                                <span class="text-gris4">06/10/2020</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
-                        </div>
-                        <hr>
 			</div>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
 			<?php
 						$args = array(    
-							'posts_per_page' => 2, 
-							'post_type' 	=> 'proyectos'
+							'posts_per_page' 	=> 2, 
+							'post_type' 		=> 'proyectos',
+							'meta_query'	 	=> array(
+								array(
+									'key' 	=> 'taller',
+									'value' => $product_id 
+								)
+							)
 						); 
 						$proyectos = new WP_Query($args); 
 						if ( $proyectos->have_posts() ) { 
 					?>
-				<div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12">
+				<div class="grid lg:grid-cols-2 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-4">
 					<?php
                             while ( $proyectos->have_posts() ) {
                                 $proyectos->the_post();    
