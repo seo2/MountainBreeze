@@ -19,10 +19,9 @@ Template name: Subir Proyectos
 <section class="">
     <div class="flex items-center justify-center bg-beige py-8 px-4 sm:px-6 lg:px-4">
         <div class="max-w-sm w-full space-y-8">
-
-          <?php echo do_shortcode( '[wpfepp_submission_form form="1"]' ); ?> 
-          <?php // echo do_shortcode( '[wpshout_frontend_post]' ); ?>          
-
+          @loop
+          @php the_content(); @endphp
+          @endloop
         </div>
       </div>
 
