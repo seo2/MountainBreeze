@@ -211,6 +211,10 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
     }
 
+    #mceu_10, #mceu_11, #mceu_12{
+        @apply hidden;
+    }
+
 }
 @screen lg{
 
