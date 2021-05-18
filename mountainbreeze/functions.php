@@ -34,7 +34,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('alpine-js-defer', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js');
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js');
 });
-
+global $container;
 add_filter('template_include', function ($template) use ($container) {
     $templateName = wp_basename(wp_basename($template, '.php'), '.blade');
     if (getBladeViewFactory($container)->exists($templateName)) {

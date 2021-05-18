@@ -25,8 +25,7 @@
                             'taxonomy' => 'product_cat',
                             'field' => 'slug',
                             'terms' => 'destacados',
-                        ),
-                        $array_plus
+                        )
                     ),
                 ); // (1)
                 $wc_query = new WP_Query($params); // (2)
@@ -36,7 +35,7 @@
             <?php while ($wc_query->have_posts()) : // (4)
                 $i++;
                 $wc_query->the_post(); // (4.1) 
-                global $woocommerce;
+                global $woocommerce, $post;
                 $product    = new WC_Product( get_the_ID() );
                 $image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'talleres-home' );
             ?>            
@@ -90,8 +89,7 @@
                                 'taxonomy' => 'product_cat',
                                 'field' => 'slug',
                                 'terms' => 'destacados',
-                            ),
-                            $array_plus
+                            )
                         ),
                     ); // (1)
                         $wc_query = new WP_Query($params); // (2)

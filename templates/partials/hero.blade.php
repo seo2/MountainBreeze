@@ -1,6 +1,7 @@
 
 @if(is_user_logged_in())
 <?php
+    global $atts;
     $slide_params = array(    
         'p'         => 412,
         'post_type' => 'carousel_home'

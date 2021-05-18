@@ -7,7 +7,7 @@
             'post_type' => 'herencia_colectiva'
         );
         $herencia_colectiva = new WP_Query( $args );
-
+        global $post_id;
         if ( $herencia_colectiva->have_posts() ) {
             while ( $herencia_colectiva->have_posts() ) {
                 $herencia_colectiva->the_post();                  

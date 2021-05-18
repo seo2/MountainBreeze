@@ -20,6 +20,7 @@
                             'post_type' => 'tallerista'
                         );
                         $talleristas = new WP_Query( $args );
+                        global $post_id;
 
                         if ( $talleristas->have_posts() ) {
                             while ( $talleristas->have_posts() ) {
