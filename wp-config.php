@@ -17,6 +17,7 @@
  *
  * @package WordPress
  */
+// mysqldump -h localhost:3306 -u root -p herenciacolectiva > herenciacolectiva.sql
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -26,10 +27,10 @@ define( 'DB_NAME', 'herenciacolectiva' );
 define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', 'D0l0r3s1.2020' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'localhost:3306' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
