@@ -21,6 +21,14 @@ module.exports = {
       '180': '180deg',
      '270': '270deg',
     },
+    minHeight: {
+     '0': '0',
+     '1/4': '25%',
+     '1/2': '50%',
+     '3/4': '75%',
+     'full': '100%',
+     'screen': '75vh',
+    },
     extend: {
       colors: {
           'azuloscuro'    : '#172e5a',
@@ -30,6 +38,7 @@ module.exports = {
           'gris4'         : '#BDBDBD',
           'gris5'         : '#E0E0E0',
           'gris6'         : '#f2f2f2',
+          'gris7'         : '#E8E8E8',
           'azul'          : '#0c6aba',
           'verde'         : '#498931',
           'naranjo'       : '#f69618',

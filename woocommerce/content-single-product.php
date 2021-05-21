@@ -75,12 +75,12 @@ if ( post_password_required() ) {
 				do_action( 'woocommerce_single_product_summary' );
 			?>
 			<ul class="mt-4">
-				<li class="mb-2 text-sm">
+				<!-- <li class="mb-2 text-sm">
 					<span class="mr-2"><i class="fak fa-valoraciones" ></i></span> 98% valoraciones positivas
 				</li>
 				<li class="mb-2 text-sm">
 					<span class="mr-2"><i class="fal fa-user-graduate"></i></span> 112 personas que lo han hecho
-				</li>
+				</li> -->
 				<?php if( have_rows('ficha-tecnica') ): ?>
 					<?php while( have_rows('ficha-tecnica') ): the_row(); 
 

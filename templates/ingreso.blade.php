@@ -37,7 +37,7 @@ $redirect_to = '';
             <div class="relative">
                 <label for="password" class="sr-only">Password</label>
                 <input id="password" name="pwd" type="password" autocomplete="current-password" required class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Contraseña">
-                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer">Mostrar</span>
+                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer" id="mostrar1">Mostrar</span>
             </div>
         </div>
   
@@ -79,6 +79,20 @@ $redirect_to = '';
 @endsection
 
 @section('footer')
-
+<script type='text/javascript'>
+  $(document).ready(function(){
+      $('#mostrar1').click(function(){
+          if ($(this).hasClass('mostrando')) { 
+          $(this).removeClass('mostrando');
+          $(this).html('Mostrar');
+          $('#password').attr('type', 'password');
+          }else{
+          $(this).addClass('mostrando');
+          $(this).html('Ocultar');
+          $('#password').attr('type', 'text');
+          }
+      });
+  });
+  </script>
 
 @endsection  

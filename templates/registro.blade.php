@@ -5,10 +5,10 @@ Template name: Registro
 
 */
 
-$error= '';
-	$success = '';
  
-	global $wpdb, $PasswordHash, $current_user, $user_ID;
+	global $wpdb, $PasswordHash, $current_user, $user_ID, $error, $success;
+  $error = '';
+	$success = '';
  
 	if(isset($_POST['task']) && $_POST['task'] == 'register' ) {
  
@@ -92,12 +92,12 @@ $error= '';
             <div class="relative">
                 <label for="password" class="sr-only">Password</label>
                 <input id="password" name="password1" type="password" autocomplete="current-password" required class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Contraseña">
-                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer">Mostrar</span>
+                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer" id="mostrar1">Mostrar</span>
             </div>
             <div class="relative">
                 <label for="password" class="sr-only">Password</label>
-                <input id="password" name="password2" type="password" autocomplete="current-password" required class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Repetir contraseña">
-                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer">Mostrar</span>
+                <input id="password2" name="password2" type="password" autocomplete="current-password" required class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Repetir contraseña">
+                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer" id="mostrar2">Mostrar</span>
             </div>
         </div>
   
@@ -109,8 +109,8 @@ $error= '';
             </label>
           </div>
         </div>
-  
-        <div class="alignleft"><p><?php if($sucess != "") { echo $sucess; } ?> <?php if($error!= "") { echo $error; } ?></p></div>
+        
+        <div class="alignleft"><p><?php if($success != "") { echo $success; } ?> <?php if($error!= "") { echo $error; } ?></p></div>
         <input type="hidden" name="task" value="register" />     
         <div>
           <button type="submit" name="btnregister" class="group relative w-full flex justify-center py-2 px-4 border border-negro text-negro uppercase bg-white hover:bg-naranjo hover:border-naranjo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-naranjo">
@@ -138,5 +138,30 @@ $error= '';
 
 @section('footer')
 
-
+<script type='text/javascript'>
+  $(document).ready(function(){
+      $('#mostrar1').click(function(){
+        if ($(this).hasClass('mostrando')) { 
+          $(this).removeClass('mostrando');
+          $('#password').attr('type', 'password');
+          $(this).html('Mostrar');
+        }else{
+          $(this).addClass('mostrando');
+          $('#password').attr('type', 'text');
+          $(this).html('Ocultar');
+        }
+      });
+      $('#mostrar2').click(function(){
+        if ($(this).hasClass('mostrando')) { 
+          $(this).removeClass('mostrando');
+          $('#password2').attr('type', 'password');
+          $(this).html('Mostrar');
+        }else{
+          $(this).addClass('mostrando');
+          $('#password2').attr('type', 'text');
+          $(this).html('Ocultar');
+        }
+      });
+  });
+</script>
 @endsection  

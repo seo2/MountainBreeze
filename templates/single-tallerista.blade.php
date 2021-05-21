@@ -5,6 +5,7 @@
 @loop
 <section class="w-full pt-44 pb-56 lg:pb-64 lg:pt-48 relative lg:bg-100 bg-no-repeat bg-bottom -mt-12 lg:mt-auto bg-beige" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige_top_a_blanco.png');">
     <div class="container max-w-screen-lg mx-auto lg:flex lg:space-x-8 lg:content-end">
+        @php global $post_id; @endphp
         @php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'w-1/2' ) ); @endphp 
         <div class="p-4 lg:p-0 lg:flex lg:flex-wrap lg:content-end">
             <div class="mb-8">

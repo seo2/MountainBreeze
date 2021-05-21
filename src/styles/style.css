@@ -215,6 +215,31 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply hidden;
     }
 
+    .wishlist_item{
+        @apply border-gris7 border-b  border-solid
+    }
+
+    .tinv-wishlist tfoot {
+        @apply mt-8;
+    }
+    .tinv-wishlist tfoot .tinvwl-to-right {
+        @apply w-full;
+    }
+    .order-total td,
+    .cart-subtotal td{
+        @apply text-right;
+    }
+
+    .ld-course-list-items div.ld_course_grid .thumbnail.course .caption, .ld_course_grid .thumbnail .caption{
+        padding: 1em 0 1.5em;
+    }
+    .woocommerce #reviews #comments ol.commentlist li img.avatar {
+        @apply p-0 border-0 rounded-full
+    }
+    .woocommerce .star-rating{
+        @apply text-naranjo tracking-widest w-28
+    }
+
 }
 @screen lg{
 

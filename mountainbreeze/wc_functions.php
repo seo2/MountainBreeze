@@ -61,14 +61,28 @@ function misha_remove_additional_information( $tabs ) {
  
 }
 
-add_filter( 'woocommerce_product_tabs', 'misha_remove_reviews_tab' );
+// add_filter( 'woocommerce_product_tabs', 'misha_remove_reviews_tab' );
  
-function misha_remove_reviews_tab( $tabs ) {
+// function misha_remove_reviews_tab( $tabs ) {
  
-	unset( $tabs['reviews'] );
-	return $tabs;
+// 	unset( $tabs['reviews'] );
+// 	return $tabs;
  
+// }
+
+add_filter( 'woocommerce_product_tabs', 'wp_woo_rename_reviews_tab', 98);
+function wp_woo_rename_reviews_tab($tabs) {
+    global $product;
+    // $check_product_review_count = $product->get_review_count();
+    // if ( $check_product_review_count == 0 ) {
+        $tabs['reviews']['title'] = 'Valoraciones';
+    // } else {
+    //     $tabs['reviews']['title'] = 'Reviews('.$check_product_review_count.')';
+    // }
+    return $tabs;
 }
+
+
 
 /**
  * Remove related products output & upsell products
@@ -115,7 +129,7 @@ function custom_action_after_single_product_title() {
     global $product; 
     $product_id = $product->get_id(); // The product ID
     $tallerista = get_post_meta($product_id, "tallerista", true);
-    echo '<h2 class="text-sm mb-2 capitalize">' . esc_html( get_the_title($tallerista[0]) ) . '</h2>';
+    echo '<h2 class="text-sm mb-2 capitalize">' . esc_html( get_the_title($tallerista) ) . '</h2>';
 }
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta',40 );
@@ -145,9 +159,16 @@ add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_pro
 
 
 function wc_before_main_content() {
-	echo '<section class="mt-48">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
-        <div class="w-100">';
+
+	if(is_user_logged_in()){
+		echo '<section class="mt-48">
+		<div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+			<div class="w-100">';
+	}else{
+		echo '<section class="mt-36">
+		<div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+			<div class="w-100">';
+	}	
 }
 add_action( 'woocommerce_before_main_content', 'wc_before_main_content', 10 );
 

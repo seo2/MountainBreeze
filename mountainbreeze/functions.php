@@ -262,3 +262,10 @@ function shortcode_ld_next_lesson_link( $atts , $content = 'Next Lesson' ){
 }
 add_shortcode('ld_next_lesson_link', 'shortcode_ld_next_lesson_link');
 
+function bm_bbp_no_breadcrumb ($param) {
+
+    return true;
+    
+}
+
+add_filter ('bbp_no_breadcrumb', 'bm_bbp_no_breadcrumb');

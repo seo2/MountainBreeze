@@ -37,7 +37,7 @@ $redirect_to = '';
             <div class="relative">
                 <label for="password" class="sr-only">Password</label>
                 <input id="password" name="pwd" type="password" autocomplete="current-password" required class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Contraseña">
-                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer">Mostrar</span>
+                <span class="absolute right-3 top-0 text-verde text-sm z-20 py-4 cursor-pointer" id="mostrar1">Mostrar</span>
             </div>
         </div>
   
@@ -79,7 +79,21 @@ $redirect_to = '';
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('footer'); ?>
-
+<script type='text/javascript'>
+  $(document).ready(function(){
+      $('#mostrar1').click(function(){
+          if ($(this).hasClass('mostrando')) { 
+          $(this).removeClass('mostrando');
+          $(this).html('Mostrar');
+          $('#password').attr('type', 'password');
+          }else{
+          $(this).addClass('mostrando');
+          $(this).html('Ocultar');
+          $('#password').attr('type', 'text');
+          }
+      });
+  });
+  </script>
 
 <?php $__env->stopSection(); ?>  
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/ingreso.blade.php ENDPATH**/ ?>

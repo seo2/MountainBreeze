@@ -1,0 +1,1 @@
+Error 404 - hacer plantilla<?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/404.blade.php ENDPATH**/ ?>
