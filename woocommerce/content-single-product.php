@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 		?>
 	</div>
     <div class="w-2/5">
-		<div class="bg-beige py-4 px-8 sticky top-40">
+		<div class="bg-beige py-4 px-8 sticky top-36">
 			<?php
 				$product_id = $product->get_id(); // The product ID
 				$related_courses = get_post_meta($product_id, '_related_course');

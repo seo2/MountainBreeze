@@ -239,6 +239,10 @@ All credit goes to the authors of the respective packages for their amazing cont
     .woocommerce .star-rating{
         @apply text-naranjo tracking-widest w-28
     }
+    ul.wc-tabs li.active a{
+        @apply text-naranjo  
+    }
+
 
 }
 @screen lg{

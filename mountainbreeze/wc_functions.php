@@ -61,28 +61,12 @@ function misha_remove_additional_information( $tabs ) {
  
 }
 
-// add_filter( 'woocommerce_product_tabs', 'misha_remove_reviews_tab' );
- 
-// function misha_remove_reviews_tab( $tabs ) {
- 
-// 	unset( $tabs['reviews'] );
-// 	return $tabs;
- 
-// }
-
 add_filter( 'woocommerce_product_tabs', 'wp_woo_rename_reviews_tab', 98);
 function wp_woo_rename_reviews_tab($tabs) {
     global $product;
-    // $check_product_review_count = $product->get_review_count();
-    // if ( $check_product_review_count == 0 ) {
-        $tabs['reviews']['title'] = 'Valoraciones';
-    // } else {
-    //     $tabs['reviews']['title'] = 'Reviews('.$check_product_review_count.')';
-    // }
+    $tabs['reviews']['title'] = 'Valoraciones';
     return $tabs;
 }
-
-
 
 /**
  * Remove related products output & upsell products
@@ -121,8 +105,10 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating',10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title',5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title',15 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating',35 );
 
 add_action( 'woocommerce_single_product_summary', 'custom_action_after_single_product_title', 16 );
 function custom_action_after_single_product_title() { 
@@ -154,9 +140,6 @@ add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_pro
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs',10 );
 add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',25 );
-
-
-
 
 function wc_before_main_content() {
 
