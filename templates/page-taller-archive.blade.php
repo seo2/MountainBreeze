@@ -12,7 +12,7 @@ Template name: Talleres
 
 
 <div class="pt-16 -mt-8 lg:mt-28 -mb-10 z-2 relative lg:bg-cover bg-top bg-no-repeat" style="background-image: url('@php bloginfo('template_url') @endphp/dist/img/bg_beige.png');">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center lg:mb-8">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-beige leading-none"  style="background: url('@php bloginfo('template_url') @endphp/dist/img/trazo.svg') center center no-repeat; background-size: contain;">
@@ -27,7 +27,7 @@ Template name: Talleres
 </div>
 
 <div class="pt-16" style="background: url('@php bloginfo('template_url') @endphp/dist/img/bg_beige2.png') top center no-repeat; background-size: cover;">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 text-center lg:mb-8">
 
@@ -38,7 +38,7 @@ Template name: Talleres
             </div>
         </div>
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 lg:gap-4">
 
             
@@ -79,7 +79,7 @@ Template name: Talleres
 </div>
 <div class="w-full lg:pt-32 pb-36 relative lg:bg-contain bg-no-repeat bg-top -mt-12 " style="background-image: url('@php bloginfo('template_url') @endphp/dist/img/bg_beige_top_a_blanco.png');">
 
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="grid grid-cols-12 gap-2 lg:gap-4">
@@ -195,7 +195,7 @@ Template name: Talleres
 
 <section class="w-full lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top -mt-48 bg-rosado" style="background-image: url('@php bloginfo('template_url') @endphp/dist/img/bg_rosado_bot_blanco_top.png');">
   
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <h2 class="font-festivo6 text-4xl text-negro leading-none mb-12 text-center">
             ¡Talleres en promoción!
         </h2>

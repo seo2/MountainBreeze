@@ -12,7 +12,7 @@ Template name: Proyectos Archive
 
 
 <section class="bg-beige pt-40 pb-4">
-    <div class="flex container mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-3/3 px-4">
             <p  class="text-negro font-festivo8 my-2 inline-block uppercase text-4xl">Proyectos:</p>
             <h1 class="text-negro mb-4 text-4xl" >Técnicas de sustentabilidad</h1>
@@ -20,7 +20,7 @@ Template name: Proyectos Archive
     </div>
 </section>
 <section class="">
-    <div class="flex container mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-3/3 px-4">
 
             <div class="grid lg:grid-cols-3 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-12" x-data="{
@@ -76,7 +76,7 @@ Template name: Proyectos Archive
     </div>
 
 
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4 h-16 lg:h-24">
             <div class="col-start-5 col-span-1 mb-8 text-4xl hidden md:block">
                 <a href="#" class="h-16 w-16 leading-16 text-center inline-block border border-negro border-solid text-negro hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full">

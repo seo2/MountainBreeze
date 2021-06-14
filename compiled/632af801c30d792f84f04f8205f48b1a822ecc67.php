@@ -13,7 +13,7 @@ Template name: Unidades
 <?php echo $__env->make('partials.nav-curso', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <section class="mt-12">
-    <div class="flex container mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-2/3 px-4">
             <div>
                 <img src="<?php bloginfo('template_url') ?>/dist/img/foto_curso.jpg" alt="Curso" class="w-full">
@@ -84,7 +84,7 @@ Template name: Unidades
 
 <section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado bg-contain" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_rosado_bot_blanco_top.png');">
   
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <h2 class="font-festivo6 text-4xl text-negro leading-none mb-12 text-center">
             Te podría interesar
         </h2>

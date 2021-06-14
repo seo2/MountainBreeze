@@ -1,6 +1,6 @@
 <section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado bg-contain" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_rosado_bot_blanco_top.png');" id="interesar">
   
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <h2 class="font-festivo6 text-4xl text-negro leading-none mb-12 text-center">
             Te podría interesar
         </h2>

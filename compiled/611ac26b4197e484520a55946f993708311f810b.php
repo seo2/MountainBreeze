@@ -1,5 +1,5 @@
 <div class="pt-16 -mt-16 -mb-10 z-2 relative lg:bg-cover bg-top bg-no-repeat z-10" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige.png');">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center lg:mb-8">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-beige leading-none"  style="background: url('<?php bloginfo('template_url') ?>/dist/img/trazo.svg') center center no-repeat; background-size: contain;">
@@ -13,7 +13,7 @@
 
 
 <div class="pt-16" style="background: url('<?php bloginfo('template_url') ?>/dist/img/bg_beige2.png') top center no-repeat; background-size: cover;">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 lg:gap-4">
 
             <?php
@@ -76,7 +76,7 @@
             <?php endif; ?> 
         </div>
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="grid grid-cols-12 gap-2 lg:gap-4">
@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4 h-48">
             <div class="col-start-2 col-span-10 lg:col-start-5 lg:col-span-4 mb-8">
                 <a href="/talleres" class="btn">

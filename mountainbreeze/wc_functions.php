@@ -145,11 +145,11 @@ function wc_before_main_content() {
 
 	if(is_user_logged_in()){
 		echo '<section class="mt-48">
-		<div class="flex container mx-auto justify-between flex-row lg:px-32">
+		<div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
 			<div class="w-100">';
 	}else{
 		echo '<section class="mt-36">
-		<div class="flex container mx-auto justify-between flex-row lg:px-32">
+		<div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
 			<div class="w-100">';
 	}	
 }
@@ -178,7 +178,7 @@ add_action( 'woocommerce_after_main_content', 'woocommerce_output_related_produc
 
 function wc_before_related() {
 	echo '<section class="w-full pt-24 lg:pt-32 pb-12 relative lg:bg-100 bg-no-repeat bg-top bg-rosado bg-contain" style="background-image: url('.get_stylesheet_directory_uri().'/dist/img/bg_rosado_bot_blanco_top.png");">
-		<div class="container mx-auto">
+		<div class="container mx-auto lg:px-12">
 	';
 }
 add_action( 'woocommerce_after_main_content', 'wc_before_related', 55 );

@@ -39,7 +39,7 @@
 
 <div class="w-full py-4 bg-fondooscuro">
 
-<div class="flex container flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 ">
+<div class="flex container flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-12">
     <div class="text-gris3 lg:py-4">
         <a href="#" class="text-gris3 hover:text-gris6 block lg:inline">Condiciones de Uso</a>  <span class="hidden lg:inline-block">|</span>
         <a href="#" class="text-gris3 hover:text-gris6 block lg:inline">Política de privacidad</a>  <span class="hidden lg:inline-block">|</span>  

@@ -1,6 +1,6 @@
  
 <div class="pt-16 pb-32 bg-blanco" >
-    <div class="container mx-auto mb-8">
+    <div class="container mx-auto lg:px-12 lg:px-12mb-8">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-naranjo">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12">
             <div class="col-start-2 col-span-10 lg:mb-8">
                 <div class="owl-carousel w-full" id="talleristas">

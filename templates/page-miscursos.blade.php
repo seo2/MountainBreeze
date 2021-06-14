@@ -17,7 +17,7 @@ Template name: Mis cursos
 </section>
 
 <section class="mt-12">
-    <div class="flex container w-90 mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container w-90 mx-auto justify-between flex-row lg:px-44">
         @loop
         {{ the_content() }}
         @endloop

@@ -1,6 +1,6 @@
 
 <div class="pt-16 -mt-12 bg-top bg-no-repeat lg:bg-contain" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_naranjo.png');">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
      @php
         $args = array(
             'p'         => 457,

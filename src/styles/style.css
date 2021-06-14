@@ -45,6 +45,14 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply bg-verde text-blanco;
     }
 
+
+    .woocommerce-error, .woocommerce-info, .woocommerce-message {
+        @apply bg-transparent text-negro border-none p-0 ;
+    }
+    .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
+        @apply hidden;
+    }
+
     .flex-control-nav{ @apply flex; }
     .flex-control-nav li { @apply mr-2 mt-2; }
     .precio-producto{ @apply hidden lg:block text-naranjo text-lg lg:text-xl; }

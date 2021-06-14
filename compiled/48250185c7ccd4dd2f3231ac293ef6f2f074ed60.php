@@ -4,7 +4,7 @@
 </div>
 
 <div class="pb-32 bg-verde">
-    <div class="container mx-auto">
+    <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4 px-4 lg:px-0">
             <div class="col-start-1 col-span-12 text-center mb-8">
                 <h2 class="font-festivo6 text-4xl text-beige leading-none mb-6">

@@ -14,7 +14,7 @@ Template name: Curso
 
 @loop
 <section class="w-full pt-12 pb-12 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/plantarda.jpg');">
-    <div class="flex container mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-2/3">
             <a href="" class="text-naranjo uppercase"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige text-2xl lg:text-4xl mb-5">{{ the_title() }}</h1>
