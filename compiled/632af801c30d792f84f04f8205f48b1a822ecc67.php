@@ -1,7 +1,7 @@
 <?php
 /*
 
-Template name: Curso
+Template name: Unidades
 
 */
 ?>
@@ -22,19 +22,63 @@ Template name: Curso
             <h1 class="text-negro mb-4 text-4xl" >Técnicas de sustentabilidad</h1>
             <p  class="text-negro mb-12" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.</p>
             <hr>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Sobre el curso</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            <div>
-                <img src="<?php bloginfo('template_url') ?>/dist/img/foto_curso2.jpg" alt="Curso" class="w-full">
+            <div class="grid lg:grid-cols-1 lg:gap-x-16 w-5/6 mx-auto lg:w-full leading-loose mt-6"  x-data="{
+                unidades: [
+                    {
+                        unidad: 'Unidad 1',
+                        question: 'Et has minim alitr',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 2',
+                        question: 'Lorem ipsum dolor sit amet',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 3',
+                        question: 'mea aeterno eleifend antiopam?',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 4',
+                        question: 'Why am I so awesome?',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                    {
+                        unidad: 'Unidad 5',
+                        question: 'up exlaborum incidunt quis nos',
+                        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                        isOpen: false,
+                    },
+                ]
+            }">
+                <template x-for="unidad in unidades" :key="unidad.question">
+                    <div>
+                        <button class="w-full border-b border-gris5 py-3 flex justify-between items-center mt-4"
+                            @click="unidades = unidades.map(f => ({ ...f, isOpen: f.question !== unidad.question ? false : !f.isOpen}))"><!-- Specs has it that only one component can be open at a time and also you should be able to toggle the open state of the active component too -->
+                            <div class="text-left">
+                                <div x-text="unidad.unidad" class="text-naranjo uppercase font-festivo6"></div>
+                                <div x-text="unidad.question" class="text-gris"></div>
+                            </div>
+                            <svg x-show="!unidad.isOpen" class="fill-current" viewBox="0 0 24 24" width="24" height="24">
+                                <path class="heroicon-ui text-negro" d="M12 22a10 10 0 110-20 10 10 0 010 20zm0-2a8 8 0 100-16 8 8 0 000 16zm1-9h2a1 1 0 010 2h-2v2a1 1 0 01-2 0v-2H9a1 1 0 010-2h2V9a1 1 0 012 0v2z" />
+                            </svg>
+                            <svg x-show="unidad.isOpen" class="fill-current" viewBox="0 0 24 24" width="24" height="24">
+                                <path class="heroicon-ui text-naranjo" d="M12 22a10 10 0 110-20 10 10 0 010 20zm0-2a8 8 0 100-16 8 8 0 000 16zm4-8a1 1 0 01-1 1H9a1 1 0 010-2h6a1 1 0 011 1z" />
+                            </svg>
+                        </button>
+                        <div class="text-negro mt-2" x-text="unidad.answer" x-show="unidad.isOpen" ></div>
+                    </div>
+                </template>
             </div>
-            <h2 class="text-negro mt-12 mb-4 text-2xl" >Requisitos</h2>
-            <p  class="text-negro mb-8" >Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-            
         </div>
         <div class="w-1/3 px-4">
             <?php echo $__env->make('partials.sidebar-curso', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
-
     </div>
 </section>
 
@@ -113,4 +157,4 @@ Template name: Curso
 
 
 <?php $__env->stopSection(); ?>  
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/page-curso.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/page-unidades.blade.php ENDPATH**/ ?>

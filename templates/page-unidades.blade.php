@@ -13,7 +13,7 @@ Template name: Unidades
 @include('partials.nav-curso')
 
 <section class="mt-12">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container mx-auto justify-between flex-row lg:px-32">
         <div class="w-2/3 px-4">
             <div>
                 <img src="<?php bloginfo('template_url') ?>/dist/img/foto_curso.jpg" alt="Curso" class="w-full">

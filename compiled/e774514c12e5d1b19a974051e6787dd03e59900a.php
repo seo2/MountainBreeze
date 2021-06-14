@@ -2,7 +2,7 @@
 
 
 <section class="my-48">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container mx-auto justify-between flex-row lg:px-32">
         <div class="w-full">
             <?php $__env->startComponent('partials.the_loop'); ?>
             <h1 class="font-festivo6 text-5xl mb-4"><?php echo e(the_title()); ?><h1>

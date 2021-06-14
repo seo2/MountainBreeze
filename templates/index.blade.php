@@ -4,7 +4,7 @@
 
 
 <section class="my-48">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+    <div class="flex container mx-auto justify-between flex-row lg:px-32">
         <div class="w-full">
             @loop
             <h1 class="font-festivo6 text-5xl mb-4">{{ the_title() }}<h1>

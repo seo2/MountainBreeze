@@ -145,11 +145,11 @@ function wc_before_main_content() {
 
 	if(is_user_logged_in()){
 		echo '<section class="mt-48">
-		<div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+		<div class="flex container mx-auto justify-between flex-row lg:px-32">
 			<div class="w-100">';
 	}else{
 		echo '<section class="mt-36">
-		<div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32">
+		<div class="flex container mx-auto justify-between flex-row lg:px-32">
 			<div class="w-100">';
 	}	
 }
