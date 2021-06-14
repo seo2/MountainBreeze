@@ -1,6 +1,6 @@
  
 <div class="pt-16 pb-32 bg-blanco" >
-    <div class="container mx-auto lg:px-12 lg:px-12mb-8">
+    <div class="container mx-auto lg:px-12 lg:px-12 mb-8">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center">
                 <h2 class="font-festivo6 text-4xl lg:text-6xl text-naranjo">

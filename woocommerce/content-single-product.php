@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 			?>
-			<ul class="mt-4">
+			<ul class="mt-2">
 				<!-- <li class="mb-2 text-sm">
 					<span class="mr-2"><i class="fak fa-valoraciones" ></i></span> 98% valoraciones positivas
 				</li>

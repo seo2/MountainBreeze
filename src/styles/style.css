@@ -53,6 +53,15 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply hidden;
     }
 
+   
+    .woocommerce-product-gallery__wrapper img {
+        @apply w-full !important;
+    }
+
+    .learndash-wrapper .ld-expand-button.ld-button-alternate:hover {
+        background-color: transparent !important;
+    }
+
     .flex-control-nav{ @apply flex; }
     .flex-control-nav li { @apply mr-2 mt-2; }
     .precio-producto{ @apply hidden lg:block text-naranjo text-lg lg:text-xl; }
