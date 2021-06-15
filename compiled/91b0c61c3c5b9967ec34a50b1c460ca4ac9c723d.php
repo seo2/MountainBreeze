@@ -16,23 +16,49 @@ Template name: Mis Proyectos
     </div>
 </section>
 
-<section class="mt-12">
-    <div class="container w-full lg:w-3/5 mx-auto min-h-3/4 ">
+<section class="mt-12 mb-12">
+    <div class="container w-full mx-auto min-h-3/4 lg:px-40">
         <?php $__env->startComponent('partials.the_loop'); ?>
         <?php echo $__env->renderComponent(); ?>
 
-        <div class="flex flex-row border-b border-gris7 py-4 my-4">
+        <a href="#" class="flex flex-row border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
             <div class="w-1/12 flex-none">
                 <img src="https://source.unsplash.com/200x200/?plants" alt="" class="w-full">
             </div>
             <div class="flex-grow flex-col flex px-8">
-                <p class="flex-grow">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad</p>
+                <p class="flex-grow text-negro">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad</p>
                 <h1 class=" text-naranjo">Nombre Taller</h1>
             </div>
             <div class="w-2/12 flex flex-none justify-end">
-                <p class="self-end">06/10/2020</p>
+                <p class="self-end text-negro">06/10/2020</p>
             </div>
-        </div>
+        </a>
+
+        <a href="#" class="flex flex-row border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
+            <div class="w-1/12 flex-none">
+                <img src="https://source.unsplash.com/200x200/?plants" alt="" class="w-full">
+            </div>
+            <div class="flex-grow flex-col flex px-8">
+                <p class="flex-grow text-negro">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad</p>
+                <h1 class=" text-naranjo">Nombre Taller</h1>
+            </div>
+            <div class="w-2/12 flex flex-none justify-end">
+                <p class="self-end text-negro">06/10/2020</p>
+            </div>
+        </a>
+
+        <a href="#" class="flex flex-row border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
+            <div class="w-1/12 flex-none">
+                <img src="https://source.unsplash.com/200x200/?plants" alt="" class="w-full">
+            </div>
+            <div class="flex-grow flex-col flex px-8">
+                <p class="flex-grow text-negro">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad</p>
+                <h1 class=" text-naranjo">Nombre Taller</h1>
+            </div>
+            <div class="w-2/12 flex flex-none justify-end">
+                <p class="self-end text-negro">06/10/2020</p>
+            </div>
+        </a>
 
     </div>
 </section>
