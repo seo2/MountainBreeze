@@ -44,11 +44,6 @@ if ( ! empty( $product_tabs ) ) : ?>
 						Unidades
 					</a>
 				</li>
-                <!-- <li class="<?php echo esc_attr( 'valoraciones'); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-valoraciones" role="tab" aria-controls="tab-valoraciones">
-					<a href="#tab-<?php echo esc_attr(  'valoraciones'); ?>">
-						Valoraciones
-					</a>
-				</li> -->
                 <li class="<?php echo esc_attr( 'proyectos'); ?>_tab px-4 lg:px-6 py-4 text-gris text-sm font-sans bg-transparent rounded-none md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" id="tab-title-proyectos" role="tab" aria-controls="tab-proyectos">
 					<a href="#tab-<?php echo esc_attr(  'proyectos'); ?>">
 						Proyectos

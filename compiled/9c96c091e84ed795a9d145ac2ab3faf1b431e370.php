@@ -1,14 +1,14 @@
-@php
+<?php
 /*
 
 Template name: Proyectos Archive
 
 */
-@endphp
+?>
 
-@extends('layouts.app')
 
-@section('content') 
+
+<?php $__env->startSection('content'); ?> 
 
 
 <section class="bg-beige pt-40 pb-4">
@@ -112,9 +112,10 @@ Template name: Proyectos Archive
 
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('footer')
+<?php $__env->startSection('footer'); ?>
 
 
-@endsection  
+<?php $__env->stopSection(); ?>  
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/templates/page-proyectos-archive.blade.php ENDPATH**/ ?>
