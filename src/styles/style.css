@@ -356,7 +356,9 @@ All credit goes to the authors of the respective packages for their amazing cont
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  
+  .woocommerce div.product form.cart{
+    margin-bottom: 1em;
+  }
   @media only screen and (max-width: 767px) {
     .tab-to-dropdown {
       position: relative;
