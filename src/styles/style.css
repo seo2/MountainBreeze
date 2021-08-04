@@ -58,6 +58,35 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply w-full !important;
     }
 
+    .woocommerce-form__label-for-checkbox{
+        @apply ml-0 block text-sm text-gray-500 mb-2
+    }
+    .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme{
+        @apply block
+    }
+
+    .woocommerce-form__label-for-checkbox span{
+        @apply relative -top-1 ml-2 inline-block text-sm text-gray-500
+    }
+
+    .woocommerce-form__input-checkbox{
+        @apply h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded
+    }
+    #customer_login h2 {
+        @apply mt-6 text-4xl text-negro
+    }
+
+    .woocommerce-privacy-policy-text p{
+        @apply pb-4 ml-2 block text-sm text-gray-500; 
+    }
+
+    .woocommerce-LostPassword a{
+        @apply font-medium text-naranjo hover:text-naranjo mt-2 inline-block text-sm underline;
+    }
+    .woocommerce-LostPassword a:hover{
+        @apply hover:no-underline;
+    }
+
     .learndash-wrapper .ld-expand-button.ld-button-alternate:hover {
         background-color: transparent !important;
     }
@@ -184,7 +213,7 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
-        @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-azul bg-azul border-solid text-beige transition duration-200 uppercase !important no-underline;
+        @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-negro bg-white border-solid text-negro transition duration-200 uppercase !important no-underline;
     }
     .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
         @apply  border-naranjo !important  bg-naranjo !important no-underline;
@@ -286,3 +315,59 @@ All credit goes to the authors of the respective packages for their amazing cont
 
     
 }
+
+@media only screen and (max-width: 767px) {
+    ul.tabs li {
+      display: block;
+      text-align: left;
+      padding: 0;
+    }
+    ul.tabs li a {
+      color: #000;
+      display: block;
+      padding: 20px 24px;
+    }
+  }
+  /**
+  **	Main css for plugin
+  **/
+  .selected-tab {
+    position: relative;
+    height: 40px;
+    padding: 5px 35px 5px 15px;
+    line-height: 30px;
+    color: #747474;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(116, 116, 116, 0.25);
+  }
+  .selected-tab:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #747474;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .tab-to-dropdown {
+      position: relative;
+    }
+  
+    .converted-tab {
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #fff;
+    }
+  }

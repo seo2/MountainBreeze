@@ -145,12 +145,12 @@ function wc_before_main_content() {
 
 	if(is_user_logged_in()){
 		echo '<section class="mt-48">
-		<div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
-			<div class="w-100">';
+		<div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left px-4 md:px-6 lg:px-12">
+			<div class="w-full ">';
 	}else{
 		echo '<section class="mt-36">
-		<div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
-			<div class="w-100">';
+		<div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left px-4 md:px-6 lg:px-12">
+			<div class="w-full>';
 	}	
 }
 add_action( 'woocommerce_before_main_content', 'wc_before_main_content', 10 );

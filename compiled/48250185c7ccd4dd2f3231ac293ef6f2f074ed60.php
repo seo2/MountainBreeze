@@ -1,5 +1,5 @@
 
-<div class="bg-left-top lg:bg-top bg-no-repeat bg-210% lg:bg-cover -mt-24 h-12 lg:h-32 z-10 relative" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde.png'); ">
+<div class="bg-left-top lg:bg-top bg-no-repeat bg-210% lg:bg-cover -mt-24 h-12 lg:h-24 z-10 relative" style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde.png'); ">
 
 </div>
 

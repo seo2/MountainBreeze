@@ -28,7 +28,7 @@
                     @endphp 
                     <div class="w-full">
                         <a href="@php the_permalink(); @endphp" class="relative block cursor-pointer">
-                            @php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); @endphp 
+                            @php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft w-full' ) ); @endphp 
                         </a>
                         <div class="relative mt-3">
                             <a href="@php the_permalink(); @endphp" class="text-negro block text-xl lg:text-2xl font-bold lg:font-festivo6 leading-none mt-3 hover:text-naranjo">@php the_title(); @endphp</a>

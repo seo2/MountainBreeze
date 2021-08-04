@@ -33,7 +33,7 @@ if ( have_posts() ) {
 </section>
 
 <section class="mt-12 mb-48">
-    <div class="flex container flex-row max-w-screen-xl px-4 mx-auto lg:items-center justify-left md:px-6 lg:px-12">
+    <div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-full">
  
         <?php

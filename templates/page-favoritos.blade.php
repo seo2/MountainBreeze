@@ -16,7 +16,7 @@ Template name: Mis favoritos
     </div>
 </section>
 
-<section class="mt-12">
+<section class="my-12">
     <div class="container w-full lg:w-3/5 mx-auto min-h-3/4 ">
         @loop
         {{ the_content() }}

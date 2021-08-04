@@ -44,7 +44,7 @@
             <?php if($i==1){
                 echo '<div class="col-start-2 col-span-10 lg:col-start-2 lg:col-span-5 mb-12">';
             }else{
-                echo '<div class="col-span-5 mb-8 hidden md:block">';
+                echo '<div class="col-span-5 mb-8 hidden lg:block">';
             }
             ?>  
                 <div class="relative">
@@ -108,7 +108,7 @@
                     <?php if($i<3){
                         echo '<div class="col-span-6 lg:col-span-3 mb-8">';
                     }else{
-                        echo '<div class="col-span-3 mb-8 hidden md:block">';
+                        echo '<div class="col-span-3 mb-8 hidden lg:block">';
                     }
                     ?>  
                         <div class="relative">

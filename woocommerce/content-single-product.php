@@ -32,8 +32,8 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
-<div class="flex container max-w-screen-xl mx-auto justify-between flex-row">
-    <div class="w-3/5 md:pr-8">
+<div class="flex container max-w-screen-xl mx-auto justify-between flex-col md:flex-row">
+    <div class="w-full md:w-3/5 md:pr-8">
 		<?php
 		/**
 		 * Hook: woocommerce_before_single_product_summary.
@@ -44,8 +44,8 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
 	</div>
-    <div class="w-2/5">
-		<div class="bg-beige py-4 px-8 sticky top-36">
+    <div class="w-full md:w-2/5">
+		<div class="bg-beige py-4 px-4 md:px-8 md:sticky md:top-36">
 			<?php
 				$product_id = $product->get_id(); // The product ID
 				$related_courses = get_post_meta($product_id, '_related_course');
