@@ -44,7 +44,7 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
 	</div>
-    <div class="w-full md:w-2/5">
+    <div class="w-full md:w-2/5 mb-10 md:mb-0">
 		<div class="bg-beige py-4 px-4 md:px-8 md:sticky md:top-36">
 			<?php
 				$product_id = $product->get_id(); // The product ID
@@ -75,10 +75,10 @@ if ( post_password_required() ) {
 				do_action( 'woocommerce_single_product_summary' );
 			?>
 			<ul class="mt-2">
-				<!-- <li class="mb-2 text-sm">
+				<!-- <li class="mb-2 text-sm flex">
 					<span class="mr-2"><i class="fak fa-valoraciones" ></i></span> 98% valoraciones positivas
 				</li>
-				<li class="mb-2 text-sm">
+				<li class="mb-2 text-sm flex">
 					<span class="mr-2"><i class="fal fa-user-graduate"></i></span> 112 personas que lo han hecho
 				</li> -->
 				<?php if( have_rows('ficha-tecnica') ): ?>
@@ -88,8 +88,8 @@ if ( post_password_required() ) {
 						$descripcion 	= get_sub_field('descripcion');
 
 					?>
-						<li class="mb-2 text-sm">
-							<span class="mr-2"><?php the_sub_field('icono'); ?></span> <?php the_sub_field('descripcion'); ?>
+						<li class="mb-2 text-sm flex">
+							<span class="mr-2 w-6"><?php the_sub_field('icono'); ?></span> <?php the_sub_field('descripcion'); ?>
 						</li>
 					<?php endwhile; ?>
 				<?php endif; ?>
