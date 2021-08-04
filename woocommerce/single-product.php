@@ -68,7 +68,7 @@ get_header();
                             currentItem = $(this),
                             container = $(this).closest('.tab-to-dropdown'),
                             value = $(this).find('.'+settings.activeClass).text(),
-                            toggler = '<div class="selected-tab">'+ value +'</div>';
+                            toggler = '<div class="selected-tab text-naranjo text-sm font-sans uppercase">'+ value +'</div>';
                     currentItem.addClass('converted-tab');
                     container.prepend(toggler);
                     
