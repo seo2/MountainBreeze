@@ -357,11 +357,15 @@ All credit goes to the authors of the respective packages for their amazing cont
     transform: translateY(-50%);
   }
   .woocommerce div.product form.cart{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
+  .woocommerce div.product .woocommerce-product-rating{
+    margin-bottom: 0.5em;
+  }
+
   @media only screen and (max-width: 767px) {
     .tab-to-dropdown {
-      position: relative;
+      @apply relative
     }
   
     .converted-tab {
@@ -371,5 +375,14 @@ All credit goes to the authors of the respective packages for their amazing cont
       left: 0;
       width: 100%;
       background: #fff;
+    }
+    .tinvwl_add_to_wishlist-text{
+        @apply hidden
+    }
+    .tinv-wishlist.tinvwl-after-add-to-cart .tinvwl_add_to_wishlist_button{
+        @apply absolute top-0 right-3
+    }
+    .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, .woocommerce ul.products li.product a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, .woocommerce-page ul.products li.product a.tinvwl-button.tinvwl-icon-heart.tinvwl_add_to_wishlist_button:before, a.wishlist_products_counter.top_wishlist-heart:before, span.wishlist_products_counter.top_wishlist-heart:before, a.sidr-class-wishlist_products_counter.sidr-class-top_wishlist-heart:before{
+        @apply text-3xl
     }
   }

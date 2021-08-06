@@ -76,6 +76,7 @@ $( document ).ready(function() {
 				}else{
 					currentItem.css('display','');
 					currentItem.parent().find('.selected-tab').css('display','none');
+					currentItem.addClass('flex');
 				}
 			}
 
