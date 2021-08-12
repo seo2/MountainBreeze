@@ -1,5 +1,15 @@
 module.exports = {
   important: true,
+
+  purge: [
+    // './partials/*.php',
+    // './partials/*.php',
+    // './mountainbreeze/*.php',
+    // './woocommerce/*.php',
+    // './woocommerce/**/*.php',
+    // './templates/*.php',
+    // './templates/**/*.php',
+  ],
   theme: {
     container: {
       center: true,

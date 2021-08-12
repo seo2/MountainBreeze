@@ -91,29 +91,12 @@ All credit goes to the authors of the respective packages for their amazing cont
         background-color: transparent !important;
     }
 
-    .flex-control-nav{ @apply flex; }
-    .flex-control-nav li { @apply mr-2 mt-2; }
     .precio-producto{ @apply hidden lg:block text-naranjo text-lg lg:text-xl; }
     #interesar .precio-producto{ @apply text-beige; }
 
-    .owl-dots{
-        position: absolute;
-        width: 100%;
-        bottom: 120px;   
-    } 
+    .flex-control-nav{ @apply flex; }
+    .flex-control-nav li { @apply mr-2 mt-2; }
 
-
-    .owl-carousel .owl-nav button{
-        position: absolute;
-        top: 50%;
-        margin-top: -32px;
-    }
-    .owl-carousel .owl-nav button.owl-prev{
-        left: -90px;
-    }
-    .owl-carousel .owl-nav button.owl-next{
-        right: -90px;
-    }
     #taller h2{
         @apply font-festivo6 text-3xl mt-6 mb-4 text-negro
     }
@@ -376,13 +359,33 @@ All credit goes to the authors of the respective packages for their amazing cont
       width: 100%;
       background: #fff;
     }
+    .tinvwl-product-in-list.tinvwl-product-make-remove .tinvwl_remove_from_wishlist-text, .tinvwl-product-in-list.tinvwl-product-make-remove .tinvwl_already_on_wishlist-text, .tinvwl-product-in-list.tinvwl-product-already-on-wishlist .tinvwl_remove_from_wishlist-text, .tinvwl-product-in-list.tinvwl-product-already-on-wishlist .tinvwl_already_on_wishlist-text,
     .tinvwl_add_to_wishlist-text{
-        @apply hidden
+        @apply hidden !important    
     }
     .tinv-wishlist.tinvwl-after-add-to-cart .tinvwl_add_to_wishlist_button{
-        @apply absolute top-0 right-3
+        @apply absolute -top-2 right-3
     }
     .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, .woocommerce ul.products li.product a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before, .woocommerce-page ul.products li.product a.tinvwl-button.tinvwl-icon-heart.tinvwl_add_to_wishlist_button:before, a.wishlist_products_counter.top_wishlist-heart:before, span.wishlist_products_counter.top_wishlist-heart:before, a.sidr-class-wishlist_products_counter.sidr-class-top_wishlist-heart:before{
         @apply text-3xl
     }
   }
+
+  .owl-dots{
+    position: absolute;
+    width: 100%;
+    bottom: 120px;   
+} 
+
+
+.owl-carousel .owl-nav button{
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+}
+.owl-carousel .owl-nav button.owl-prev{
+    left: -90px;
+}
+.owl-carousel .owl-nav button.owl-next{
+    right: -90px;
+}

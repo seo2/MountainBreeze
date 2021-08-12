@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 				 * @hooked woocommerce_template_single_sharing - 50
 				 * @hooked WC_Structured_Data::generate_product_data() - 60
 				 */
-				echo '<div class="border-solid border-t-8 border-naranjo fixed bottom-0 md:block z-10 bg-beige left-0 w-full p-4 pb-0 md:p-0">';
+				echo '<div class="border-solid border-t-8 border-naranjo md:border-none fixed md:static bottom-0 md:block z-10 bg-beige left-0 w-full px-4 pt-2 md:p-0">';
 				do_action( 'woocommerce_single_product_summary' );
 				echo '</div>';
 			?>
