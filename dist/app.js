@@ -98,7 +98,7 @@ $(document).ready(function () {
     items: 1,
     dots: true
   });
-  $('#talleristas').owlCarousel({
+  $('#talleristasCarousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -206,8 +206,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/src/scripts/app.js */"./src/scripts/app.js");
-module.exports = __webpack_require__(/*! /Users/Seo2/Dropbox/04 - Diseño y Desarrollo/00 - En desarrollo/01 - Sitios/herenciacolectiva/wp-content/themes/mountainbreeze/src/styles/style.css */"./src/styles/style.css");
+__webpack_require__(/*! /Applications/MAMP/htdocs/herenciacolectiva/wp-content/themes/mountainbreeze/src/scripts/app.js */"./src/scripts/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/herenciacolectiva/wp-content/themes/mountainbreeze/src/styles/style.css */"./src/styles/style.css");
 
 
 /***/ })

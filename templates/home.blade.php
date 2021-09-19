@@ -2,6 +2,8 @@
 
 @section('content') 
 
+    @include('partials.modal')
+    
     @include('partials.hero')
 
     @include('partials.talleres')

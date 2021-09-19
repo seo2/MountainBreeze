@@ -1,18 +1,29 @@
 module.exports = {
   important: true,
-
-  purge: [
-    // './partials/*.php',
-    // './partials/*.php',
-    // './mountainbreeze/*.php',
-    // './woocommerce/*.php',
-    // './woocommerce/**/*.php',
-    // './templates/*.php',
-    // './templates/**/*.php',
-  ],
+  purge: {
+    enabled: false,
+    content: [
+      './src/**/*.html',
+      './*.html',
+      './partials/*.php',
+      './partials/*.php',
+      './mountainbreeze/*.php',
+      './woocommerce/*.php',
+      './woocommerce/**/*.php',
+      './templates/*.php',
+      './templates/**/*.php'
+    ],
+  },
   theme: {
     container: {
       center: true,
+    },
+    minHeight: {
+     '0': '0',
+     '1/4': '25%',
+     '1/2': '50%',
+     '3/4': '75%',
+     'full': '100%',
     },
     backgroundSize: {
       'auto': 'auto',

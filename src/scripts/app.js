@@ -4,7 +4,7 @@ $( document ).ready(function() {
         dots: true
     });
     
-    $('#talleristas').owlCarousel({
+    $('#talleristasCarousel').owlCarousel({
         loop:true,
 		margin:10,
 		nav:true,
