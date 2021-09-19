@@ -70,8 +70,8 @@
         <?php
          }else{  
         ?>
-        <a class="px-4 py-2 mt-2 text-sm bg-rosado md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url') ?>/registrate/">Regístrate</a>
-        <a class="px-2 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url') ?>/ingresa/"><i class="fal fa-user-circle mr-1 md:hidden lg:inline-block"></i> Ingresar</a>
+        <a class="px-4 py-2 mt-2 text-sm bg-rosado md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url') ?>/mi-cuenta">Regístrate</a>
+        <a class="px-2 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url') ?>/mi-cuenta"><i class="fal fa-user-circle mr-1 md:hidden lg:inline-block"></i> Ingresar</a>
         <?php
         }  
         ?>
