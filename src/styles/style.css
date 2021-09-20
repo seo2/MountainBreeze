@@ -47,7 +47,7 @@ All credit goes to the authors of the respective packages for their amazing cont
 
 
     .woocommerce-error, .woocommerce-info, .woocommerce-message {
-        @apply bg-transparent text-negro border-none p-0 ;
+        @apply bg-transparent text-naranjo border-none p-0 ;
     }
     .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
         @apply hidden;
@@ -184,6 +184,15 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
     }
 
+    .woocommerce .woocommerce-MyAccount-content a{ 
+        @apply text-naranjo transform ease-in duration-75;
+    }
+
+    .woocommerce .woocommerce-MyAccount-content a:hover{ 
+        @apply text-negro underline;
+    }
+
+
     div.bbp-submit-wrapper{
         @apply float-left
     }
@@ -198,9 +207,20 @@ All credit goes to the authors of the respective packages for their amazing cont
     .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
         @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-negro bg-white border-solid text-negro transition duration-200 uppercase !important no-underline;
     }
+
+
     .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
         @apply  border-naranjo !important  bg-naranjo !important no-underline;
     }
+
+    .woocommerce .woocommerce-orders-table a.button{
+        @apply px-4 !important py-0 !important text-sm !important mx-1 border-0 !important text-naranjo !important 
+    }
+
+    .woocommerce .woocommerce-orders-table a.button:hover{
+        @apply bg-transparent !important text-negro !important underline
+    }
+
 
     .learndash-wrapper .ld-button, .learndash-wrapper .btn-join, .learndash-wrapper #btn-join, .learndash-wrapper .learndash_mark_complete_button, .learndash-wrapper #learndash_mark_complete_button, .learndash-wrapper .ld-login-modal .ld-button, .learndash-wrapper .ld-login-modal input[type=submit], .learndash-wrapper .ld-login-modal .ld-login-modal-register #wp-submit, .learndash-wrapper .ld-item-list .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button, body div.ld-course-list-items div.ld_course_grid .thumbnail.course a.btn-primary, .ldx-plugin .uo-toolkit-grid__course-action input, .learndash-resume-button input[type=submit], .learndash-wrapper .ld-login-button, .learndash-reset-form .learndash-reset-button[type=submit], .learndash-wrapper .ld-focus-comment .ld-comment-reply a.comment-reply-link, .learndash-wrapper .ld-focus-comments .form-submit #submit, .rrf-modal-content.modal .modal-navigation button, .course-reviews-section .write-a-review.not-rated, .course-reviews-section .login-to-enroll.button, button.wdm_feedback_form_pop, .wdm_feedback_form .wdm_feedback_submission, .ldgr-group-actions #ldgr-update-group-details, .wdm-tabs-wrapper #bulk_remove, .wdm-tabs-wrapper #wdm_submit, .wdm-tabs-wrapper #wdm_ldgr_show_report, .wdm-tabs-wrapper #wdm_submit_upload {
         @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-azul bg-azul border-solid text-beige transition duration-200 uppercase !important no-underline;
@@ -388,4 +408,8 @@ All credit goes to the authors of the respective packages for their amazing cont
 }
 .owl-carousel .owl-nav button.owl-next{
     right: -90px;
+}
+
+#fotoPerfil img{
+    @apply object-fill
 }

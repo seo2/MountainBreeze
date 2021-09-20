@@ -64,7 +64,10 @@
       get_currentuserinfo();     
       ?>
         <a href="/perfil" class="flex flex-row px-4 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
-          <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'h-8 w-8 rounded-full border border-blanco mr-4' ) ); ?>
+          <span class="h-8 w-8 rounded-full border border-blanco mr-4 overflow-hidden flex flex-col justify-center bg-negro" id="fotoPerfil">
+            <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'object-cover' ) ); ?>
+          </span>
+          
           <span class="self-center"><?php echo show_loggedin_function( $atts );  ?></span>
         </a>
         <?php

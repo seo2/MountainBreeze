@@ -1,0 +1,1 @@
+Error 404 - hacer plantilla<?php /**PATH /Applications/MAMP/htdocs/herenciacolectiva/wp-content/themes/mountainbreeze/templates/404.blade.php ENDPATH**/ ?>
