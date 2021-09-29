@@ -7,10 +7,9 @@
         <div class="p-4 lg:p-0 lg:flex lg:flex-wrap lg:content-end">
             <div class="mb-8">
                 <p class="text-naranjo uppercase">Cultivo</p>
-                <h1 class="text-negro uppercase my-4 text-4xl"><?php the_title(); ?></h1>
+                <h1 class="text-negro uppercase my-4 text-4xl font-festivo6"><?php the_title(); ?></h1>
                 <p><?php echo get_field('epigrafe'); ?></p>
             </div>
-            
         </div>
     </div>
 </section>
