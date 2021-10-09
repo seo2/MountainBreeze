@@ -86,7 +86,9 @@ All credit goes to the authors of the respective packages for their amazing cont
     .woocommerce-LostPassword a:hover{
         @apply hover:no-underline;
     }
-
+    .learndash-wrapper .ld-focus .ld-focus-header .ld-button{
+        @apply p-0 flex;
+    }
     .learndash-wrapper .ld-expand-button.ld-button-alternate:hover {
         background-color: transparent !important;
     }
