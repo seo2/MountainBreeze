@@ -6,12 +6,7 @@
 
     @include('partials.talleres')
     
-    @if(is_user_logged_in())
-        {{-- @include('partials.promocion') --}}
-        @include('partials.sobrehc')
-    @else
-        @include('partials.sobrehc')
-    @endif
+    @include('partials.sobrehc')
     
     @include('partials.maestres')
     

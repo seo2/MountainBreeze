@@ -343,7 +343,7 @@ function show_modal(){
             <div id="modalHome" class="<?php echo $css;?> top-0 left-0 w-full h-screen fixed z-50 bg-black bg-opacity-70"  style="display:none;">
                 <div class="w-full h-screen  flex flex-col justify-center items-center" >
                     <div class="w-11/12 md:w-3/5 bg-white shadow-2xl relative">
-                        <a href="javascript:void(0);" class="absolute -right-8 -top-8 text-white text-3xl hover:text-naranjo transition duration-200" id="cerrarModal"><i class="fal fa-times-circle"></i></a>
+                        <a href="javascript:void(0);" class="absolute right-0 -top-10 sm:-right-8 sm:-top-8 text-white text-3xl hover:text-naranjo transition duration-200" id="cerrarModal"><i class="fal fa-times-circle"></i></a>
                         <div class="modal-content">
                             <?php if($contenido == "html" && $op != "img") :?>
                                 <h1><?php echo $titulo;?></h1>
@@ -358,9 +358,9 @@ function show_modal(){
                                     <small><?php echo $letra_chica;?></small>
                                 <?php endif;?>
                             <?php else : ?>
-                                <div class="contenido-img">
+                                <div class="contenido-img relative">
                                     <?php
-                                        if(get_field('link')){
+                                        if(get_field('link') && !get_field('texto_boton')){
                                     ?>
                                     <a href="<?php the_field('link'); ?>">
                                     <?php
@@ -369,28 +369,34 @@ function show_modal(){
                                     <img src="<?php the_field('imagen_desktop'); ?>"    class="hidden md:block w-full">
                                     <img src="<?php the_field('imagen_mobile'); ?>"     class="block md:hidden w-full">
                                     <?php
-                                        if(get_field('link')){
+                                        if(get_field('link') && !get_field('texto_boton')){
                                     ?>
                                     </a>
                                     <?php
                                         }
                                     ?>
-                                    <div class="overlay hidden"></div>
-                                    <div class="caption-modal hidden" >
-                                        <h1><?php echo $titulo;?></h1>
+                                    <?php
+                                        if(get_field('texto_boton')){
+                                    ?>
+                                    <div class="overlay absolute w-full h-full bg-black bg-opacity-30 top-0"></div>
+                                    <div class="caption-modal absolute w-full h-full top-0 text-beige flex flex-col justify-center text-center px-4 py-8" >
+                                        <h1 class="font-bold text-3xl mb-3"><?php echo $titulo;?></h1>
                                     <?php if($content_html != "") :?>
-                                        <p><?php echo $content_html;?></p>
+                                        <div class="font-light text-lg"><?php echo $content_html;?></div>
                                     <?php endif;?>
                                     <?php if($texto_boton != "") :?>
-                                        <a href="<?php echo $link;?>" target="_blank" class="btn-modal"><span><?php echo $texto_boton;?></span><i class="material-icons dp48">arrow_forward</i></a>
+                                        <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4"><span><?php echo $texto_boton;?></span></a>
                                     <?php endif;?>
                                     <?php if($texto_bajo_boton != "") :?>
-                                        <p><?php echo $texto_bajo_boton;?></p>
+                                        <p class="font-light text-lg"><?php echo $texto_bajo_boton;?></p>
                                     <?php endif;?>
                                     <?php if($letra_chica != "") :?>
-                                        <small><?php echo $letra_chica;?></small>
+                                        <small class="mt-12"><?php echo $letra_chica;?></small>
                                     <?php endif;?>
                                     </div>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             <?php endif; ?>
                         </div>
