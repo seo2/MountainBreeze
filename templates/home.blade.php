@@ -2,7 +2,7 @@
 
 @section('content') 
 
-    @include('partials.modal')
+    {{-- @include('partials.modal') --}}
     
     @include('partials.hero')
 

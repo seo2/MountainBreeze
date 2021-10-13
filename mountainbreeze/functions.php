@@ -269,3 +269,187 @@ function bm_bbp_no_breadcrumb ($param) {
 }
 
 add_filter ('bbp_no_breadcrumb', 'bm_bbp_no_breadcrumb');
+
+
+
+// SHOW MODAL DE @CarolinaRojas
+
+function show_modal(){
+	
+	global $wpdb;
+
+	date_default_timezone_set('America/Santiago');
+
+	// Find todays date in Ymd format.
+	$today = date('Ymd');
+
+	// Query posts using a meta_query to compare two custom fields; start_date and end_date.
+	$args = array(
+		'post_type' => 'modal',
+		'posts_per_page'	=> 1,
+		'meta_query' => array(
+			array(
+				'key'     => 'fecha_de_inicio',
+				'compare' => '<=',
+				'value'   => $today,
+			),
+			array(
+				'key'     => 'fecha_de_termino',
+				'compare' => '>=',
+				'value'   => $today,
+			)
+		),
+	);
+
+	$the_query = new WP_Query( $args );
+
+    if($the_query->have_posts() && is_home()) :
+
+        while ( $the_query->have_posts() ) : $the_query->the_post(); 
+        
+                $titulo     = get_the_title();
+                $frecuencia = get_field_object('frecuencia');
+                $frecuencia = $frecuencia['value'];
+                $horas      = get_field('horas');
+                $fecha_de_inicio = get_field('fecha_de_inicio');
+                $contenido = get_field_object('contenido');
+                $contenido = $contenido['value'];
+
+                $content_html       = get_field('html');
+                $texto_boton        = get_field('texto_boton');
+                $texto_bajo_boton   = get_field('texto_bajo_boton');
+                $link               = get_field('link');
+                $letra_chica        = get_field('letra_chica');
+                $imagen_desktop     = get_field('imagen_desktop');
+                $imagen_mobile      = get_field('imagen_mobile');
+
+                $css = "";
+
+                if($contenido == "imagen"){
+                    $css = "modal-img";
+                }
+
+                $op = "";
+
+                if(isset($_GET["op"])){
+                    $op = $_GET["op"];
+                    if($op == "img"){
+                        $css = "modal-img";
+                    }
+                }
+            
+        ?>
+
+            <div id="modalHome" class="<?php echo $css;?> top-0 left-0 w-full h-screen fixed z-50 bg-black bg-opacity-70"  style="display:none;">
+                <div class="w-full h-screen  flex flex-col justify-center items-center" >
+                    <div class="w-11/12 md:w-3/5 bg-white shadow-2xl relative">
+                        <a href="javascript:void(0);" class="absolute -right-8 -top-8 text-white text-3xl hover:text-naranjo transition duration-200" id="cerrarModal"><i class="fal fa-times-circle"></i></a>
+                        <div class="modal-content">
+                            <?php if($contenido == "html" && $op != "img") :?>
+                                <h1><?php echo $titulo;?></h1>
+                                <p><?php echo $content_html;?></p>
+                                <?php if($texto_boton != "") :?>
+                                <a href="<?php echo $link;?>" target="_blank" class="btn-modal"><span><?php echo $texto_boton;?></span><i class="material-icons dp48">arrow_forward</i></a>
+                                <?php endif;?>
+                                <?php if($texto_bajo_boton != "") :?>
+                                    <p><?php echo $texto_bajo_boton;?></p>
+                                <?php endif;?>
+                                <?php if($letra_chica != "") :?>
+                                    <small><?php echo $letra_chica;?></small>
+                                <?php endif;?>
+                            <?php else : ?>
+                                <div class="contenido-img">
+                                    <?php
+                                        if(get_field('link')){
+                                    ?>
+                                    <a href="<?php the_field('link'); ?>">
+                                    <?php
+                                        }
+                                    ?>
+                                    <img src="<?php the_field('imagen_desktop'); ?>"    class="hidden md:block w-full">
+                                    <img src="<?php the_field('imagen_mobile'); ?>"     class="block md:hidden w-full">
+                                    <?php
+                                        if(get_field('link')){
+                                    ?>
+                                    </a>
+                                    <?php
+                                        }
+                                    ?>
+                                    <div class="overlay hidden"></div>
+                                    <div class="caption-modal hidden" >
+                                        <h1><?php echo $titulo;?></h1>
+                                    <?php if($content_html != "") :?>
+                                        <p><?php echo $content_html;?></p>
+                                    <?php endif;?>
+                                    <?php if($texto_boton != "") :?>
+                                        <a href="<?php echo $link;?>" target="_blank" class="btn-modal"><span><?php echo $texto_boton;?></span><i class="material-icons dp48">arrow_forward</i></a>
+                                    <?php endif;?>
+                                    <?php if($texto_bajo_boton != "") :?>
+                                        <p><?php echo $texto_bajo_boton;?></p>
+                                    <?php endif;?>
+                                    <?php if($letra_chica != "") :?>
+                                        <small><?php echo $letra_chica;?></small>
+                                    <?php endif;?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>    
+            </div>	
+            <?php	
+            if($frecuencia == "24" || $frecuencia == "cada_x_horas") : // modal lo muestra cada cierto tiempo
+                if($frecuencia == "24"){
+                    $tiempo = 24;
+                }else{
+                    $tiempo = $horas;
+                }
+            ?>
+            
+            <script>
+            if(localStorage.last){
+                if( (localStorage.last - Date.now() ) / (1000*60*60*<?php echo $tiempo;?>) >= 1){ //Date.now() is in milliseconds, so convert it all to days, and if it's more than 1 day, show the div
+                    //alert("mostrar modal cada <?php echo $tiempo;?> hora(s)");
+                    localStorage.last = Date.now(); //Reset your timer
+                    setTimeout(function(){
+                        mostrarModal();
+                    }, 500);
+                }
+            }else {
+                localStorage.last = Date.now();
+                //alert("mostrar modal cada <?php echo $tiempo;?> horas(s)");
+                setTimeout(function(){
+                    mostrarModal();
+                }, 500);
+            }
+            </script>
+        <?php
+            else : // modal lo muestra siempre 
+        ?>	
+            <script>
+                setTimeout(function(){
+                    mostrarModal();
+                }, 500);
+            </script>
+        <?php	
+            endif;
+            ?>	
+            <script>
+                function mostrarModal(){
+                        $('#modalHome').fadeIn();
+                        $('body').css({'overflow':'hidden'});
+                }
+
+                $('#cerrarModal').on('click', function(){
+                    $('#modalHome').fadeOut();
+                    $('body').css({'overflow':'auto'});
+                });
+            </script>
+        <?php	
+            
+        endwhile;
+    endif;
+    wp_reset_query();	
+}
+
+add_action('wp_footer', 'show_modal');
