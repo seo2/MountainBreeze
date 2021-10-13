@@ -349,7 +349,7 @@ function show_modal(){
                                 <h1 class="font-bold text-3xl mb-3"><?php echo $titulo;?></h1>
                                 <div class="font-light text-lg"><?php echo $content_html;?></div>
                                 <?php if($texto_boton != "") :?>
-                                    <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4"><span><?php echo $texto_boton;?></span></a>
+                                    <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4 hover:bg-azul transition duration-200"><span><?php echo $texto_boton;?></span></a>
                                 <?php endif;?>
                                 <?php if($texto_bajo_boton != "") :?>
                                     <p class="font-light text-lg"><?php echo $texto_bajo_boton;?></p>
@@ -385,7 +385,7 @@ function show_modal(){
                                         <div class="font-light text-lg"><?php echo $content_html;?></div>
                                     <?php endif;?>
                                     <?php if($texto_boton != "") :?>
-                                        <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4"><span><?php echo $texto_boton;?></span></a>
+                                        <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4 hover:bg-azul transition duration-200"><span><?php echo $texto_boton;?></span></a>
                                     <?php endif;?>
                                     <?php if($texto_bajo_boton != "") :?>
                                         <p class="font-light text-lg"><?php echo $texto_bajo_boton;?></p>

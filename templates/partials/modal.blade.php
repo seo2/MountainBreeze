@@ -17,8 +17,8 @@
             <?php
                 }
             ?>
-            <img src="<?php the_field('imagen_desktop'); ?>"    class="hidden sm:block w-full">
-            <img src="<?php the_field('imagen_mobile'); ?>"     class="block sm:hidden w-full">
+                <img src="<?php the_field('imagen_desktop'); ?>" class="hidden sm:block w-full">
+                <img src="<?php the_field('imagen_mobile'); ?>"  class="block sm:hidden w-full">
             <?php
                 if(get_field('link')){
             ?>
