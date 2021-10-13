@@ -346,16 +346,16 @@ function show_modal(){
                         <a href="javascript:void(0);" class="absolute right-0 -top-10 sm:-right-8 sm:-top-8 text-white text-3xl hover:text-naranjo transition duration-200" id="cerrarModal"><i class="fal fa-times-circle"></i></a>
                         <div class="modal-content">
                             <?php if($contenido == "html" && $op != "img") :?>
-                                <h1><?php echo $titulo;?></h1>
-                                <p><?php echo $content_html;?></p>
+                                <h1 class="font-bold text-3xl mb-3"><?php echo $titulo;?></h1>
+                                <div class="font-light text-lg"><?php echo $content_html;?></div>
                                 <?php if($texto_boton != "") :?>
-                                <a href="<?php echo $link;?>" target="_blank" class="btn-modal"><span><?php echo $texto_boton;?></span><i class="material-icons dp48">arrow_forward</i></a>
+                                    <a href="<?php echo $link;?>" target="_blank" class="btn-modal bg-naranjo px-12 py-2 block w-auto mx-auto my-4"><span><?php echo $texto_boton;?></span></a>
                                 <?php endif;?>
                                 <?php if($texto_bajo_boton != "") :?>
-                                    <p><?php echo $texto_bajo_boton;?></p>
+                                    <p class="font-light text-lg"><?php echo $texto_bajo_boton;?></p>
                                 <?php endif;?>
                                 <?php if($letra_chica != "") :?>
-                                    <small><?php echo $letra_chica;?></small>
+                                    <small class="mt-12"><?php echo $letra_chica;?></small>
                                 <?php endif;?>
                             <?php else : ?>
                                 <div class="contenido-img relative">
