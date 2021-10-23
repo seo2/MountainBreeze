@@ -83,6 +83,11 @@
         <span class="text-beige bg-naranjo absolute h-4 w-4 text-xs top-1 right-1 text-center leading-4 rounded-full"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
       </a>
       <?php // wcmc_currency_selector(); ?>
+        <?php
+        // use wordpress shortcode to display currency selector
+         echo do_shortcode('[woocs sd=1]');
+
+        ?>
     </nav>
 
   </div>
