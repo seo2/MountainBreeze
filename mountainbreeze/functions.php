@@ -459,3 +459,4 @@ function show_modal(){
 }
 
 add_action('wp_footer', 'show_modal');
+

@@ -13,7 +13,7 @@
                 <img src="<?php bloginfo('template_url') ?>/dist/img/cachirulo.svg" alt="cachirulo" class="mx-auto my-1">
             </div>
             <div class="col-start-1 col-span-12 lg:col-start-3 lg:col-span-4 text-lg text-center lg:text-left">
-                <p class="text-beige mb-4">Suscríbete al newsletter de Herencia Colectiva y recibe noticias sobre los talleres y la comunidad.</p>
+                <p class="text-beige mb-4">Suscríbete al newsletter de Herencia Colectiva y recibe noticias sobre los talleres y la comunidad.</p>  
                 <h3 class="text-beige font-bold">¡Súmate!</h3>
             </div>
             
