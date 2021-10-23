@@ -82,12 +82,14 @@
         <i class="fak fa-bolsita self-center"></i>
         <span class="text-beige bg-naranjo absolute h-4 w-4 text-xs top-1 right-1 text-center leading-4 rounded-full"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
       </a>
-      <?php // wcmc_currency_selector(); ?>
+      <!-- span for currency selector -->
+      <span class="px-4 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 relative flex" id="currencySelector">
+        
         <?php
         // use wordpress shortcode to display currency selector
          echo do_shortcode('[woocs sd=1]');
-
         ?>
+      </span>
     </nav>
 
   </div>
