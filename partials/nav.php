@@ -83,7 +83,7 @@
         <span class="text-beige bg-naranjo absolute h-4 w-4 text-xs top-1 right-1 text-center leading-4 rounded-full"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
       </a>
       <!-- span for currency selector -->
-      <span class="px-4  id="currencySelector">
+      <span class="px-4 flex" id="currencySelector">
         
         <?php
         // use wordpress shortcode to display currency selector
