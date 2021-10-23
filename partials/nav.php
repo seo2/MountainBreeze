@@ -84,11 +84,12 @@
       </a>
       <!-- span for currency selector -->
       <span class="px-4 flex" id="currencySelector">
-        
+        <span class="self-center">
         <?php
         // use wordpress shortcode to display currency selector
          echo do_shortcode('[woocs sd=1]');
         ?>
+        </span>
       </span>
     </nav>
 
