@@ -118,8 +118,7 @@ $(document).ready(function () {
       }
     }
   });
-}); // Small plugin to convert tab like designs to dropdown on small screen.
-// Small plugin to convert tab like designs to dropdown on small screen.
+}); // 
 
 (function ($) {
   $.fn.tabConvert = function (options) {
