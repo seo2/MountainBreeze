@@ -415,3 +415,38 @@ All credit goes to the authors of the respective packages for their amazing cont
 #fotoPerfil img{
     @apply object-fill
 }
+
+
+@media (min-width:768px) {
+	.learndash-wrapper .ld-focus .ld-focus-sidebar {
+		left: unset;
+		right: 0;
+		border-right: 0;
+		border-left: 1px solid var(--ldx-course-nav-line-separator-color);
+	}
+	.learndash-wrapper .ld-focus .ld-focus-main {
+		margin-left: 0;
+		margin-right: 350px;
+		-webkit-transition: margin-right .3s ease;
+		transition: margin-right .3s ease;
+	}
+	.learndash-wrapper .ld-focus.ld-focus-sidebar-collapsed .ld-focus-sidebar {
+		-webkit-transform: translateX(-webkit-calc(100% - 50px));
+		-ms-transform: translateX(calc(100% - 50px));
+		transform: translateX(calc(100% - 50px));
+		border-left: 0;
+	}
+	.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation-heading {
+		padding: .75em 1em .75em 4em;
+	}
+	.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-focus-sidebar-trigger {
+		right: unset;
+		left: 0;
+	}
+	.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-focus-sidebar-trigger .ld-icon {
+		transform: translateY(-50%) translateX(-20%) rotate(180deg);
+	}
+	.learndash-wrapper .ld-focus-sidebar-collapsed .ld-focus-sidebar .ld-focus-sidebar-trigger .ld-icon {
+		transform: translateY(-50%) translateX(-20%) rotate(0deg);
+	}
+}

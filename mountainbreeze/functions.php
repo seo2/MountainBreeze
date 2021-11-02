@@ -466,3 +466,34 @@ function get_current_user_name() {
     get_currentuserinfo();
     return $current_user->user_login;
 }
+
+function shapeSpace_register_add_meta($user_id) { 
+	add_user_meta($user_id, 'login_amount', '1');
+}
+add_action('user_register', 'shapeSpace_register_add_meta');
+
+add_action( 'wp_login', 'track_user_logins', 10, 2 );
+function track_user_logins( $user_login, $user ){
+    if( $login_amount = get_user_meta( $user->id, 'login_amount', true ) ){
+        // They've Logged In Before, increment existing total by 1
+        update_user_meta( $user->id, 'login_amount', ++$login_amount );
+    } else {
+        // First Login, set it to 1
+        update_user_meta( $user->id, 'login_amount', 1 );
+    }
+}
+
+// Function that checks user firt login
+function is_first_login() {
+    if( is_user_logged_in() ){
+        // Get current total amount of logins (should be at least 1)
+        $login_amount = get_user_meta( get_current_user_id(), 'login_amount', true );
+
+        // return content based on how many times they've logged in.
+        if( $login_amount == 1 ){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}   // end is_first_login()

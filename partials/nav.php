@@ -90,6 +90,7 @@
                 <a href="<?php bloginfo('url'); ?>/mi-cuenta/" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Cuenta</a>
                 <a href="<?php bloginfo('url'); ?>/perfil" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Perfil</a>
                 <a href="<?php bloginfo('url'); ?>/mi-cuenta/edit-account/" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Editar perfil</a>
+                <a href="<?php echo wp_logout_url( home_url() ); ?>" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Cerrar sesión</a>
               </div>
           </div>
       </div> 

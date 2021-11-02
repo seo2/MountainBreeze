@@ -26,6 +26,8 @@ $allowed_html = array(
 		'href' => array(),
 	),
 );
+if( is_first_login() == true){
+	$first_login = true;
 ?>
 <div class="mb-4">
     <h1 class="uppercase text-azul font-bold text-4xl font-festivo6 mb-2">¡Listo!</h1>
@@ -33,6 +35,7 @@ $allowed_html = array(
     <h3 class="mb-2">Ahora te invitamos a que recorras nuestros talleres y veas cuál o cuáles te interesan más.</h3>
     <a href="/talleres" class="inline-block bg-azul text-beige px-8 py-2 mt-2">VER TALLERES</a>
 </div>
+<?php }else{ ?>
 <p>
 	<?php
 	printf(
@@ -43,7 +46,7 @@ $allowed_html = array(
 	);
 	?>
 </p>
-
+<?php } ?>
 
 
 <p>
