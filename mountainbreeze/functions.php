@@ -460,3 +460,9 @@ function show_modal(){
 
 add_action('wp_footer', 'show_modal');
 
+// a function that gets current user name   
+function get_current_user_name() {
+    global $current_user;
+    get_currentuserinfo();
+    return $current_user->user_login;
+}

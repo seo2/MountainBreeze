@@ -5,7 +5,7 @@
     @include('partials.hero')
 
     @include('partials.talleres')
-    
+
     @include('partials.sobrehc')
     
     @include('partials.maestres')
@@ -15,5 +15,5 @@
 @section('footer')
 
     @include('partials.suscribirse')
-
+    
 @endsection

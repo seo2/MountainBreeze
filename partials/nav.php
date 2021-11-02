@@ -60,16 +60,40 @@
     <nav class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row uppercase text-center">
       <?php
       if(is_user_logged_in()){
-      global $current_user,  $atts ;
-      get_currentuserinfo();     
+        global $current_user,  $atts ;
+        get_currentuserinfo();     
       ?>
-        <a href="/perfil" class="flex flex-row px-4 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
-          <span class="h-8 w-8 rounded-full border border-blanco mr-4 overflow-hidden flex flex-col justify-center bg-negro" id="fotoPerfil">
-            <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'object-cover' ) ); ?>
-          </span>
-          
-          <span class="self-center"><?php echo show_loggedin_function( $atts );  ?></span>
-        </a>
+
+
+
+  <div @click.away="open = false" class="relative" x-data="{ open: false }">
+
+
+
+
+          <a @click="open = !open" class="flex flex-row px-4 py-2 mt-2 text-gris6 text-sm md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+              
+              <span class="h-8 w-8 rounded-full border border-blanco mr-4 overflow-hidden flex flex-col justify-center bg-negro" id="fotoPerfil">
+                <?php echo get_avatar( $current_user->ID, 64 , '', '', $args = array( 'scheme' => 'https', 'class' => 'object-cover' ) ); ?>
+              </span>
+              <span class="self-center"><?php echo show_loggedin_function( $atts );  ?></span>
+              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="hidden md:inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 self-center">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+              <svg viewBox="0 0 27 32" fill="none" class="inline md:hidden h-8 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                <path d="M10.2248 1L24.919 15.9954L10.2248 30.9846" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+              </svg>
+          </a>
+          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48 text-left">
+              <div class="px-2 py-2 bg-negro shadow dark-mode:bg-gray-800">  
+                <a href="<?php bloginfo('url'); ?>/mi-cuenta/" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Cuenta</a>
+                <a href="<?php bloginfo('url'); ?>/perfil" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Perfil</a>
+                <a href="<?php bloginfo('url'); ?>/mi-cuenta/edit-account/" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" >Editar perfil</a>
+              </div>
+          </div>
+      </div> 
+
         <?php
          }else{  
         ?>
