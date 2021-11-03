@@ -452,3 +452,7 @@ All credit goes to the authors of the respective packages for their amazing cont
 		transform: translateY(-50%) translateX(-20%) rotate(0deg);
 	}
 }
+
+.woocs_price_info{
+    @apply hidden
+}
