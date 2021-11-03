@@ -497,14 +497,3 @@ function is_first_login() {
         }
     }
 }   // end is_first_login()
-
-
-add_filter( 'gettext', 'custom_paypal_button_text', 20, 3 );
-function custom_paypal_button_text( $translated_text, $text, $domain ) {
-   switch ( $translated_text ) {
-      case 'Ir a PayPal' :
-         $translated_text = __( 'Finalizar Compra', 'woocommerce' );
-         break;
-   }
-   return $translated_text;
-}

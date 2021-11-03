@@ -207,7 +207,7 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
-        @apply text-base font-normal leading-none px-16 py-4 text-center !important rounded-none !important inline-block border !important border-negro bg-white border-solid text-negro transition duration-200 uppercase !important no-underline;
+        @apply text-base font-normal leading-none px-16 py-4 text-center  rounded-none  inline-block border  border-negro bg-white border-solid text-negro transition duration-200 uppercase no-underline;
     }
 
 
