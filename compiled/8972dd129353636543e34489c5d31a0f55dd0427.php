@@ -22,6 +22,11 @@ Template name: Mis cursos
         <?php echo e(the_content()); ?>
 
         <?php echo $__env->renderComponent(); ?>
+
+        <?php
+        
+        ?>
+
     </div>
 </section>
 
