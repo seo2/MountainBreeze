@@ -21,11 +21,6 @@ Template name: Mis cursos
         @loop
         {{ the_content() }}
         @endloop
-
-        @php
-        
-        @endphp
-
     </div>
 </section>
 
