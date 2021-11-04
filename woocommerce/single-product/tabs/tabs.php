@@ -117,7 +117,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 							'post_type' 		=> 'proyectos',
 							'meta_query'	 	=> array(
 								array(
-									'key' 	=> 'taller',
+									'key' 	=> 'Taller',
 									'value' => $product_id 
 								)
 							)

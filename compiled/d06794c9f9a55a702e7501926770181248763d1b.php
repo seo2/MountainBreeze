@@ -1,14 +1,14 @@
-@php
+<?php
 /*
 
 Template name: Mis Proyectos
 
 */
-@endphp
+?>
 
-@extends('layouts.app')
 
-@section('content') 
+
+<?php $__env->startSection('content'); ?> 
 
 <section class="w-full bg-beige mt-8 pt-36 pb-8 lg:pb-8 lg:bg-contain bg-left-top lg:bg-bottom bg-no-repeat " >
     <div class=" w-5/6  lg:w-1/2 mx-auto lg:text-center relative">
@@ -40,17 +40,17 @@ Template name: Mis Proyectos
                 <img src="https://source.unsplash.com/200x200/?plants" alt="" class="w-full">
             </div>
             <div class="flex-grow flex-col flex px-8">
-                <p class="flex-grow text-negro">@php
+                <p class="flex-grow text-negro"><?php
                     the_title();
-                @endphp</p>
-                <h1 class=" text-naranjo">@php
+                ?></p>
+                <h1 class=" text-naranjo"><?php
                     echo get_post_title_by_id(get_field('Taller'));
-                @endphp</h1>
+                ?></h1>
             </div>
             <div class="w-2/12 flex flex-none justify-end">
-                <p class="self-end text-negro">@php
+                <p class="self-end text-negro"><?php
                     echo get_the_date();
-                @endphp</p>
+                ?></p>
             </div>
         </a>
 
@@ -62,9 +62,10 @@ Template name: Mis Proyectos
     </div>
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('footer')
+<?php $__env->startSection('footer'); ?>
 
 
-@endsection  
+<?php $__env->stopSection(); ?>  
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/MAMP/htdocs/herenciacolectiva/wp-content/themes/mountainbreeze/templates/page-mis_proyectos.blade.php ENDPATH**/ ?>

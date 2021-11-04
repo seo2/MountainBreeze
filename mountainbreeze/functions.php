@@ -467,6 +467,13 @@ function get_current_user_name() {
     return $current_user->user_login;
 }
 
+// function that gets post title by id
+function get_post_title_by_id($post_id) {
+    $post = get_post($post_id);
+    return $post->post_title;
+}
+
+
 function shapeSpace_register_add_meta($user_id) { 
 	add_user_meta($user_id, 'login_amount', '1');
 }
