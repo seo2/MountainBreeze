@@ -21,5 +21,4 @@
     @if(!is_page('cart'))
         @include('partials.suscribirse')
     @endif
-    
 @endsection 
