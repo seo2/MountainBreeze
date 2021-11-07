@@ -32,12 +32,14 @@ Template name: Mis Proyectos
             if ( $proyectos->have_posts() ) { 
                 while ( $proyectos->have_posts() ) {
                             $proyectos->the_post();    
+                            $url = get_the_post_thumbnail_url( $featured_post->ID );
                             
         ?>
 
         <a href="<?php the_permalink(); ?>" class="flex flex-row border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
             <div class="w-1/12 flex-none">
-                <img src="https://source.unsplash.com/200x200/?plants" alt="" class="w-full">
+                <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>" class="w-full">
+
             </div>
             <div class="flex-grow flex-col flex px-8">
                 <p class="flex-grow text-negro">@php
