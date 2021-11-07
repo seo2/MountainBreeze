@@ -4,13 +4,17 @@
 <?php $__env->startComponent('partials.the_loop'); ?>
 <?php
 $imagen_banner_taller = get_field('imagen_banner_taller');
-
+// current post id
+$post_id = get_the_ID();
 ?>
 
-<section class="w-full flex pt-6 pb-6 mt-32 h-48 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul" style="background-image: url(<?php echo e($imagen_banner_taller); ?>);">
-    <div class="container flex flex-row h-100 max-w-screen-xl mx-auto justify-between lg:px-32">
+<section class="w-full flex pt-6 pb-6 mt-32 h-48 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" <?php if($imagen_banner_taller): ?>  style="background-image: url(<?php echo e($imagen_banner_taller); ?>);" <?php endif; ?> >
+    <?php if($imagen_banner_taller): ?>  
+        <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
+    <?php endif; ?> 
+    <div class="container flex flex-row h-100 max-w-screen-xl mx-auto justify-between lg:px-32 relative z-10">
         <div class="relative w-2/3">
-            <a href="/mis-talleres/" class="text-blanco uppercase relative top-0 hover:text-naranjo transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
+            <a href="/mis-talleres/" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0"><?php echo e(the_title()); ?></h1>
         </div> 
         <div class="w-1/3 flex justify-center content-center items-center">
@@ -35,8 +39,14 @@ $imagen_banner_taller = get_field('imagen_banner_taller');
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32 gap-12">
         <div class="w-2/3">
             <?php
-                  echo do_shortcode('[uo_learndash_resume_link]');
+                  echo do_shortcode("[uo_course_resume course_id='$post_id']");
             ?>
+            <?php
+                $thumbnail_id = get_post_thumbnail_id();
+                $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail-size', true);
+            ?>
+            <img src="<?php echo $thumbnail_url[0]; ?>" alt="<?php the_title(); ?>">
+
             <?php echo e(the_content()); ?>
 
         </div>

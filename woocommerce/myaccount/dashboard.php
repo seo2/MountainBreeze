@@ -36,7 +36,7 @@ if( is_first_login() == true){
     <a href="/talleres" class="inline-block bg-azul text-beige px-8 py-2 mt-2">VER TALLERES</a>
 </div>
 <?php }else{ ?>
-<p>
+<p class="mb-4 text-negro">
 	<?php
 	printf(
 		/* translators: 1: user display name 2: logout url */
@@ -46,10 +46,9 @@ if( is_first_login() == true){
 	);
 	?>
 </p>
-<?php } ?>
 
 
-<p>
+<p class="mb-4 text-negro">
 	<?php
 	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
 	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
@@ -65,6 +64,7 @@ if( is_first_login() == true){
 	);
 	?>
 </p>
+<?php } ?>
 
 <?php
 	/**

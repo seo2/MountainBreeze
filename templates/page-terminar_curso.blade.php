@@ -19,7 +19,7 @@ Template name: Terminar Proyecto
         <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes
             <br class="hidden sm:block">y sube tu proyecto</h3>
         <div class="w-11/12 md:w-1/2 mx-auto">
-            <a href="#" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="fas fa-folder-upload mr-2"></i> Subir Proyecto</a>
+            <a href="<?php bloginfo('url');?>/subir-proyecto/" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="fas fa-folder-upload mr-2"></i> Subir Proyecto</a>
             <a href="#" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="far fa-file-certificate mr-2"></i> Descargar Certificado</a>
             <a href="#" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="fas fa-star-half-alt mr-2"></i> Evalúa tu experiencia</a>
         </div> 
@@ -27,7 +27,7 @@ Template name: Terminar Proyecto
     </div>
 </section>
 
-<section class="w-full lg:pt-12 pb-12 lg:pb-48 bg-beige relative overflow-hidden">
+<section class="w-full lg:pt-12 pb-12 lg:pb-24 bg-beige relative overflow-hidden">
     <div class="container lg:px-32">
         <div class="w-11/12 mx-auto text-center mb-8">
             <h4 class="text-negro text-2xl font-festivo19">Contáctate con tu tallerista</h4>

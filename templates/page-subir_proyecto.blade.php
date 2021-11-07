@@ -83,31 +83,32 @@ else
 
 
 
-<section class="w-full bg-beige mt-8 pt-36 pb-8 lg:pb-8 lg:bg-contain bg-left-top lg:bg-bottom bg-no-repeat " >
-    <div class=" w-5/6  lg:w-1/2 mx-auto lg:text-center relative">
-        <h1 class="text-negro font-festivo6 text-5xl uppercase">Subir Proyectos</h1>
+<section class="w-full bg-naranjo mt-8 pt-28 lg:bg-contain bg-left-top lg:bg-bottom bg-no-repeat " >
+    <div class="container h-24">
+        <div class="w-11/12 h-full  md:w-full mx-auto lg:text-center relative  flex flex-col justify-center">
+
+            <a href="javascript:history.back()" class="text-blanco uppercase absolute left-0 top-2 hover:text-negro transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
+            <h1 class="text-beige font-festivo6 text-5xl uppercase">Comparte tu proyecto</h1>
+        </div>
     </div>
 </section>
 
-<section class="mt-12 mb-12">
-    <div class="container w-full mx-auto min-h-3/4 lg:px-40">
+<section class="">
+    <div class="flex items-center justify-center bg-beige py-8 px-4 sm:px-6 lg:px-4">
 
-        <div class="col-sm-12">
+        <div class="max-w-sm w-full space-y-8">
             <form class="form-horizontal" name="form" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="ispost" value="1" />
                 <input type="hidden" name="userid" value="<?php echo $user_id; ?>" />
                 <div class="col-md-12">
-                    <label class="control-label">Nombre de tu proyecto</label>
-                    <input type="text" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="title" />
+                    <input type="text" placeholder="Título de tu Proyecto..." class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="title" />
                 </div>
         
                 <div class="col-md-12">
-                    <label class="control-label">Cuéntanos de qué se trata.</label>
-                    <textarea class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" rows="8" name="sample_content"></textarea>
+                    <textarea placeholder="Escribe sobre tu proyecto..." class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" rows="8" name="sample_content"></textarea>
                 </div>
         
                 <div class="col-md-12">
-                    <label class="control-label">Choose Category</label>
                     <select name="category" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
                         <?php
                         $catList = get_categories();
@@ -125,7 +126,7 @@ else
                 </div>
         
                 <div class="col-md-12">
-                    <input type="submit" class="btn btn-primary" value="SUBMIT" name="submitpost" />
+                    <input type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-negro text-negro uppercase bg-white hover:bg-naranjo hover:border-naranjo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-naranjo" value="Subir Proyecto" name="submitpost" />
                 </div>
             </form>
             <div class="clearfix"></div>

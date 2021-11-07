@@ -6,7 +6,8 @@
 @loop
 @php
 $imagen_banner_taller = get_field('imagen_banner_taller');
-
+// current post id
+$post_id = get_the_ID();
 @endphp
 
 <section class="w-full flex pt-6 pb-6 mt-32 h-48 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
@@ -40,8 +41,14 @@ $imagen_banner_taller = get_field('imagen_banner_taller');
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32 gap-12">
         <div class="w-2/3">
             @php
-                  echo do_shortcode('[uo_learndash_resume_link]');
+                $thumbnail_id = get_post_thumbnail_id();
+                $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail-size', true);
             @endphp
+            <img src="@php echo $thumbnail_url[0]; @endphp" alt="@php the_title(); @endphp">
+            @php
+                  echo do_shortcode("[uo_course_resume course_id='$post_id']");
+            @endphp
+
             {{ the_content() }}
         </div>
         <div class="w-1/3">
