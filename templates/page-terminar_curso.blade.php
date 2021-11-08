@@ -18,17 +18,29 @@ Template name: Terminar Proyecto
     }
 @endphp
 @loop
-<section class="w-full bg-beige pt-48 pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde_proyecto.png');" id="comoFunciona1">
+<section class="w-full bg-beige pt-44 pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde_proyecto.png');" id="comoFunciona1">
     <div class="w-11/12 lg:w-1/2 mx-auto text-center relative">
         <h1 class="text-beige font-festivo6 text-5xl lg:text-6xl uppercase mb-5">¡Felicidades!</h1>
-        <img src="<?php bloginfo('template_url'); ?>/dist/img/rayas_rosadas.svg" class="block mx-auto w-80 mb-8 md:mb-12">
+        <img src="<?php bloginfo('template_url'); ?>/dist/img/rayas_rosadas.svg" class="block mx-auto w-70 mb-8 md:mb-8">
         <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">@php the_title();@endphp</h2>
-        <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes
-            <br class="hidden sm:block">y sube tu proyecto</h3>
-        <div class="w-11/12 md:w-1/2 mx-auto">
-            <a href="<?php bloginfo('url');?>/subir-proyecto/" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="fas fa-folder-upload mr-2"></i> Subir Proyecto</a>
-            <a href="#" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="far fa-file-certificate mr-2"></i> Descargar Certificado</a>
-            <a href="#" class="btn border-beige hover:border-naranjo text-beige mb-3 "><i class="fas fa-star-half-alt mr-2"></i> Evalúa tu experiencia</a>
+        <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes y sube tu proyecto</h3>
+        <div class="w-11/12 lg:w-full mx-auto grid grid-cols-4 gap-4">
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+                <i class="fas fa-star-half-alt mr-4 self-center text-lg"></i> 
+                <span>Evalúa<br>tu experiencia</span>
+            </a>
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+                <i class="fas fa-file-certificate mr-4 self-center text-lg"></i> 
+                <span>Descargar<br>Certificado</span>
+            </a>
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+                <i class="fas fa-folder-upload mr-4 self-center text-lg"></i> 
+                <span>Subir<br>Proyecto</span>
+            </a>
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+                <i class="fas fa-chalkboard-teacher mr-4 self-center text-lg"></i> 
+                <span>Contáctate con<br>tu tallerista</span>
+            </a>
         </div> 
 
     </div>
