@@ -10,6 +10,13 @@ Template name: Terminar Proyecto
 @extends('layouts.app')
 
 @section('content') 
+@php
+    // redirect if not logged in
+    if(!is_user_logged_in()){
+        wp_redirect( home_url() .'/mi-cuenta' );
+        exit;
+    }
+@endphp
 @loop
 <section class="w-full bg-beige pt-48 pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_verde_proyecto.png');" id="comoFunciona1">
     <div class="w-11/12 lg:w-1/2 mx-auto text-center relative">

@@ -9,6 +9,13 @@ Template Name: Subir proyectos 2
 @extends('layouts.app')
 
 @section('content') 
+@php
+    // redirect if not logged in
+    if(!is_user_logged_in()){
+        wp_redirect( home_url() .'/mi-cuenta' );
+        exit;
+    }
+@endphp
 
 <?php
 if(is_user_logged_in())
