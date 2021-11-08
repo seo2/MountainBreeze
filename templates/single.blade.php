@@ -48,7 +48,6 @@ $post_id = get_the_ID();
             @php
                   echo do_shortcode("[uo_course_resume course_id='$post_id']");
             @endphp
-
             {{ the_content() }}
         </div>
         <div class="w-1/3">
