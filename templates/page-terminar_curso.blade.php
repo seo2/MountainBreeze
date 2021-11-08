@@ -25,19 +25,19 @@ Template name: Terminar Proyecto
         <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">@php the_title();@endphp</h2>
         <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes y sube tu proyecto</h3>
         <div class="w-11/12 lg:w-full mx-auto grid grid-cols-4 gap-4">
-            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-star-half-alt mr-4 self-center text-lg"></i> 
                 <span>Evalúa<br>tu experiencia</span>
             </a>
-            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-file-certificate mr-4 self-center text-lg"></i> 
                 <span>Descargar<br>Certificado</span>
             </a>
-            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-folder-upload mr-4 self-center text-lg"></i> 
                 <span>Subir<br>Proyecto</span>
             </a>
-            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center">
+            <a href="#" class="flex py-3 text-left bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-chalkboard-teacher mr-4 self-center text-lg"></i> 
                 <span>Contáctate con<br>tu tallerista</span>
             </a>

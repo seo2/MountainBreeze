@@ -29,9 +29,10 @@ Template name: Mis cursos
         {{ the_content() }}
         @endloop
         @php
-            $user_id = get_current_user_id();
+            $user_id    = get_current_user_id();
             // get array length
-            $count = count(learndash_user_get_enrolled_courses($user_id));
+            $cursos     = learndash_user_get_enrolled_courses($user_id);
+            $count      = count($cursos);
             
         @endphp
         @if ($count == 0)

@@ -47,20 +47,30 @@ if ( post_password_required() ) {
     <div class="w-full md:w-2/5 mb-10 md:mb-0">
 		<div class="bg-beige py-4 px-4 md:px-8 md:sticky md:top-36">
 			<?php
-				$product_id = $product->get_id(); // The product ID
-				$related_courses = get_post_meta($product_id, '_related_course');
+				$product_id 		= $product->get_id(); // The product ID
+				$related_courses 	= get_post_meta($product_id, '_related_course');
 				foreach ($related_courses as $related_course) {
 					$id = $related_course[0];
 					$url = learndash_get_course_url($id);
 				}
+
+				$completado = "
+					<a href='$url' class='flex py-4 text-left bg-rosado text-negro hover:bg-negro hover:text-beige leading-5 mb-3 col-span-1 justify-center transition duration-200 uppercase'>¡Taller Completado!</a>
+				";
+
+
 				echo '<div class="">';
-				echo do_shortcode('[uo_course_resume course_id="'.$id.'"]');
+					echo do_shortcode("[course_inprogress course_id='$id'][uo_course_resume course_id='$id'][/course_inprogress]");
+					echo do_shortcode("[course_complete course_id='$id']".$completado."[/course_complete]");
 				echo '</div>';
-                //echo do_shortcode('[learndash_login]');
-				
-				// if(){
-				// 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30 );
-				// }
+
+            	$user_id    = get_current_user_id();
+				$cursos     = learndash_user_get_enrolled_courses($user_id);
+				$count      = count($cursos);
+				$is_in_array = in_array( $id, $cursos );
+				if ($is_in_array) {
+					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30 );
+				}
 				
 				/**	
 				 * Hook: woocommerce_single_product_summary.
