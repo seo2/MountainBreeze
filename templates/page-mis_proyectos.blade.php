@@ -58,6 +58,22 @@ Template name: Mis Proyectos
 
        <?php
                 }
+            }else{
+        ?>
+
+<div class="flex flex-wrap justify-between">
+    <div class="w-full">
+        <div class="mb-8">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full text-center h-64">
+                    <h2 class="text-2xl font-festivo6  text-negro">Aún no subes ningún proyecto a Herencia Colectiva</h2>
+                    <p class="text-negro">Acá se mostrarán todos los proyectos que subas en los talleres terminados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+        <?php
             }
         ?>
 
