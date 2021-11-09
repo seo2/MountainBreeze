@@ -170,8 +170,14 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     #bbpress-forums ul.bbp-topics{
-        @apply border-t border-b border-l-0 border-r-0
+        @apply border-t border-b border-l-0 border-r-0 text-base
     }
+
+    #bbpress-forums ul.bbp-topics .bbp-topic-freshness{
+        @apply text-xs
+    }
+
+
     #bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer{
         @apply bg-white
     }
@@ -237,10 +243,10 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply leading-6;
     }
     .learndash-resume-button{
-        @apply mb-8 w-full inline-block
+        @apply mb-8 inline-block
     }
     .learndash-resume-button input[type=submit]{
-        @apply w-full 
+        @apply w-full cursor-pointer
     }
     .resume-item-name{
         @apply hidden;
@@ -455,4 +461,27 @@ All credit goes to the authors of the respective packages for their amazing cont
 
 .woocs_price_info{
     @apply hidden
+}
+.favorite-toggle,
+.subscription-toggle{
+    @apply inline-block px-6 py-3 bg-negro text-beige font-sans mb-4 uppercase hover:bg-naranjo transition duration-200 cursor-pointer
+}
+.bbpress-wrapper{
+    @apply lg:px-20
+}
+
+#taller .bbpress-wrapper{
+    @apply lg:px-0
+}
+
+.bbp-reply-header{
+    @apply bg-beige text-negro !important
+}
+
+.bbp-author-avatar img{
+    @apply rounded-full
+}
+
+.bbp-reply-content p{
+    @apply text-base
 }

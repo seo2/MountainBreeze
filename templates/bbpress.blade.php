@@ -15,19 +15,6 @@ if ( have_posts() ) {
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0">{{ the_title() }}</h1>
         </div> 
         <div class="w-1/3 flex justify-center content-center items-center">
-            @php
-                $permalink  = get_permalink( get_field('tallerista'));
-                $title      = get_the_title( get_field('tallerista') );
-                $url        = get_the_post_thumbnail_url( get_field('tallerista')  );
-                $instagram  = get_field( 'instagram', get_field('tallerista') );
-            @endphp
-            <div class="rounded-full h-20 w-20 flex items-center justify-center bg-naranjo border border-negro mr-4 bg-cover" style="background-image: url('<?php echo $url; ?>">
-
-            </div>
-            <div>
-                <a href="@php echo $permalink; @endphp" class="text-beige uppercase text-xle hover:underline">@php echo $title; @endphp</p>
-                <a href="https://instagram.com/@php echo $instagram; @endphp" class="text-beige hover:underline">@php echo '@'.$instagram; @endphp</a>
-            </div>
         </div>
     </div>
 </section>
@@ -35,7 +22,7 @@ if ( have_posts() ) {
 <section class="mt-12 mb-48">
     <div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left md:px-6 lg:px-12">
         <div class="w-full">
- 
+
         <?php
                 the_content();
         ?>

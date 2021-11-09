@@ -39,14 +39,22 @@ $post_id = get_the_ID();
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32 gap-12">
         <div class="w-2/3">
             <?php
-                  echo do_shortcode("[uo_course_resume course_id='$post_id']");
-            ?>
-            <?php
+
+                $html = '
+                <div class="w-full mb-8">
+                    <p class="text-negro">Ya terminaste el taller, recuerda descargar el certificado, subir tu proyecto, evaluar el taller y contactar una cita con tu tallerista.</p>
+                    <a href="/haz-finalizado-el-taller/?taller='.$post_id.'" class="bg-rosado px-6 py-3 text-negro uppercase text-sm transition duration-200 hover:bg-negro hover:text-beige">Pasos finales <i class="fas fa-long-arrow-right"></i></a>
+                </div>
+                ';
+                echo do_shortcode("[course_complete course_id='$post_id'] ". $html ." [/course_complete]"); 
+
                 $thumbnail_id = get_post_thumbnail_id();
                 $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail-size', true);
             ?>
             <img src="<?php echo $thumbnail_url[0]; ?>" alt="<?php the_title(); ?>">
-
+            <?php
+                  echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
+            ?>
             <?php echo e(the_content()); ?>
 
         </div>
