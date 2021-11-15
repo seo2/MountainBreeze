@@ -35,7 +35,7 @@
 
 <div class="w-full h-screen fixed z-50 bg-black bg-opacity-70 woocommerce" id="modalCertificado" style="display:none;">
     <div class="w-full h-screen  flex flex-col justify-center items-center"  id="reviews">
-        <div class="w-11/12 md:w-2/5 bg-white min-h-1/2 shadow-2xl relative p-8 ">
+        <div class="w-11/12 md:w-2/5 bg-white shadow-2xl relative p-8 ">
 
 @php
     $loop = new WP_Query($args);
@@ -48,7 +48,7 @@
                         $commenter    = wp_get_current_commenter();
                         $comment_form = array(
                             /* translators: %s is product title */
-                            'title_reply'         => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
+                            'title_reply'         => sprintf( 'Evalúa tu experiencia en &ldquo;%s&rdquo;', get_the_title() ),
                             /* translators: %s is product title */
                             'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
                             'title_reply_before'  => '<span id="reply-title" class="text-negro font-festivo19 text-2xl lg:text-3xl uppercase mb-4 inline-block w-full">',
@@ -107,7 +107,7 @@
                             </select></div>';
                         }
     
-                        $comment_form['comment_field'] .= '<p class="comment-form-comment my-4"><label for="comment" class="hidden">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" required placeholder="' . esc_html__( 'Your review', 'woocommerce' ) . '"></textarea></p>';
+                        $comment_form['comment_field'] .= '<p class="comment-form-comment my-4"><label for="comment" class="hidden">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="12" class="appearance-none h-32 rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" required placeholder="' . esc_html__( 'Your review', 'woocommerce' ) . '"></textarea></p>';
     
                         comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
                         ?>
@@ -129,9 +129,9 @@
     <div class="w-11/12 lg:w-1/2 mx-auto text-center relative">
         <h1 class="text-beige font-festivo6 text-5xl lg:text-6xl uppercase mb-5">¡Felicidades!</h1>
         <img src="<?php bloginfo('template_url'); ?>/dist/img/rayas_rosadas.svg" class="block mx-auto w-70 mb-8 md:mb-8">
-        <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">@php the_title();@endphp <a href="{{ $course_permalink }}" class="hover:underline">{{ $course_title }}</a></h2>
+        <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">HAZ FINALIZADO EL TALLER <a href="{{ $course_permalink }}" class="hover:underline">{{ $course_title }}</a></h2>
         <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes y sube tu proyecto</h3>
-        <div class="w-11/12 lg:w-full mx-auto grid grid-cols-4 gap-4">
+        <div class="w-11/12 lg:w-full mx-auto grid grid-cols-4 gap-4 ">
             <a href="javascript:void(0);" id="btn-evalua" class="flex py-3 text-left  bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-star-half-alt mr-4 self-center text-lg"></i> 
                 <span>Evalúa<br>tu experiencia</span>
@@ -170,7 +170,7 @@
 			$( '#rating' )
 				.hide()
 				.before(
-					'<p class="stars">\
+					'<p class="stars text-3xl mt-2">\
 						<span>\
 							<a class="star-1" href="#">1</a>\
 							<a class="star-2" href="#">2</a>\
