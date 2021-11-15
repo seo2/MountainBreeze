@@ -9,7 +9,7 @@
         <div class="lg:p-4 col-span-8 md:col-span-5 flex flex-row lg:items-center justify-between">
             <ul class="self-center md:self-start">
                 <li><a href="https://www.instagram.com/herencia_colectiva/" target="_blank" class="text-sm text-beige leading-10 hover:underline"><span class="ml-2 text-fondooscuro bg-beige rounded-full text-sm w-6 h-6 leading-6 text-center inline-block mr-2"><i class="fab fa-instagram"></i></span>@herencia_colectiva</a></li>
-                <li><a href="https://vimeo.com"                             target="_blank" class="text-sm text-beige leading-10 hover:underline"><span class="ml-2 text-fondooscuro bg-beige rounded-full text-sm w-6 h-6 leading-6 text-center inline-block mr-2"><i class="fab fa-vimeo-v"></i></span>herencia.colectiva</a></li>
+                <li><a href="https://vimeo.com/user132281863"               target="_blank" class="text-sm text-beige leading-10 hover:underline"><span class="ml-2 text-fondooscuro bg-beige rounded-full text-sm w-6 h-6 leading-6 text-center inline-block mr-2"><i class="fab fa-vimeo-v"></i></span>herencia.colectiva</a></li>
                 <li><a href="mailto:hola@herenciacolectiva.cl"              target="_blank" class="text-sm text-beige leading-10 hover:underline"><span class="ml-2 text-fondooscuro bg-beige rounded-full text-sm w-6 h-6 leading-6 text-center inline-block mr-2"><i class="fas fa-envelope transform rotate-25"></i></span>hola@herenciacolectiva.cl</a></li>
             </ul>
         </div>

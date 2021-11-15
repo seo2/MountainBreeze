@@ -89,21 +89,13 @@ else
 ?>
 
 
+@include('partials.terminar-menu')
 
-<section class="w-full bg-naranjo mt-8 pt-28 lg:bg-contain bg-left-top lg:bg-bottom bg-no-repeat " >
-    <div class="container h-24">
-        <div class="w-11/12 h-full  md:w-full mx-auto lg:text-center relative  flex flex-col justify-center">
-
-            <a href="javascript:history.back()" class="text-blanco uppercase absolute left-0 top-2 hover:text-negro transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
-            <h1 class="text-beige font-festivo6 text-5xl uppercase">Comparte tu proyecto</h1>
-        </div>
-    </div>
-</section>
 
 <section class="">
     <div class="flex items-center justify-center bg-beige py-8 px-4 sm:px-6 lg:px-4">
-
         <div class="max-w-sm w-full space-y-8">
+            <h4 class="text-negro text-2xl font-festivo19 text-center">Subir proyecto</h4>
             <form class="form-horizontal" name="form" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="ispost" value="1" />
                 <input type="hidden" name="userid" value="<?php echo $user_id; ?>" />

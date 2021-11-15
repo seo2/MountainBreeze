@@ -76,39 +76,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 			</div>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-valoraciones" role="tabpanel" aria-labelledby="tab-title-valoraciones">
 
-                        <div class="flex flex-col my-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    <div>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                    </div>
-                                </div>
-                                <span class="text-gris4">06/10/2020</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
-                        </div>
-                        <hr>
-                        <div class="flex flex-col my-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    <div>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-naranjo"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                        <i class="fas fa-star text-gris4"></i>
-                                    </div>
-                                </div>
-                                <span class="text-gris4">06/10/2020</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt quis nostrud exercitatn.</p>
-                        </div>
+                       
 			</div>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
 			<?php

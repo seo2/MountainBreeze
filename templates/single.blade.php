@@ -57,6 +57,7 @@ $post_id = get_the_ID();
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
             @endphp
+            
             {{ the_content() }}
         </div>
         <div class="w-1/3">
