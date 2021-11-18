@@ -125,7 +125,7 @@ else
                 </div>
         
                 <div class="col-md-12">
-                    <input type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-negro text-negro uppercase bg-white hover:bg-naranjo hover:border-naranjo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-naranjo" value="Subir Proyecto" name="submitpost" />
+                    <input type="submit" class="h-12 px-24 block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Subir Proyecto" name="submitpost" />
                 </div>
             </form>
             <div class="clearfix"></div>

@@ -55,7 +55,7 @@ $post_id = get_the_ID();
             <?php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
             ?>
-            
+            <h4 class="text-negro text-2xl font-festivo19 float-right">Foro del taller</h4>
             <?php echo e(the_content()); ?>
 
         </div>

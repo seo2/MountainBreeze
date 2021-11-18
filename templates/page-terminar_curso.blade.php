@@ -30,17 +30,17 @@ Template name: Terminar Proyecto
             <div class="flex flex-wrap -m-2">
                 <div class="p-2 w-full md:w-1/2">
                     <div class="relative">
-                    <input type="text" id="name" name="name" placeholder="Nombre y apellido" class="w-full bg-white rounded border border-gray-300 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    <input type="text" id="name" name="name" placeholder="Nombre y apellido" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
                     </div>
                 </div>
                 <div class="p-2 w-full md:w-1/2"">
                     <div class="relative">
-                        <input type="email" id="email" name="email" placeholder="Email" class="w-full bg-white rounded border border-gray-300 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <input type="email" id="email" name="email" placeholder="Email" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
                     </div>
                 </div>
                 <div class="p-2 w-full">
                     <div class="relative">
-                        <select class="bg-white rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 text-base pl-3 pr-10 w-full">
+                        <select class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
                             <option value="" >Agendar una reunión*</option>
                             <option value="" >M</option>
                             <option value="" >L</option>
@@ -55,7 +55,7 @@ Template name: Terminar Proyecto
                 </div>
                 <div class="p-2 w-full">
                     <div class="relative">
-                    <textarea id="message" name="message"  placeholder="Mensaje"  class="w-full bg-white rounded border border-gray-300 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                    <textarea id="message" name="message"  placeholder="Mensaje"  class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm h-32"></textarea>
                     </div>
                 </div>
                 <div class="p-2 w-full">

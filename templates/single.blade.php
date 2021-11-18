@@ -5,9 +5,9 @@
 
 @loop
 @php
-$imagen_banner_taller = get_field('imagen_banner_taller');
-// current post id
-$post_id = get_the_ID();
+    $imagen_banner_taller = get_field('imagen_banner_taller');
+    // current post id
+    $post_id = get_the_ID();
 @endphp
 
 <section class="w-full flex pt-6 pb-6 mt-32 h-48 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
@@ -57,7 +57,7 @@ $post_id = get_the_ID();
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
             @endphp
-            
+            <h4 class="text-negro text-2xl font-festivo19 float-right">Foro del taller</h4>
             {{ the_content() }}
         </div>
         <div class="w-1/3">
