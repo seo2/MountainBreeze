@@ -24,7 +24,7 @@ Template name: Terminar Proyecto
 <section class="w-full lg:pt-12 pb-12 lg:pb-24 bg-beige relative overflow-hidden">
     <div class="container lg:px-32">
         <div class="w-11/12 mx-auto text-center mb-8">
-            <h4 class="text-negro text-2xl font-festivo19">Contáctate con tu tallerista</h4>
+            <h4 class="text-negro text-2xl font-festivo19">Agenda una reunión con tu tallerista</h4>
         </div>
         <form class="w-11/12 md:w-2/3 lg:w-1/2  mx-auto">
             <div class="flex flex-wrap -m-2">

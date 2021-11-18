@@ -129,7 +129,7 @@
     <div class="w-11/12 lg:w-1/2 mx-auto text-center relative">
         <h1 class="text-beige font-festivo6 text-5xl lg:text-6xl uppercase mb-5">¡Felicidades!</h1>
         <img src="<?php bloginfo('template_url'); ?>/dist/img/rayas_rosadas.svg" class="block mx-auto w-70 mb-8 md:mb-8">
-        <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">HAZ FINALIZADO EL TALLER <a href="{{ $course_permalink }}" class="hover:underline">{{ $course_title }}</a></h2>
+        <h2 class="text-beige font-festivo19 text-3xl lg:text-4xl uppercase mb-2">HAZ FINALIZADO EL TALLER <a href="{{ $course_permalink }}" class="underline hover:no-underline">{{ $course_title }}</a></h2>
         <h3 class="text-beige font-festivo8 text-3xl lg:text-4xl uppercase mb-5">Comparte tus aprendizajes y sube tu proyecto</h3>
         <div class="w-11/12 lg:w-full mx-auto grid grid-cols-4 gap-4 ">
             <a href="javascript:void(0);" id="btn-evalua" class="flex py-3 text-left  bg-rosado border-rosado hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
@@ -145,7 +145,7 @@
             </a>
             <a href="{{ bloginfo('url') }}/haz-finalizado-el-taller/?taller={{ $tallerID }}" class="flex py-3 text-left @if( is_page('haz-finalizado-el-taller')) bg-beige border-beige @else bg-rosado border-rosado @endif hover:bg-beige text-negro leading-5 mb-3 col-span-1 justify-center transition duration-200">
                 <i class="fas fa-chalkboard-teacher mr-4 self-center text-lg"></i> 
-                <span>Contáctate con<br>tu tallerista</span>
+                <span>Agenda reunión<br>con tu tallerista</span>
             </a>
         </div> 
 
