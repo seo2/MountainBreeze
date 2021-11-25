@@ -57,8 +57,6 @@
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
             @endphp
-            <div class="clear-both"></div>
-            <h4 class="text-negro text-2xl font-festivo19 float-right">Foro del taller</h4>
             {{ the_content() }}
         </div>
         <div class="w-1/3">
@@ -72,6 +70,11 @@
 @endsection
 
 @section('footer')
-
+<script>
+    // prepend html in #bbpress-forums   
+    jQuery(document).ready(function($) {
+        $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left">Foro del taller</h4>');
+    }); 
+</script>
 
 @endsection  
