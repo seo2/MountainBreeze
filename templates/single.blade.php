@@ -73,8 +73,11 @@
 <script>
     // prepend html in #bbpress-forums   
     jQuery(document).ready(function($) {
-        $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left">Foro del taller</h4>');
+        // if #bbpress-forums exists
+        if ($('#bbpress-forums').length) {
+            // prepend html
+            $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left">Foro del taller</h4>');
+        }
     }); 
 </script>
-
 @endsection  
