@@ -12,26 +12,30 @@ Template name: Terminar Proyecto
 @section('content') 
 @php
     $tallerID = $_GET['taller'];
+    $course_title = get_the_title($tallerID);
     // redirect if not logged in
     if(!is_user_logged_in()){
         wp_redirect( home_url() .'/mi-cuenta' );
         exit;
     }
 
-    $response = "";
 
     //function to generate response
     function my_contact_form_generate_response($type, $message){
-        global $response;
-        if($type == "success") $response = "<div class='alert alert-success'>{$message}</div>";
-        else $response = "<div class='alert alert-danger'>{$message}</div>";
+        if($type == "success"){
+            $response = "<span class='text-verde'>{$message}</span>";
+        } else {
+            $response = "<span class='text-naranjo'>{$message}</span>";
+        }
+        return $response;
     }
 
     //response messages
-    $missing_content = "Please supply all required fields.";
-    $email_invalid   = "Email Address is invalid.";
-    $message_unsent  = "Message was not sent. Try Again.";
-    $message_sent    = "Thank you! Your message has been sent.";
+    $missing_content = "Por favor completa todos los campos del formulario.";
+    $email_invalid   = "La dirección de correo es invalida.";
+    $message_unsent  = "El mensaje no se ha podido enviar, por favor prueba nuevamente.";
+    $message_sent    = "¡Gracias! Tu mensaje ha sido enviado.";
+    $missing_horario    = "Por favor seleccione un horario.";
 
     //user posted variables
     $name            = $_POST['message_name'];
@@ -39,24 +43,31 @@ Template name: Terminar Proyecto
     $message         = $_POST['message_text'];
     $horario         = $_POST['message_horario'];
 
+    //php mailer variables
+    $to         = get_option('admin_email');
+    $subject    = "Agendar una reunión. Taller ".$course_title;
+    $headers    = array('Content-Type: text/html; charset=UTF-8','From: Herencia Colectiva <hola@herenciacolectiva.com>','Reply-To: '.$name .' <'. $email .'>');
 
-
-      //validate email
-      if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-        my_contact_form_generate_response("error", $email_invalid);
-      else //email is valid
-      {
+    //validate email
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $response = my_contact_form_generate_response("error", $email_invalid);
+    }else{
         //validate presence of name and message
         if(empty($name) || empty($message)){
-          my_contact_form_generate_response("error", $missing_content);
+            $response = my_contact_form_generate_response("error", $missing_content);
+        }else{
+            if(!empty($horario)){
+            $response = my_contact_form_generate_response("error", $missing_horario);
+            }else{
+                $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+                if($sent){
+                    $response = my_contact_form_generate_response("success", $message_sent);
+                }else{
+                    $response = my_contact_form_generate_response("error", $message_unsent);
+                }  
+            }
         }
-        else //ready to go!
-        {
-          $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-          if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-          else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
-        }
-      }
+    }
 
 
 
@@ -71,7 +82,7 @@ Template name: Terminar Proyecto
     <div class="container lg:px-32">
         <div class="w-11/12 mx-auto text-center mb-8">
             <h4 class="text-negro text-2xl font-festivo19">Agenda una reunión con tu tallerista</h4>
-            <?php echo $response; ?>
+            <h3 class="mt-4 font-bold">{!! $response !!}</h3>
         </div>
         <form class="w-11/12 md:w-2/3 lg:w-1/2 mx-auto" action="<?php the_permalink(); ?>?taller=<?php echo $tallerID; ?>" method="post">
             <div class="flex flex-wrap -m-2">
@@ -116,7 +127,7 @@ Template name: Terminar Proyecto
                 </div>
                 <div class="p-2 w-full">
                     <div class="relative">
-                    <textarea id="message" name="message_text"  placeholder="Mensaje"  class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm h-32" value="<?php echo esc_attr($_POST['message_text']); ?>"></textarea>
+                    <textarea id="message" name="message_text"  placeholder="Mensaje"  class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm h-32" ><?php echo esc_attr($_POST['message_text']); ?></textarea>
                     </div>
                 </div>
                 <div class="p-2 w-full">
