@@ -37,7 +37,7 @@
 </section>
 
 <section class="my-2 md:my-12" id="taller">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 gap-12">
+    <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 md:gap-12">
         <div class="w-full md:w-2/3">
             @php
 
@@ -75,7 +75,7 @@
         // if #bbpress-forums exists
         if ($('#bbpress-forums').length) {
             // prepend html
-            $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left mb-2 md:mb-0">Foro del taller</h4>');
+            $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 md:float-left mb-2 md:mb-0">Foro del taller</h4>');
         }
     }); 
 </script>
