@@ -535,3 +535,9 @@ body .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_pri
 .bbp-reply-content p{
     @apply text-base
 }
+
+@media (max-width:767px) {
+    #bbpress-forums #subscription-toggle {
+        @apply float-none
+    }
+}

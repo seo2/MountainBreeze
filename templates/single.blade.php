@@ -14,7 +14,7 @@
     @if ($imagen_banner_taller)  
         <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
     @endif 
-    <div class="container flex flex-row h-100 max-w-screen-xl mx-auto justify-between lg:px-32 relative z-10">
+    <div class="container flex flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
         <div class="relative w-2/3">
             <a href="/mis-talleres/" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0">{{ the_title() }}</h1>
@@ -38,8 +38,8 @@
 </section>
 
 <section class="my-12" id="taller">
-    <div class="flex container max-w-screen-xl mx-auto justify-between flex-row lg:px-32 gap-12">
-        <div class="w-2/3">
+    <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 gap-12">
+        <div class="w-full md:w-2/3">
             @php
 
                 $html = '
@@ -59,7 +59,7 @@
             @endphp
             {{ the_content() }}
         </div>
-        <div class="w-1/3">
+        <div class="w-full md:w-1/3">
             @php dynamic_sidebar( 'sidebar-1' ); @endphp
         </div>
     </div>
@@ -76,7 +76,7 @@
         // if #bbpress-forums exists
         if ($('#bbpress-forums').length) {
             // prepend html
-            $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left">Foro del taller</h4>');
+            $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 float-left mb-2 md:mb-0">Foro del taller</h4>');
         }
     }); 
 </script>
