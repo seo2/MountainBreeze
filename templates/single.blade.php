@@ -10,7 +10,7 @@
     $post_id = get_the_ID();
 @endphp
 
-<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
+<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
     @if ($imagen_banner_taller)  
         <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
     @endif 
