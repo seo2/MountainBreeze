@@ -12,6 +12,8 @@ Template name: Evaluar Taller
 @section('content') 
 @php
 $tallerID = $_GET['taller'];
+    $course_title = get_the_title($tallerID);
+$eval     = $_GET['eval'];
     // redirect if not logged in
     if(!is_user_logged_in()){
         wp_redirect( home_url() .'/mi-cuenta' );
@@ -47,6 +49,39 @@ $tallerID = $_GET['taller'];
             @endphp
             <div id="review_form_wrapper" class="lolol">
                 <div id="review_form">
+
+                    @if ( $eval == '1' )
+                    <div class="w-full mx-auto text-center mb-4"><h4 class="text-naranjo text-2xl font-festivo19">¡Gracias por dejar tu evaluación!</h4></div>
+                    @endif
+
+                    @php
+                        // get user comments for this product
+                        $comments = get_comments( array(
+                            'post_id' => get_the_ID(),
+                            'user_id' => get_current_user_id(),
+                            'status' => 'approve',
+                            'type' => 'review'
+                        ) );
+                        // if user has already commented, show the comment
+                        if ( $comments ) {
+                            echo '<div class="w-full mx-auto text-center mb-4"><h5 class="text-negro text-base font-sans">Estos son los comentarios que escribiste en '. $course_title .'</h5></div>';
+                            // for each comment, show the comment
+                            foreach ( $comments as $comment ) {
+                                echo '<div class="border rounded-sm border-gris5 bg-white py-4 px-4 mb-6 text-negro">';
+                                echo '<p class=" text-gris text-sm mb-4">';
+                                echo '<strong class="">' . $comment->comment_author . '</strong>';
+                                echo '<span class="woocommerce-review__dash"> – </span>';
+                                echo '<time class="woocommerce-review__published-date" datetime="' . get_comment_date( 'c', $comment  ) . '">' . get_comment_date( 'M j, Y', $comment  ) . '</time>';
+                                echo '</p>';
+                                echo '<div class="description text-base">' . $comment->comment_content . '</div>';
+                                echo '</div>';
+                            }
+                            $comment = $comments[0];
+                        }
+                    @endphp
+
+
+
                     <?php
                     $commenter    = wp_get_current_commenter();
                     $comment_form = array(
@@ -55,7 +90,7 @@ $tallerID = $_GET['taller'];
                         /* translators: %s is product title */
                         'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
                         'title_reply_before'  => '<div class="w-11/12 mx-auto text-center mb-8"><h4 class="text-negro text-2xl font-festivo19">',
-                        'title_reply_after'   => '</div>',
+                        'title_reply_after'   => '</h4></div>',
                         'comment_notes_after' => '',
                         'label_submit'        => esc_html__( 'Submit', 'woocommerce' ),
                         'logged_in_as'        => '',

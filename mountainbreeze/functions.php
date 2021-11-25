@@ -13,6 +13,7 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 $GLOBALS['filesystem']  = new Filesystem;
 $GLOBALS['compiler']    = new BladeCompiler($GLOBALS['filesystem'], getCompiledTemplateDirectory());
+global $taller;
 
 add_action('init', function() {
     $GLOBALS['compiler']->component('partials.the_loop', 'loop');
@@ -521,3 +522,25 @@ function __update_post_meta( $post_id, $field_name, $value = '' )
         update_post_meta( $post_id, $field_name, $value );
     }
 }
+
+
+add_filter( 'comment_post_redirect', 'redirect_after_comment', 10, 2 );
+
+function redirect_after_comment( $location, $comment ){
+    $post_id = $comment->comment_post_ID;
+    // product-only comment redirects
+    if( 'product' == get_post_type( $post_id ) ){
+        $related_courses = get_post_meta($post_id, '_related_course');
+        foreach ($related_courses as $related_course) {
+            $id = $related_course[0];
+        }
+        $location = 'http://herenciacolectiva.test/evaluar-taller/?taller='.$id.'&eval=1';
+    }
+    return $location;
+}
+
+
+
+
+
+

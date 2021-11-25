@@ -11,11 +11,57 @@ Template name: Terminar Proyecto
 
 @section('content') 
 @php
+    $tallerID = $_GET['taller'];
     // redirect if not logged in
     if(!is_user_logged_in()){
         wp_redirect( home_url() .'/mi-cuenta' );
         exit;
     }
+
+    $response = "";
+
+    //function to generate response
+    function my_contact_form_generate_response($type, $message){
+        global $response;
+        if($type == "success") $response = "<div class='alert alert-success'>{$message}</div>";
+        else $response = "<div class='alert alert-danger'>{$message}</div>";
+    }
+
+    //response messages
+    $missing_content = "Please supply all required fields.";
+    $email_invalid   = "Email Address is invalid.";
+    $message_unsent  = "Message was not sent. Try Again.";
+    $message_sent    = "Thank you! Your message has been sent.";
+
+    //user posted variables
+    $name            = $_POST['message_name'];
+    $email           = $_POST['message_email'];
+    $message         = $_POST['message_text'];
+    $horario         = $_POST['message_horario'];
+
+
+
+      //validate email
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        my_contact_form_generate_response("error", $email_invalid);
+      else //email is valid
+      {
+        //validate presence of name and message
+        if(empty($name) || empty($message)){
+          my_contact_form_generate_response("error", $missing_content);
+        }
+        else //ready to go!
+        {
+          $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+          if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
+          else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+        }
+      }
+
+
+
+
+
 @endphp
 @loop
 
@@ -25,26 +71,41 @@ Template name: Terminar Proyecto
     <div class="container lg:px-32">
         <div class="w-11/12 mx-auto text-center mb-8">
             <h4 class="text-negro text-2xl font-festivo19">Agenda una reunión con tu tallerista</h4>
+            <?php echo $response; ?>
         </div>
-        <form class="w-11/12 md:w-2/3 lg:w-1/2  mx-auto">
+        <form class="w-11/12 md:w-2/3 lg:w-1/2 mx-auto" action="<?php the_permalink(); ?>?taller=<?php echo $tallerID; ?>" method="post">
             <div class="flex flex-wrap -m-2">
                 <div class="p-2 w-full md:w-1/2">
                     <div class="relative">
-                    <input type="text" id="name" name="name" placeholder="Nombre y apellido" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                    <input type="text" id="name" name="message_name" placeholder="Nombre y apellido" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="<?php echo esc_attr($_POST['message_name']); ?>">
                     </div>
                 </div>
                 <div class="p-2 w-full md:w-1/2"">
                     <div class="relative">
-                        <input type="email" id="email" name="email" placeholder="Email" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <input type="email" id="email" name="message_email" placeholder="Email" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="<?php echo esc_attr($_POST['message_email']); ?>">
                     </div>
                 </div>
                 <div class="p-2 w-full">
                     <div class="relative">
-                        <select class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <select class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="message_horario">
                             <option value="" >Agendar una reunión*</option>
-                            <option value="" >M</option>
-                            <option value="" >L</option>
-                            <option value="" >XL</option>
+                            <?php
+                                $args = array(
+                                    'post_type' => 'sfwd-courses',
+                                    'posts_per_page' => -1,
+                                    'p'  => $tallerID, );
+                                $loop = new WP_Query($args);
+                                while ($loop->have_posts()) : $loop->the_post();
+                            ?>
+                            <?php if( get_field('horario') ): ?>
+                                <?php while( the_repeater_field('horario') ): ?>
+                                <option value="<?php the_sub_field('dia__hora'); ?>"> <?php the_sub_field('dia__hora'); ?></option>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php
+                                endwhile;
+                                wp_reset_query();
+                            ?>
                         </select>
                         <span class="absolute right-0 top-0 h-full w-10 text-center text-negro pointer-events-none flex items-center justify-center">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
@@ -55,7 +116,7 @@ Template name: Terminar Proyecto
                 </div>
                 <div class="p-2 w-full">
                     <div class="relative">
-                    <textarea id="message" name="message"  placeholder="Mensaje"  class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm h-32"></textarea>
+                    <textarea id="message" name="message_text"  placeholder="Mensaje"  class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm h-32" value="<?php echo esc_attr($_POST['message_text']); ?>"></textarea>
                     </div>
                 </div>
                 <div class="p-2 w-full">
