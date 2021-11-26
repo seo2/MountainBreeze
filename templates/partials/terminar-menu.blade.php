@@ -78,7 +78,9 @@
             </a>
             @endif
         </div> 
-
+        <div class="grid md:grid-cols-4"></div>
+        <div class="grid md:grid-cols-3"></div>
+        <div class="grid md:grid-cols-2"></div>
     </div>
 </section>
 

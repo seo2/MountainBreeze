@@ -128,7 +128,7 @@ else
 
 @section('footer')
 
-<script>
+{{-- <script>
     function returnformValidations()
     {
         var title = document.getElementById("title").value;
@@ -152,7 +152,7 @@ else
         }
     }
     
-    </script>
+    </script> --}}
     
     
     <script src="https://cdn.tiny.cloud/1/mk0fu9zzsfp89kxopyusgvdrxvhqaym0p8rccxh3zdofvviq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>

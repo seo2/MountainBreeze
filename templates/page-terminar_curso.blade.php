@@ -31,10 +31,10 @@ Template name: Terminar Proyecto
     }
 
     //response messages
-    $missing_content = "Por favor completa todos los campos del formulario.";
-    $email_invalid   = "La dirección de correo es invalida.";
-    $message_unsent  = "El mensaje no se ha podido enviar, por favor prueba nuevamente.";
-    $message_sent    = "¡Gracias! Tu mensaje ha sido enviado.";
+    $missing_content    = "Por favor completa todos los campos del formulario.";
+    $email_invalid      = "La dirección de correo es invalida.";
+    $message_unsent     = "El mensaje no se ha podido enviar, por favor prueba nuevamente.";
+    $message_sent       = "¡Gracias! Tu mensaje ha sido enviado.";
     $missing_horario    = "Por favor seleccione un horario.";
 
     //user posted variables
