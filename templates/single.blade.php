@@ -77,6 +77,9 @@
             // prepend html
             $('#bbpress-forums').prepend('<div class="clear-both"></div><h4 class="text-negro text-2xl font-festivo19 md:float-left mb-2 md:mb-0">Foro del taller</h4>');
         }
+        // change .learndash-resume-button input value to "Continuar Taller"
+        $('.learndash-resume-button input').val('Continuar taller');
+        $('.learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link').css('display', 'none');
     }); 
 </script>
 @endsection  

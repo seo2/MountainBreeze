@@ -142,7 +142,7 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     .learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link{
-        @apply h-12 w-full leading-12 text-center !important inline-block border !important border-negro border-solid text-negro transition duration-200 uppercase !important no-underline;
+        @apply h-12 w-full leading-12 text-center !important inline-block border border-negro border-solid text-negro transition duration-200 uppercase !important no-underline;
     }
     .learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link:hover{
         @apply bg-negro text-beige !important; 

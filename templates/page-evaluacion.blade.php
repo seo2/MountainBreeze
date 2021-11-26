@@ -80,8 +80,6 @@ $eval     = $_GET['eval'];
                         }
                     @endphp
 
-
-
                     <?php
                     $commenter    = wp_get_current_commenter();
                     $comment_form = array(
@@ -89,8 +87,8 @@ $eval     = $_GET['eval'];
                         'title_reply'         => sprintf( 'Evalúa tu experiencia en &ldquo;%s&rdquo;', get_the_title() ),
                         /* translators: %s is product title */
                         'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
-                        'title_reply_before'  => '<div class="w-11/12 mx-auto text-center mb-8"><h4 class="text-negro text-2xl font-festivo19">',
-                        'title_reply_after'   => '</h4></div>',
+                        'title_reply_before'  => '<div class="w-11/12 mx-auto text-center mb-8"><h4 class="text-negro text-2xl font-festivo19 mb-2">',
+                        'title_reply_after'   => '</h4><div class="w-full mx-auto text-center mb-4"><p class="text-negro text-base font-sans">Con tu comentario ayudarás a otras personas a conocer más sobre este taller.</p></div></div>',
                         'comment_notes_after' => '',
                         'label_submit'        => esc_html__( 'Submit', 'woocommerce' ),
                         'logged_in_as'        => '',

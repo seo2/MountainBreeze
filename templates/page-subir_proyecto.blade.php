@@ -41,8 +41,8 @@ if(is_user_logged_in())
 		$new_post = array(
 			'post_title'    => $post_title,
 			'post_content'  => $post_content,
-			'post_status'   => 'pending',
-			'post_name'     => 'pending',
+			'post_status'   => 'publish',
+			'post_name'     => $post_title,
 			'post_type'     => $post_type
 		);
 
