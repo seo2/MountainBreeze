@@ -81,12 +81,13 @@ if ( ! empty( $product_tabs ) ) : ?>
             <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--valoraciones panel entry-content wc-tab" id="tab-proyectos" role="tabpanel" aria-labelledby="tab-title-proyectos">
 			<?php
 						$args = array(    
-							'posts_per_page' 	=> 2, 
+							'posts_per_page' 	=> 8, 
 							'post_type' 		=> 'proyectos',
+							'orderby' 			=> 'rand',
 							'meta_query'	 	=> array(
 								array(
-									'key' 	=> 'Taller',
-									'value' => $product_id 
+									'key' 	=> 'taller',
+									'value' => 268 
 								)
 							)
 						); 

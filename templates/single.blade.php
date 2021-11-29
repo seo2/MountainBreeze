@@ -5,18 +5,36 @@
 
 @loop
 @php
-    $imagen_banner_taller = get_field('imagen_banner_taller');
+    if ( get_post_type( get_the_ID() ) == 'proyectos' ) {
+        $imagen_banner_taller            = get_the_post_thumbnail_url( $featured_post->ID );
+        $volver               = '/mis-proyectos/';
+        $tallerID       = get_field('taller');
+        $course_title   = get_the_title($tallerID);
+    }else{
+        $imagen_banner_taller = get_field('imagen_banner_taller');
+        $volver               = '/mis-talleres/';
+    }
     // current post id
     $post_id = get_the_ID();
 @endphp
-
-<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
+<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-center bg-fixed bg-no-repeat bg-azul relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
     @if ($imagen_banner_taller)  
         <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
     @endif 
+    @if ( get_post_type( get_the_ID() ) == 'proyectos' )
+    <div class="container flex flex-col md:flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
+        <div class="relative w-full mb-4 md:mb-0">
+            <a href="@php echo $volver; @endphp" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
+            <h2 class="text-beige font-festivo6 text-2xl uppercase mt-4">proyecto</h2>
+            <h1 class="text-beige font-festivo6 text-5xl uppercase">{{ the_title()}}</h1>
+            <h4 class="text-beige text-2xl font-festivo19">Taller {{$course_title}}</h4>
+            <h3 class="font-bold">{!! $mensaje !!}</h3>
+        </div> 
+    </div>
+    @else
     <div class="container flex flex-col md:flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
         <div class="relative w-full md:w-2/3 mb-4 md:mb-0">
-            <a href="/mis-talleres/" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
+            <a href="" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0 hidden md:block">{{ the_title() }}</h1>
         </div> 
         <div class="w-full md:w-1/3 flex md:justify-center content-center items-center">
@@ -34,8 +52,8 @@
             </div>
         </div>
     </div>
+    @endif
 </section>
-
 <section class="my-2 md:my-12" id="taller">
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 md:gap-12">
         <div class="w-full md:w-2/3">

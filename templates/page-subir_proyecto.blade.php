@@ -15,76 +15,93 @@ Template Name: Subir proyectos 2
         wp_redirect( home_url() .'/mi-cuenta' );
         exit;
     }
-    $mensaje = "";
-    $tallerID = $_GET['taller'];
-    $course_title = get_the_title($tallerID);
+    $mensaje        = "";
+    $tallerID       = $_GET['taller'];
+    $course_title   = get_the_title($tallerID);
 
-if(is_user_logged_in())
+
+if(isset($_POST['ispost']))
 {
-	if(isset($_POST['ispost']))
-	{
-		global $current_user;
-		get_currentuserinfo();
+    global $current_user, $wpdb;
+    
+    get_currentuserinfo();
+    $mensaje        = "";
+    $user_login     = $current_user->user_login;
+    $user_email     = $current_user->user_email;
+    $user_firstname = $current_user->user_firstname;
+    $user_lastname  = $current_user->user_lastname;
+    $user_id        = $current_user->ID;
 
-		$user_login = $current_user->user_login;
-		$user_email = $current_user->user_email;
-		$user_firstname = $current_user->user_firstname;
-		$user_lastname = $current_user->user_lastname;
-		$user_id = $current_user->ID;
+    $post_title     = $_POST['title'];
+    $sample_image   = $_FILES['sample_image']['name'];
+    $post_content   = $_POST['sample_content'];
+    
+    $post_type = "proyectos";
 
-		$post_title     = $_POST['title'];
-		$sample_image   = $_FILES['sample_image']['name'];
-		$post_content   = $_POST['sample_content'];
-		// $category = $_POST['category'];
-        $post_type = "proyectos";
+    if ($_FILES && $_FILES['sample_image'])
+    {
 
-		$new_post = array(
-			'post_title'    => $post_title,
-			'post_content'  => $post_content,
-			'post_status'   => 'publish',
-			'post_name'     => $post_title,
-			'post_type'     => $post_type
-		);
+        $query = $wpdb->prepare(
+            'SELECT ID FROM ' . $wpdb->posts . '
+            WHERE post_title = %s
+            AND post_type = \'proyectos\'',
+            $post_title
+        );
+        $wpdb->query( $query );
 
-		$pid = wp_insert_post($new_post);
-		add_post_meta($pid, 'meta_key', true);
+        if ( $wpdb->num_rows ) {
+            $mensaje = "<span class='text-naranjo text-lg'><i class='fas fa-exclamation-triangle'></i> El proyecto ya existe</span>";
+        }else {
+            $new_post = array(
+                'post_title'    => $post_title,
+                'post_content'  => $post_content,
+                'post_status'   => 'publish',
+                'post_name'     => $post_title,
+                'post_type'     => $post_type
+            );
 
-		if (!function_exists('wp_generate_attachment_metadata'))
-		{
-			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-			require_once(ABSPATH . "wp-admin" . '/includes/file.php');
-			require_once(ABSPATH . "wp-admin" . '/includes/media.php');
-		}
-		if ($_FILES)
-		{
-			foreach ($_FILES as $file => $array)
-			{
-				if ($_FILES[$file]['error'] !== UPLOAD_ERR_OK)
-				{
-					return "upload error : " . $_FILES[$file]['error'];
-				}
-				$attach_id = media_handle_upload( $file, $pid );
-			}
-		}
-		if ($attach_id > 0)
-		{
-			//and if you want to set that image as Post then use:
-			update_post_meta($pid, '_thumbnail_id', $attach_id);
-		}
+            $pid = wp_insert_post($new_post);
+            add_post_meta($pid, 'meta_key', true);
 
-		$my_post1 = get_post($attach_id);
-		$my_post2 = get_post($pid);
-		// $my_post = array_merge($my_post1, $my_post2);
+            if (!function_exists('wp_generate_attachment_metadata'))
+            {
+                require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+                require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+            }
 
-        __update_post_meta( $pid, 'Taller', $tallerID );
+            $attach_id = media_handle_upload( 'sample_image', $pid );
+            if ($attach_id > 0)
+            {
+                update_post_meta($pid, '_thumbnail_id', $attach_id);
+            }
 
-        $mensaje = "<span class='text-naranjo'>Hemos recibido tu proyecto, este se encuentra en proceso de revisión.</span>";
-	}
+
+            $files = $_FILES['image_gallery'];
+            foreach ($files['image_gallery'] as $key => $value) {
+                if ($files['name'][$key]) {
+                    $file = array(
+                    'name'     => $files['name'][$key],
+                    'type'     => $files['type'][$key],
+                    'tmp_name' => $files['tmp_name'][$key],
+                    'error'    => $files['error'][$key],
+                    'size'     => $files['size'][$key]
+                    );
+                    wp_handle_upload($file);
+                }
+            }
+
+            $taller = update_field( 'taller', $tallerID, $pid );
+            
+            $link = get_permalink($pid);
+            $mensaje .= "<span class='text-verde'><i class='fas fa-check'></i> Hemos recibido tu proyecto, este lo puedes ir a <a href='$link' class='underline'>ver aquí</a></span>";
+        }
+	}else{
+        // font awesome alert icon
+        $mensaje = "<span class='text-naranjo text-lg'><i class='fas fa-exclamation-triangle'></i> Por favor, selecciona un archivo de imagen.</span>";
+    }
 }
-else
-{
-	echo "<h2 style='text-align:center;'>User must be login for add post!</h2>";
-}
+
 @endphp
 @loop
 
@@ -98,7 +115,7 @@ else
             <h3 class="mt-4 font-bold">{!! $mensaje !!}</h3>
         </div>
 
-        <form class="w-11/12 md:w-2/3 lg:w-1/2 mx-auto" action="<?php the_permalink(); ?>?taller=<?php echo $tallerID; ?>" method="post">
+        <form class="w-11/12 md:w-2/3 lg:w-1/2 mx-auto" action="<?php the_permalink(); ?>?taller=<?php echo $tallerID; ?>" method="post"  enctype="multipart/form-data">
             <input type="hidden" name="ispost" value="1" />
             <input type="hidden" name="userid" value="<?php echo $user_id; ?>" />
             <div class="w-full">
@@ -113,7 +130,12 @@ else
                 <label class="control-label">Adjunta una foto de portada</label>
                 <input type="file" name="sample_image" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </div>
-    
+                
+            <div class="w-full my-4">
+                <label class="control-label">Adjunta Galería de fotos</label>
+                <input type="file" multiple name="image_gallery" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+            </div>
+
             <div class="w-full">
                 <input type="submit" class="h-12 px-24 block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Subir Proyecto" name="submitpost" />
             </div>

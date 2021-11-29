@@ -6,7 +6,7 @@ mix.js(`src/scripts/app.js`, "dist/").postCss(`src/styles/style.css`, "./", [
   ...(process.env.NODE_ENV === "production"
     ? [
         purgecss({
-          content: ["**/*.php", "**/*.html"],
+          content: ["**/*.php", "**/*.html", "**/*.js"],
           defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
         }),
       ]

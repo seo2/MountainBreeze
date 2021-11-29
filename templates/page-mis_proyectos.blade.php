@@ -31,30 +31,30 @@ Template name: Mis Proyectos
             $proyectos = new WP_Query($args); 
             if ( $proyectos->have_posts() ) { 
                 while ( $proyectos->have_posts() ) {
-                            $proyectos->the_post();    
-                            $url = get_the_post_thumbnail_url( $featured_post->ID );
-                            
+                    $proyectos->the_post();    
+                    $url            = get_the_post_thumbnail_url( $featured_post->ID );
+                    $tallerID       = get_field('taller');
+                    $course_title   = get_the_title($tallerID);
+                    $postID         = get_the_ID();
         ?>
 
-        <a href="<?php the_permalink(); ?>" class="flex flex-row border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
-            <div class="w-1/12 flex-none">
-                <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>" class="w-full">
-
+        
+            <div class="flex flex-row relative border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
+                <div class="absolute top-4 right-4">
+                    <a href="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $postID; @endphp" class="text-negro text-sm z-50 hover:bg-rosado px-3 py-2 transition duration-200">Editar <i class="fas fa-edit"></i></a>
+                </div>
+                <div class="w-1/12 flex-none">
+                    <a href="<?php the_permalink(); ?>" class=""><img src="<?php echo $url; ?>" alt="<?php the_title(); ?>" class="w-full"></a>
+                </div>
+                <div class="flex-grow flex-col flex px-8">
+                    <h1 class="text-lg font-bold flex-grow "><a href="<?php the_permalink(); ?>" class="text-negro hover:underline transition duration-200">@php the_title(); @endphp</a></h1>
+                    <h2 class=""><a href="<?php the_permalink(); ?>" class="text-naranjo hover:underline transition duration-200"><i class="fas fa-users-class"></i> @php echo $course_title; @endphp</a></h2>
+                </div>
+                <div class="flex flex-none justify-end">
+                    <p class="self-end text-negro text-sm mr-4">@php echo get_the_date(); @endphp <i class="fas fa-calendar-alt"></i></p>
+                </div>
             </div>
-            <div class="flex-grow flex-col flex px-8">
-                <p class="flex-grow text-negro">@php
-                    the_title();
-                @endphp</p>
-                <h1 class=" text-naranjo">@php
-                    echo get_post_title_by_id(get_field('Taller'));
-                @endphp</h1>
-            </div>
-            <div class="w-2/12 flex flex-none justify-end">
-                <p class="self-end text-negro">@php
-                    echo get_the_date();
-                @endphp</p>
-            </div>
-        </a>
+        
 
        <?php
                 }
