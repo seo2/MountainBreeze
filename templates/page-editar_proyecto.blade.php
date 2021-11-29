@@ -88,9 +88,6 @@ $volver = '/mis-proyectos/';
 @endphp
 @loop
 
-
-
-
 <section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-center bg-fixed bg-no-repeat bg-verde relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
     @if ($imagen_banner_taller)  
         <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
@@ -105,9 +102,6 @@ $volver = '/mis-proyectos/';
         </div> 
     </div>
 </section>
-
-
-
 
 
 <section class="w-full pt-4 pb-12 lg:pb-24 bg-beige relative overflow-hidden">

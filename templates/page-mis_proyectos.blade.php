@@ -37,7 +37,6 @@ Template name: Mis Proyectos
                     $course_title   = get_the_title($tallerID);
                     $postID         = get_the_ID();
         ?>
-
         
             <div class="flex flex-row relative border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
                 <div class="absolute top-4 right-4">
@@ -54,7 +53,6 @@ Template name: Mis Proyectos
                     <p class="self-end text-negro text-sm mr-4">@php echo get_the_date(); @endphp <i class="fas fa-calendar-alt"></i></p>
                 </div>
             </div>
-        
 
        <?php
                 }

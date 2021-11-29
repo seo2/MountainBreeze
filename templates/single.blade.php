@@ -2,12 +2,12 @@
 
 @section('content') 
 
-
 @loop
 @php
     if ( get_post_type( get_the_ID() ) == 'proyectos' ) {
         $imagen_banner_taller            = get_the_post_thumbnail_url( $featured_post->ID );
-        $volver               = '/mis-proyectos/';
+        $volver         = '/mis-proyectos/';
+        $volver         = 'javascript:history.back();';
         $tallerID       = get_field('taller');
         $course_title   = get_the_title($tallerID);
     }else{
@@ -25,6 +25,17 @@
     <div class="container flex flex-col md:flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
         <div class="relative w-full mb-4 md:mb-0">
             <a href="@php echo $volver; @endphp" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
+            @php
+                //check if the post is from current user
+                $user_id = get_current_user_id();
+                $post_author_id = get_the_author_meta('ID');
+                $is_current_user = ($user_id == $post_author_id);
+                if($user_id == $post_author_id){
+                    echo'<a href="'.$edit_link.'" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block">Editar <i class="fas fa-edit"></i></a>';
+                }
+            @endphp
+
+
             <h2 class="text-beige font-festivo6 text-2xl uppercase mt-4">proyecto</h2>
             <h1 class="text-beige font-festivo6 text-5xl uppercase">{{ the_title()}}</h1>
             <h4 class="text-beige text-2xl font-festivo19">Taller {{$course_title}}</h4>
