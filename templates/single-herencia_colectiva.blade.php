@@ -46,8 +46,21 @@ Template name: Herencia Colectiva
 
                 @php the_field('descripcion'); @endphp
 
-                {{-- <a href="@php bloginfo('url'); @endphp/el-cambio" class="btn mb-4">El cambio</a> --}}
-                <a href="@php bloginfo('url'); @endphp/como-funciona" class="btn">Cómo funciona</a>
+                @php
+                        $rows = get_field('botones');
+                        if($rows)
+                        {
+                            foreach($rows as $row)
+                            {
+                                $texto_del_boton  =  $row['texto_del_boton'];
+                                $enlace_del_boton =  $row['enlace_del_boton'];
+                @endphp
+                                    <a href="{{$enlace_del_boton}}" class="btn mb-4">{{$texto_del_boton}}</a>
+                @php
+                                    break;
+                            }
+                        }
+                @endphp
             </div>
         </div>
     </div>

@@ -28,8 +28,21 @@ Template name: Cómo funciona
                     <img src="<?php bloginfo('template_url') ?>/dist/img/oxoxox.svg" alt="x_x" class="hidden lg:block">
                 </div>
                 <div class="hidden lg:block">
-                    <a href="@php bloginfo('url'); @endphp/el-cambio" class="btn mb-4">El cambio</a>
-                    <a href="@php bloginfo('url'); @endphp/herencia-colectiva" class="btn">Herencia Colectiva</a>
+                @php
+                        $rows = get_field('botones');
+                        if($rows)
+                        {
+                            foreach($rows as $row)
+                            {
+                                $texto_del_boton  =  $row['texto_del_boton'];
+                                $enlace_del_boton =  $row['enlace_del_boton'];
+                @endphp
+                                    <a href="{{$enlace_del_boton}}" class="btn mb-4">{{$texto_del_boton}}</a>
+                @php
+                                    break;
+                            }
+                        }
+                @endphp
                 </div>
             </div>
             <div class="col-span-7 -mt-8 lg:mt-auto">
