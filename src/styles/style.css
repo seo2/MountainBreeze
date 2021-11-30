@@ -539,3 +539,7 @@ body .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_pri
         @apply float-none
     }
 }
+
+.learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link{
+    @apply hidden !important
+}
