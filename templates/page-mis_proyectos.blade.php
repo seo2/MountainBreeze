@@ -39,22 +39,22 @@ Template name: Mis Proyectos
                     $postID         = get_the_ID();
         ?>
         
-            <div class="flex flex-row relative border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
-                <div class="absolute top-4 right-4">
-                    <a href="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $postID; @endphp" class="text-beige text-sm z-50 bg-verde hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Editar <i class="fas fa-edit"></i></a>
-                    <a href="@php bloginfo('url'); @endphp/eliminar-proyecto?proyecto=@php echo $postID; @endphp" class="text-negro text-sm z-50 bg-rosado hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Eliminar <i class="fas fa-trash-alt"></i></a>
-                </div>
-                <div class="w-1/12 flex-none">
+            <div class="flex flex-col md:flex-row relative border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
+                <div class="w-3/12 md:w-1/12 flex-none mb-2">
                     <a href="<?php the_permalink(); ?>" class="">
-    						<?php echo get_the_post_thumbnail( $postID, 'thumbnail', array( 'class' => 'w-full' ) ); ?>
+    					<?php echo get_the_post_thumbnail( $postID, 'thumbnail', array( 'class' => 'w-full' ) ); ?>
                     </a>
                 </div>
-                <div class="flex-grow flex-col flex px-8">
+                <div class="flex-grow flex-col flex md:px-8">
                     <h1 class="text-lg font-bold flex-grow "><a href="<?php the_permalink(); ?>" class="text-negro hover:underline transition duration-200">@php the_title(); @endphp</a></h1>
                     <h2 class=""><a href="<?php echo $url2; ?>" class="text-naranjo hover:underline transition duration-200"><i class="fas fa-users-class"></i> @php echo $course_title; @endphp</a></h2>
                 </div>
-                <div class="flex flex-none justify-end">
+                <div class="flex flex-none md:justify-end">
                     <p class="self-end text-negro text-sm">@php echo get_the_date(); @endphp <i class="fas fa-calendar-alt"></i></p>
+                </div>
+                <div class="absolute top-4 right-4">
+                    <a href="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $postID; @endphp" class="text-beige text-sm z-50 bg-verde hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Editar <i class="fas fa-edit"></i></a>
+                    <a href="@php bloginfo('url'); @endphp/eliminar-proyecto?proyecto=@php echo $postID; @endphp" class="text-negro text-sm z-50 bg-rosado hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Eliminar <i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
 

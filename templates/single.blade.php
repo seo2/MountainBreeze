@@ -17,7 +17,7 @@
         $imagen_banner_taller = get_field('imagen_banner_taller');
         $volver               = '/mis-talleres/';
         $bg_color = 'bg-azul';
-        $txt_color = 'bg-beige';
+        $txt_color = 'text-beige';
     }
     // current post id
     $post_id = get_the_ID();
