@@ -45,7 +45,7 @@
     @else
     <div class="container flex flex-col md:flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
         <div class="relative w-full md:w-2/3 mb-4 md:mb-0">
-            <a href="" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
+            <a href="@php echo $volver; @endphp" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0 hidden md:block">{{ the_title() }}</h1>
         </div> 
         <div class="w-full md:w-1/3 flex md:justify-center content-center items-center">
