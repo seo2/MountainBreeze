@@ -35,6 +35,7 @@ Template name: Mis Proyectos
                     $url            = get_the_post_thumbnail_url( $featured_post->ID );
                     $tallerID       = get_field('taller');
                     $course_title   = get_the_title($tallerID);
+                    $url2            = get_the_permalink( $tallerID );
                     $postID         = get_the_ID();
         ?>
         
@@ -47,7 +48,7 @@ Template name: Mis Proyectos
                 </div>
                 <div class="flex-grow flex-col flex px-8">
                     <h1 class="text-lg font-bold flex-grow "><a href="<?php the_permalink(); ?>" class="text-negro hover:underline transition duration-200">@php the_title(); @endphp</a></h1>
-                    <h2 class=""><a href="<?php the_permalink(); ?>" class="text-naranjo hover:underline transition duration-200"><i class="fas fa-users-class"></i> @php echo $course_title; @endphp</a></h2>
+                    <h2 class=""><a href="<?php echo $url2; ?>" class="text-naranjo hover:underline transition duration-200"><i class="fas fa-users-class"></i> @php echo $course_title; @endphp</a></h2>
                 </div>
                 <div class="flex flex-none justify-end">
                     <p class="self-end text-negro text-sm mr-4">@php echo get_the_date(); @endphp <i class="fas fa-calendar-alt"></i></p>
