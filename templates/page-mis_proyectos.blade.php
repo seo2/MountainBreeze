@@ -35,7 +35,7 @@ Template name: Mis Proyectos
                     $url            = get_the_post_thumbnail_url( $featured_post->ID );
                     $tallerID       = get_field('taller');
                     $course_title   = get_the_title($tallerID);
-                    $url2            = get_the_permalink( $tallerID );
+                    $url2           = get_the_permalink( $tallerID );
                     $postID         = get_the_ID();
         ?>
         

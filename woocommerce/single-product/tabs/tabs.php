@@ -87,7 +87,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 							'meta_query'	 	=> array(
 								array(
 									'key' 	=> 'taller',
-									'value' => 268 
+									'value' => $id
 								)
 							)
 						); 
