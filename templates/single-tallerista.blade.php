@@ -9,7 +9,21 @@
         @php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'w-1/2' ) ); @endphp 
         <div class="p-4 lg:p-0 lg:flex lg:flex-wrap lg:content-end">
             <div class="mb-8">
-                <p class="text-naranjo uppercase">Cultivo</p>
+                <p class="text-naranjo uppercase">
+                    @php
+                        // show post tags
+                        $etiquetas = "";
+                        $posttags = get_the_tags();
+                        if ($posttags) {
+                            foreach($posttags as $tag) {
+                                $etiquetas .= $tag->name . ', '; 
+                            }
+                        }
+                        echo substr($etiquetas, 0, -2);
+                    @endphp
+
+
+                </p>
                 <h1 class="text-negro uppercase my-4 text-4xl font-festivo6">@php the_title(); @endphp</h1>
                 <p>@php echo get_field('epigrafe'); @endphp</p>
             </div>

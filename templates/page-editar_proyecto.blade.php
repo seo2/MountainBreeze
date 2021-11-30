@@ -88,16 +88,14 @@ $volver = '/mis-proyectos/';
 @endphp
 @loop
 
-<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-center bg-fixed bg-no-repeat bg-verde relative" @if ($imagen_banner_taller)  style="background-image: url({{$imagen_banner_taller}});" @endif >
-    @if ($imagen_banner_taller)  
-        <div class="absolute inset-0 w-full h-full  bg-gradient-to-t from-black opacity-50"></div>
-    @endif 
+<section class="w-full flex py-4 md:py-6 mt-32 md:h-48 bg-cover bg-left-bottom lg:bg-center bg-fixed bg-no-repeat bg-rosado relative" >
+
     <div class="container flex flex-col md:flex-row h-100 max-w-screen-xl mx-auto justify-between px-6 lg:px-32 relative z-10">
         <div class="relative w-full mb-4 md:mb-0">
-            <a href="@php echo $volver; @endphp" class="text-blanco uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
-            <h2 class="text-beige font-festivo6 text-2xl uppercase mt-4">Editar proyecto</h2>
-            <h1 class="text-beige font-festivo6 text-5xl uppercase">{{$project_title}}</h1>
-            <h4 class="text-beige text-2xl font-festivo19">Taller {{$course_title}}</h4>
+            <a href="@php echo $volver; @endphp" class="text-negro uppercase relative top-2 hover:text-naranjo transition duration-200 block"><i class="fak fa-back mr-4"></i> Volver</a>
+            <h2 class="text-negro font-festivo6 text-2xl uppercase mt-4">Editar proyecto</h2>
+            <h1 class="text-negro font-festivo6 text-5xl uppercase">{{$project_title}}</h1>
+            <h4 class="text-negro text-2xl font-festivo19">Taller {{$course_title}}</h4>
             <h3 class="font-bold">{!! $mensaje !!}</h3>
         </div> 
     </div>

@@ -76,25 +76,27 @@ if(isset($_POST['ispost']))
                 update_post_meta($pid, '_thumbnail_id', $attach_id);
             }
 
-
-            $files = $_FILES['image_gallery'];
-            foreach ($files['image_gallery'] as $key => $value) {
-                if ($files['name'][$key]) {
-                    $file = array(
-                    'name'     => $files['name'][$key],
-                    'type'     => $files['type'][$key],
-                    'tmp_name' => $files['tmp_name'][$key],
-                    'error'    => $files['error'][$key],
-                    'size'     => $files['size'][$key]
-                    );
-                    wp_handle_upload($file);
-                }
-            }
+            $files = $_FILES["image_gallery"];  
+            foreach ($files['name'] as $key => $value) {  
+                if ($files['name'][$key]) { 
+                    $file = array( 
+                        'name'      => $files['name'][$key],
+                        'type'      => $files['type'][$key], 
+                        'tmp_name'  => $files['tmp_name'][$key], 
+                        'error'     => $files['error'][$key],
+                        'size'      => $files['size'][$key]
+                    ); 
+                    $_FILES = array ("image_gallery" => $file); 
+                    foreach ($_FILES as $file => $array) {              
+                        $newupload = my_handle_attachment($file,$pid); 
+                    }
+                } 
+            } 
 
             $taller = update_field( 'taller', $tallerID, $pid );
             
             $link = get_permalink($pid);
-            $mensaje .= "<span class='text-verde'><i class='fas fa-check'></i> Hemos recibido tu proyecto, este lo puedes ir a <a href='$link' class='underline'>ver aquí</a></span>";
+            $mensaje .= "<span class='text-verde'><i class='fas fa-check'></i> Hemos recibido tu proyecto, este lo puedes revisar <a href='$link' class='underline'>ver aquí</a></span>";
         }
 	}else{
         // font awesome alert icon
@@ -133,11 +135,12 @@ if(isset($_POST['ispost']))
                 
             <div class="w-full my-4">
                 <label class="control-label">Adjunta Galería de fotos</label>
-                <input type="file" multiple name="image_gallery" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                <input type="file" multiple name="image_gallery[]" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </div>
 
-            <div class="w-full">
-                <input type="submit" class="h-12 px-24 block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Subir Proyecto" name="submitpost" />
+            <div class="w-full grid grid-cols-2 gap-4">
+                <input type="submit" class="h-12 grid-span-1 w-full block mx-auto leading-12 text-center border border-gris bg-gris border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Guardar Borrador" name="submitpost2" />
+                <input type="submit" class="h-12 grid-span-1 w-full block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Subir Proyecto" name="submitpost" />
             </div>
         </form>
 
