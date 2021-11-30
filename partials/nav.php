@@ -125,7 +125,7 @@
     if(is_user_logged_in()){
 ?>
   <div class="fixed top-20 pt-2 md:pt-0 md:top-20 z-40 w-full text-gris6 bg-blanco shadow">
-  <div class="flex container max-w-screen-xl mx-auto items-center justify-between flex-row md:px-24">
+  <div class="flex container max-w-screen-xl mx-auto items-center justify-between flex-row lg:px-24">
     <nav class="flex-grow md:pb-0 flex justify-between md:justify-start flex-row uppercase">
       
       <a class="text-center md:text-left flex flex-col justify-center px-4 md:px-8 py-2 md:py-4 md:mt-2 <?php if(is_page("mis-proyectos")){ ?> text-naranjo <?php }else{ ?> text-gris <?php } ?> text-xs md:text-sm font-sans md:mt-0 md:mr-1 hover:text-naranjo focus:text-naranjo focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url'); ?>/mis-proyectos  ">Mis proyectos</a>
