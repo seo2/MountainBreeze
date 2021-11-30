@@ -12,7 +12,6 @@
 <?php while ($slide_query->have_posts()) : 
     $slide_query->the_post(); 
 ?>  
-
 <div class="flex h-2/4 overflow-hidden items-center bg-beige relative pt-28 lg:pt-0">
     <?php 
         $rows = get_field('slide');
