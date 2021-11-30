@@ -32,12 +32,15 @@
                     break;
             }
         }
-        ?>
+        ?> @php
+                // get "saludo_inicial" field
+                $saludo_inicial = get_field('saludo_inicial');
+            @endphp
     <div class="w-full h-3/4 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0"></div>
     <div class="absolute  bottom-0 left-0 mb-24 lg:mb-0 w-full px-4 lg:px-0 lg:bottom-auto lg:left-auto text-center flex items-center justify-center flex-col">
         <img src="<?php bloginfo('template_url') ?>/dist/img/raya_naranja_horizontal.svg" alt="rayas" class="absolute w-5/6 lg:w-1/4 mx-auto top-20 lg:top-auto">
         <h1 class="font-festivo6 uppercase mb-4 md:mb-8 lg:mb-5 text-6xl lg:text-7xl  leading-none text-beige relative z-10">Somos<br>Herencia</h1>
-        <p class="text-blanco">Hola <span class="font-bold">{{show_loggedin_function( $atts )}}</span>.<br>¡Bienvenido a Herencia Colectiva!</p>
+        <p class="text-blanco">Hola <span class="font-bold">{{show_loggedin_function( $atts )}}</span>.<br>{{$saludo_inicial}}</p>
         <a href="/mis-talleres/" class="bg-blanco text-negro px-3 py-2 rounded-none w-full lg:w-1/6 mt-4 uppercase hover:bg-naranjo transition duration-200">Ir a mis talleres</a>
     </div>
 </div>
