@@ -2,7 +2,6 @@
 
 @section('content') 
 
-
 @loop
 @php
     if ( get_post_type( get_the_ID() ) == 'proyectos' ) {
@@ -39,7 +38,6 @@
                 <a href="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $post_id; @endphp" class="{{$txt_color}}  uppercase absolute bottom-0 right-0 hover:text-naranjo transition duration-200 block">Editar <i class="fas fa-edit"></i></a>
             @endif
 
-
             <h2 class="{{$txt_color}} font-festivo6 text-2xl uppercase mt-4">proyecto</h2>
             <h1 class="{{$txt_color}} font-festivo6 text-5xl uppercase">{{ the_title()}}</h1>
             <h4 class="{{$txt_color}} text-2xl font-festivo19">Taller {{$course_title}}</h4>
@@ -73,7 +71,6 @@
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 md:gap-12">
         <div class="w-full md:w-2/3">
             @php
-
                 $html = '
                 <div class="w-full mb-8">
                     <p class="text-negro">Ya terminaste el taller, recuerda descargar el certificado, subir tu proyecto, evaluar el taller y contactar una cita con tu tallerista.</p>
@@ -85,28 +82,35 @@
                 $thumbnail_id = get_post_thumbnail_id();
                 $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail-size', true);
             @endphp
+
+            @if ($_GET['mensaje'])
+            <div class="text-center w-full bg-beige p-4 rounded-sm shadow">
+                <span class="text-verde ">  {{$_GET['mensaje']}} </span>
+            </div>
+            @endif
             <img src="@php echo $thumbnail_url[0]; @endphp" alt="@php the_title(); @endphp">
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
             @endphp
+
             {{ the_content() }}
 
             @if ( get_post_type( get_the_ID() ) == 'proyectos' )
                 <div class="w-full mb-8">
-                    <div class="owl-carousel owl-theme w-100 bg-negro" id="hero-carousel">
+                    <div class="owl-carousel owl-theme w-full" id="proyectoCarousel">
                         <?php 
                         $images = get_attached_media('image', $post->ID);
-                        foreach($images as $image) { ?>
-                        <div>
-                            <img src="<?php echo wp_get_attachment_image_url($image->ID,'full'); ?>" />
-                        </div>
+                        foreach($images as $image) { 
+                            //if first image is not the featured image
+                            if($image->ID != $thumbnail_id) {
+                                $image_url = wp_get_attachment_image_src($image->ID, 'full', true);
+                                echo '<div class="item"><img src="'.$image_url[0].'" alt="'.$image->post_title.' class="w-full"></div>';
+                            }   
+                            ?>
                         <?php } ?>   
                     </div>
-
-
                 </div>
             @endif
-
         </div>
         <div class="w-full md:w-1/3">
             @php dynamic_sidebar( 'sidebar-1' ); @endphp
@@ -114,7 +118,6 @@
     </div>
 </section>
 @endloop
-
 
 @endsection
 

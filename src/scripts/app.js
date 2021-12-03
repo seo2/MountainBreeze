@@ -24,6 +24,14 @@ $( document ).ready(function() {
             }
         }
     });
+    $('#proyectoCarousel').owlCarousel({
+        items: 1,
+		nav:true,
+        dots: true,
+		navText:[
+			'<div class="col-span-1 text-lg lg:text-4xl hidden md:block"><span class="h-8 w-8 leading-8 lg:h-16 lg:w-16 lg:leading-16 text-center inline-block border border-beige border-solid text-beige hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full"><i class="fal fa-chevron-left -ml-1"></i></span></div>',
+			'<div class="col-span-1 text-lg lg:text-4xl hidden md:block"><span class="h-8 w-8 leading-8 lg:h-16 lg:w-16 lg:leading-16 text-center inline-block border border-beige border-solid text-beige hover:bg-naranjo hover:border-naranjo hover:text-blanco transition duration-200 rounded-full float-right"><i class="fal fa-chevron-right -mr-1"></i></span></div>'],
+    });
 });
 
 // 

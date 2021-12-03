@@ -38,7 +38,8 @@ if(isset($_POST['ispost']))
     
     $post_type = "proyectos";
 
-    if ($_FILES && $_FILES['sample_image'])
+    // check if $_FILES['sample_image'] is empty
+    if(!empty($sample_image))
     {
 
         $query = $wpdb->prepare(
@@ -94,9 +95,10 @@ if(isset($_POST['ispost']))
             } 
 
             $taller = update_field( 'taller', $tallerID, $pid );
-            
+            $mensaje .= "Tu proyecto se ha subido correctamente";
             $link = get_permalink($pid);
-            $mensaje .= "<span class='text-verde'><i class='fas fa-check'></i> Hemos recibido tu proyecto, este lo puedes revisar <a href='$link' class='underline'>ver aquí</a></span>";
+            wp_redirect( $link.'?mensaje='.$mensaje );
+
         }
 	}else{
         // font awesome alert icon

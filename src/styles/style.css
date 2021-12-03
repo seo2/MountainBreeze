@@ -401,22 +401,42 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
   }
 
-  .owl-dots{
+#hero-carousel .owl-dots{
     position: absolute;
     width: 100%;
     bottom: 120px;   
 } 
-
-
-.owl-carousel .owl-nav button{
+#proyectoCarousel .owl-dots{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;   
+    z-index: 10;
+} 
+#proyectoCarousel.owl-carousel .owl-nav button{
     position: absolute;
     top: 50%;
     margin-top: -32px;
 }
-.owl-carousel .owl-nav button.owl-prev{
+#proyectoCarousel.owl-carousel .owl-nav button:hover{
+    background: none;
+}
+#proyectoCarousel.owl-carousel .owl-nav button.owl-prev{
+    left: 20px;
+}
+#proyectoCarousel.owl-carousel .owl-nav button.owl-next{
+    right: 20px;
+}
+
+
+#talleristasCarousel.owl-carousel .owl-nav button{
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+}
+#talleristasCarousel.owl-carousel .owl-nav button.owl-prev{
     left: -90px;
 }
-.owl-carousel .owl-nav button.owl-next{
+#talleristasCarousel.owl-carousel .owl-nav button.owl-next{
     right: -90px;
 }
 

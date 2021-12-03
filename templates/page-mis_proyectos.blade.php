@@ -4,6 +4,21 @@
 Template name: Mis Proyectos
 
 */
+
+// delete post type proyecto by id
+// get post id
+if (isset($_GET['proyecto'])) {
+    $proyecto = $_GET['proyecto'];
+    // get post name by id
+    $proyecto_name = get_post_field('post_name', $proyecto);
+    $seborra = wp_delete_post($proyecto);
+    if($seborra){
+        $mensaje = 'Proyecto <span class="italic">'.$proyecto_name.'</span> eliminado correctamente';
+    }else{
+        $mensaje = 'No se pudo eliminar el proyecto'. $proyecto_name;
+    }
+}
+
 @endphp
 
 @extends('layouts.app')
@@ -13,6 +28,7 @@ Template name: Mis Proyectos
 <section class="w-full bg-beige mt-8 pt-36 pb-8 lg:pb-8 lg:bg-contain bg-left-top lg:bg-bottom bg-no-repeat " >
     <div class=" w-5/6  lg:w-1/2 mx-auto lg:text-center relative">
         <h1 class="text-negro font-festivo6 text-3xl md:text-5xl uppercase">Mis Proyectos</h1>
+        <h2 class="text-naranjo text-xl md:text-2xl">{!! $mensaje !!}</h2>
     </div>
 </section>
 
@@ -54,7 +70,7 @@ Template name: Mis Proyectos
                 </div>
                 <div class="absolute top-4 right-4">
                     <a href="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $postID; @endphp" class="text-beige text-sm z-50 bg-verde hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Editar <i class="fas fa-edit"></i></a>
-                    <a href="@php bloginfo('url'); @endphp/eliminar-proyecto?proyecto=@php echo $postID; @endphp" class="text-negro text-sm z-50 bg-rosado hover:bg-negro hover:text-beige px-3 py-2 transition duration-200">Eliminar <i class="fas fa-trash-alt"></i></a>
+                    <a href="@php bloginfo('url'); @endphp/mis-proyectos?proyecto=@php echo $postID; @endphp" class="text-negro text-sm z-50 bg-rosado hover:bg-negro hover:text-beige px-3 py-2 transition duration-200 btn-eliminar">Eliminar <i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
 
@@ -82,9 +98,49 @@ Template name: Mis Proyectos
     </div>
 </section>
 
+<!-- modal eliminar proyecto -->
+<div class="fixed top-0 left-0 z-50 bg-black bg-opacity-50 w-full h-full flex flex-row hidden transition duration-200" id="modal-eliminar">
+    <div class="modal-content mx-auto self-center bg-beige p-8 shadow-xl">
+        <div class="modal-box">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full">
+                    <div class="">
+                        <div class="flex flex-wrap justify-between">
+                            <div class="w-full text-center">
+                                <h2 class="text-2xl font-festivo6 text-lg mb-8">¿Realmente deseas eliminar este proyecto?</h2>
+                                <!-- button confirm delete proyecto -->
+
+                                <form action="" method="POST">
+                                    <input type="hidden" name="proyecto" id="proyecto" value="">
+                                    <button type="submit" class="text-beige text-lg z-50 bg-red-500 hover:bg-negro hover:text-beige px-3 py-2 transition duration-200 mx-2">Eliminar</button>
+                                    <!-- button cancel delete proyecto -->
+                                    <button type="button" class="text-beige text-lg z-50 bg-azul hover:bg-negro hover:text-beige px-3 py-2 transition duration-200  mx-2 btn-cancelar-eliminar-proyecto">Cancelar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('footer')
-
+<script>
+    // on click btn-eliminar open confirm modal
+    $('.btn-eliminar').click(function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        $('form').attr('action', url);
+        $('#modal-eliminar').removeClass('hidden');     
+    });
+    // on click btn-cancelar-eliminar-proyecto close confirm modal
+    $('.btn-cancelar-eliminar-proyecto').click(function(e){
+        e.preventDefault();
+        $('#modal-eliminar').addClass('hidden');
+    });
+</script>
 
 @endsection  
