@@ -53,12 +53,14 @@ if(isset($_POST['ispost']))
         if ( $wpdb->num_rows ) {
             $mensaje = "<span class='text-naranjo text-lg'><i class='fas fa-exclamation-triangle'></i> El proyecto ya existe</span>";
         }else {
+            $user_id = get_current_user_id();
             $new_post = array(
                 'post_title'    => $post_title,
                 'post_content'  => $post_content,
                 'post_status'   => 'publish',
                 'post_name'     => $post_title,
-                'post_type'     => $post_type
+                'post_type'     => $post_type,
+                'post_author'   => $user_id,
             );
 
             $pid = wp_insert_post($new_post);
@@ -103,6 +105,7 @@ if(isset($_POST['ispost']))
 	}else{
         // font awesome alert icon
         $mensaje = "<span class='text-naranjo text-lg'><i class='fas fa-exclamation-triangle'></i> Por favor, selecciona un archivo de imagen.</span>";
+
     }
 }
 
@@ -113,6 +116,7 @@ if(isset($_POST['ispost']))
 @include('partials.terminar-menu')
 
 <section class="w-full lg:pt-12 pb-12 lg:pb-24 bg-beige relative overflow-hidden">
+    
     <div class="container lg:px-32">
         <div class="w-11/12 mx-auto text-center mb-8">
             <h4 class="text-negro text-2xl font-festivo19">Subir proyecto a {{$course_title}}</h4>

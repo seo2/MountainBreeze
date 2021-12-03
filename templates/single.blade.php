@@ -69,7 +69,7 @@
 </section>
 <section class="my-2 md:my-12" id="taller">
     <div class="flex container max-w-screen-xl mx-auto justify-between flex-col lg:flex-row px-6 lg:px-32 md:gap-12">
-        <div class="w-full md:w-2/3">
+        <div class="w-full md:w-2/3 mx-auto">
             @php
                 $html = '
                 <div class="w-full mb-8">
@@ -112,9 +112,13 @@
                 </div>
             @endif
         </div>
+
+        @if ( get_post_type( get_the_ID() ) != 'proyectos' )
+
         <div class="w-full md:w-1/3">
             @php dynamic_sidebar( 'sidebar-1' ); @endphp
         </div>
+        @endif
     </div>
 </section>
 @endloop

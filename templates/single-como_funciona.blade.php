@@ -39,7 +39,6 @@ Template name: Cómo funciona
                 @endphp
                                     <a href="{{$enlace_del_boton}}" class="btn mb-4">{{$texto_del_boton}}</a>
                 @php
-                                    break;
                             }
                         }
                 @endphp

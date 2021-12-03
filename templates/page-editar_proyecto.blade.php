@@ -63,9 +63,6 @@ if($proyectoID){
         if (!empty($sample_image)){
             $attach_id = media_handle_upload( 'sample_image', $proyectoID );
             update_post_meta($proyectoID, '_thumbnail_id', $attach_id);
-        }else{
-            // font awesome alert icon
-            $mensaje = "<span class='text-naranjo text-lg'><i class='fas fa-exclamation-triangle'></i> Por favor, selecciona un archivo de imagen.</span>";
         }
     }
 }else{
@@ -91,6 +88,7 @@ if($proyectoID){
             $postID         = get_the_ID();
             $project_title  = get_the_title();
             $post_content   = get_the_content();
+            $permalink      = get_permalink();
         }
     }
     $course_title       = get_the_title($tallerID);
@@ -155,7 +153,7 @@ $volver = '/mis-proyectos/';
                         if($image->ID != $thumbnail_id) {
                             $image_url = wp_get_attachment_image_src($image->ID, 'full', true);
                             echo '
-                            <div class="shadow-lg relative">
+                            <div class="shadow-lg relative my-4">
                                 <a href="/editar-proyecto/?proyecto='.$proyectoID.'&a='.$image->ID.'" class="text-negro text-sm z-30 bg-rosado shadow-lg hover:bg-negro hover:text-beige px-3 py-2 transition duration-200 btn-eliminar absolute right-6 top-6">Eliminar <i class="fas fa-trash-alt"></i></a>
                                 <img src="'.$image_url[0].'" alt="'.$image->post_title.' class="w-full ">
                             </div>';
@@ -166,8 +164,10 @@ $volver = '/mis-proyectos/';
             </div>
 
     
-            <div class="w-full my-4">
+            <div class="w-full my-4 text-center">
                 <input type="submit" class="h-12 px-24 block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Actualizar Proyecto" name="submitpost" />
+                
+                <a href="{{$permalink}}" class="inline-block h-12 px-24 mx-auto leading-12 text-center bg-beige border-solid text-naranjo hover:bg-negro hover:border-negro transition duration-200 uppercase">Ir al proyecto</a>
             </div>
         </form>
 
@@ -190,7 +190,7 @@ $volver = '/mis-proyectos/';
                                     <input type="hidden" name="proyecto" id="proyecto" value="">
                                     <button type="submit" class="text-beige text-lg z-50 bg-red-500 hover:bg-negro hover:text-beige px-3 py-2 transition duration-200 mx-2">Eliminar</button>
                                     <!-- button cancel delete proyecto -->
-                                    <button type="button" class="text-beige text-lg z-50 bg-azul hover:bg-negro hover:text-beige px-3 py-2 transition duration-200  mx-2 btn-cancelar-eliminar-proyecto">Cancelar</button>
+                                    
                                 </form>
                             </div>
                         </div>
