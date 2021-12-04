@@ -40,8 +40,8 @@ Template name: Herencia Colectiva
                     <img class="absolute z-10 left-4 top-8" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas_horizontales.svg" alt="Rayas">
                     <img class="absolute z-10 right-0 lg:right-4 -bottom-4 lg:-bottom-16 w-3/6 lg:w-auto" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas.svg" alt="cinta adhesiva">
                     
-                    <img class="ml-auto relative z-1 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc1.jpg" alt="Origen">
-                    <img class="-mt-4 w-3/4" src="<?php bloginfo('template_url') ?>/dist/img/hc2.jpg" alt="Somos Herencia">
+                    <img class="ml-auto relative z-1 w-3/4" src="{{ get_field('foto_horizontal') }}" alt="Origen">
+                    <img class="-mt-4 w-3/4" src="{{ get_field('foto_vertical') }}" alt="Somos Herencia">
                 </div>
 
                 @php the_field('descripcion'); @endphp
