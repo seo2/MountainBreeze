@@ -1,4 +1,8 @@
-# MountainBreeze
+# Herencia Colectiva
+Una plantilla hecha a medida para un sistema de e-learning
+Con las integraciones de woocommerce, learndash, bbpress, paypal y webpay.
+
+# Basado en MountainBreeze
 A Wordpress theme template for the modern web developer.
 
 # Features
@@ -9,37 +13,7 @@ A Wordpress theme template for the modern web developer.
 - [Laravel Mix](https://laravel-mix.com)
 - jQuery removed by default
 
-# Getting started
-We've made Mountain Breeze super quick to get up and running, allowing you to start developing your theme in seconds.
 
-Requirements:
-- Composer
-- NPM
-
-Clone, fork or download the repository to your Wordpress 'wp-content/themes' directory. 
-Then, from the theme directory, run ```$ composer install``` from the terminal or command prompt.
-
-The theme will automatically run ```$ npm install``` for you an even build the needed stylesheets for you.
-
-# Our motivation
-Wordpress powers over 1/3rd of the internet, which is just insane when you think about it. Whilst it
-is a powerful platform with a low barrier to entry, we also think it can be a messy platform, 
-and parts of it are beginning to show their age. 
-
-Especially when compared to a framework like Laravel, Wordpress can become a burden to develop in. 
-But it doesn't have to be. In fact, with just a little tweaking, you can have the best of both worlds.
-
-This is our *opinionated* Wordpress theme setup. These opinions come from years of developing with Wordpress
-and Laravel, of using jQuery and Alpine, of using Bootstrap and Tailwind, and from seeing what made our lives as developers easier.
-
-We include libraries that we think truly add value, remove ones we feel don't, 
-and give you the flexibility to make any adjustments you want.
-
-Our thanks goes to the many creators and contributors behind Laravel, Tailwind CSS, Alpine JS and all of
-their components for providing such an outstanding experience for web developers. Without them, none of this
-would be possible.
-
-Happy coding!
 
 # Building assets
 Mountain Breeze builds your style.css and js files using Laravel Mix. This allows you to use the latest
@@ -73,8 +47,6 @@ quickly implement the Wordpress loop in any template file. Here is an example:
     @endloop
 </div>
 ```
-
-Pretty awesome, huh?
 
 For more details on using blade, check out the documentation at https://laravel.com/docs/6.x/blade
 
