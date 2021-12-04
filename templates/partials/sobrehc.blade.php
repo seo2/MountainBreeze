@@ -22,9 +22,21 @@
                            <p class="text-beige text-lg lg:text-xl uppercase">Herencia Colectiva</p>
                            <h4 class="text-beige text-4xl lg:text-4xl font-bold leading-none my-3 font-festivo6 w-9/12 sm:w-full">@php the_title(); @endphp</h4>
                            <div class="text-negro mb-4">@php the_content(); @endphp</div>
-                           <a href="/herencia_colectiva/herencia-colectiva/" class="py-2 sm:py-0 sm:h-12 px-6 sm:leading-12 uppercase text-center inline-block border border-negro border-solid text-negro hover:bg-negro hover:border-negro hover:text-beige transition duration-200">
-                               Conocer más sobre Herencia Colectiva
-                           </a>
+                           @php
+                                    $rows = get_field('botones');
+                                    if($rows)
+                                    {
+                                        foreach($rows as $row)
+                                        {
+                                            $texto_del_boton  =  $row['texto_del_boton'];
+                                            $enlace_del_boton =  $row['enlace_del_boton'];
+                            @endphp
+                                                <a href="{{$enlace_del_boton}}" class="py-2 sm:py-0 sm:h-12 px-6 sm:leading-12 uppercase text-center inline-block border border-negro border-solid text-negro hover:bg-negro hover:border-negro hover:text-beige transition duration-200 mb-4">{{$texto_del_boton}}</a>
+                            @php
+                                        }
+                                    }
+                            @endphp
+
                        </div>
                    </div>
                </div>
