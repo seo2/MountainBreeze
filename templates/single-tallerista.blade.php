@@ -21,8 +21,6 @@
                         }
                         echo substr($etiquetas, 0, -2);
                     @endphp
-
-
                 </p>
                 <h1 class="text-negro uppercase my-4 text-4xl font-festivo6">@php the_title(); @endphp</h1>
                 <p>@php echo get_field('epigrafe'); @endphp</p>

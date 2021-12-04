@@ -19,6 +19,11 @@ Template Name: Subir proyectos 2
     $tallerID       = $_GET['taller'];
     $course_title   = get_the_title($tallerID);
 
+    if(isset($_POST['submitpost2'])){
+        $post_status = 'draft';
+    }else{
+        $post_status = 'publish';
+    }
 
 if(isset($_POST['ispost']))
 {
@@ -57,7 +62,7 @@ if(isset($_POST['ispost']))
             $new_post = array(
                 'post_title'    => $post_title,
                 'post_content'  => $post_content,
-                'post_status'   => 'publish',
+                'post_status'   => $post_status,
                 'post_name'     => $post_title,
                 'post_type'     => $post_type,
                 'post_author'   => $user_id,

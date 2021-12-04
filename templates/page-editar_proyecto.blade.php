@@ -64,6 +64,27 @@ if($proyectoID){
             $attach_id = media_handle_upload( 'sample_image', $proyectoID );
             update_post_meta($proyectoID, '_thumbnail_id', $attach_id);
         }
+
+
+        $files = $_FILES["image_gallery"];  // Array of files
+        if(!empty($files)){
+            $filesCount = count($files["name"]);
+            for($i = 0; $i < $filesCount; $i++){
+                $file = array(
+                    'name'     => $files['name'][$i],
+                    'type'     => $files['type'][$i],
+                    'tmp_name' => $files['tmp_name'][$i],
+                    'error'    => $files['error'][$i],
+                    'size'     => $files['size'][$i]
+                );
+                $_FILES = array ("image_gallery" => $file);
+                foreach ($_FILES as $file => $array) {
+                    $attach_id = media_handle_upload( $file, $proyectoID );
+                }
+            }
+        }
+
+
     }
 }else{
     wp_redirect( home_url() .'/no-existe' );
@@ -114,9 +135,8 @@ $volver = '/mis-proyectos/';
 
 
 <section class="w-full pt-4 pb-12 lg:pb-24 bg-beige relative overflow-hidden">
-    <div class="container lg:px-32">
+    <div class="container">
         <form class="w-11/12 md:w-2/3 lg:w-1/2 mx-auto" action="@php bloginfo('url'); @endphp/editar-proyecto?proyecto=@php echo $proyectoID; @endphp" method="post"  enctype="multipart/form-data">
-            
 
             @if ($mensaje)
             <div class="text-center w-full bg-azul p-4 rounded-sm shadow">
@@ -126,13 +146,11 @@ $volver = '/mis-proyectos/';
             
             <input type="hidden" name="ispost" value="1" />
             <input type="hidden" name="userid" value="<?php echo $user_id; ?>" />
-            
-            <div class="w-full my-4 px-24 pb-6">
-                <img src="<?php echo $url; ?>" alt="<?php echo $project_title; ?>" class="w-full shadow-xl">
-            </div>
-
-            <div class="w-full my-4">
-                <label class="control-label">Cambiar foto de portada</label>
+            <div class="w-full my-4 p-4 bg-white border border-gray-300">
+                <div class="text-center mb-4">
+                    <img src="<?php echo $url; ?>" alt="<?php echo $project_title; ?>" class="max-h-96 shadow-xl">
+                </div>
+                <label class="control-label inline-block mb-2">Cambiar foto de portada</label>
                 <input type="file" multiple name="sample_image" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </div>
             
@@ -143,9 +161,10 @@ $volver = '/mis-proyectos/';
             <div class="w-full">
                 <textarea placeholder="Escribe sobre tu proyecto..." name="sample_content">{{$post_content}}</textarea>
             </div>
-            
-            <div class="w-full">
-                <div class="w-2/3 mx-auto p-4">
+
+            <div class="w-full mt-4 p-4 bg-white border border-gray-300">
+                <h2 class="text-2xl font-festivo6">Galería de fotos</h2>
+                <div class="mx-auto p-4 grid grid-cols-2 md:grid-cols-3 ">
                     <?php 
                     $images = get_attached_media('image', $post->ID);
                     foreach($images as $image) { 
@@ -153,7 +172,7 @@ $volver = '/mis-proyectos/';
                         if($image->ID != $thumbnail_id) {
                             $image_url = wp_get_attachment_image_src($image->ID, 'full', true);
                             echo '
-                            <div class="shadow-lg relative my-4">
+                            <div class="col-span-1 shadow-lg hover:shadow-xl relative m-4 self-center transition duration-200">
                                 <a href="/editar-proyecto/?proyecto='.$proyectoID.'&a='.$image->ID.'" class="text-negro text-sm z-30 bg-rosado shadow-lg hover:bg-negro hover:text-beige px-3 py-2 transition duration-200 btn-eliminar absolute right-6 top-6">Eliminar <i class="fas fa-trash-alt"></i></a>
                                 <img src="'.$image_url[0].'" alt="'.$image->post_title.' class="w-full ">
                             </div>';
@@ -161,13 +180,15 @@ $volver = '/mis-proyectos/';
                         ?>
                     <?php } ?>   
                 </div>
+                <label class="control-label inline-block mb-2">Agrega fotos a la Galería</label>
+                <input type="file" multiple name="image_gallery[]" class="appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </div>
 
     
             <div class="w-full my-4 text-center">
-                <input type="submit" class="h-12 px-24 block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Actualizar Proyecto" name="submitpost" />
+                <input type="submit" class="h-12 px-24 cursor-pointer block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Actualizar Proyecto" name="submitpost" />
                 
-                <a href="{{$permalink}}" class="inline-block h-12 px-24 mx-auto leading-12 text-center bg-beige border-solid text-naranjo hover:bg-negro hover:border-negro transition duration-200 uppercase">Ir al proyecto</a>
+                <a href="{{$permalink}}" class="mt-4 inline-block h-12 px-24 mx-auto leading-12 text-center bg-beige border-solid text-naranjo hover:text-negro  transition duration-200 uppercase">Ir al proyecto</a>
             </div>
         </form>
 
