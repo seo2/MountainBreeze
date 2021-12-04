@@ -45,7 +45,7 @@ Template name: Terminar Proyecto
 
     //php mailer variables
     $to         = get_option('admin_email');
-    $subject    = "Agendar una reunión. Taller ".$course_title;
+    $subject    = "Agendar una reunión: Taller ".$course_title;
     $headers    = array('Content-Type: text/html; charset=UTF-8','From: Herencia Colectiva <hola@herenciacolectiva.com>','Reply-To: '.$name .' <'. $email .'>');
 
     //validate email
@@ -56,8 +56,8 @@ Template name: Terminar Proyecto
         if(empty($name) || empty($message)){
             $response = my_contact_form_generate_response("error", $missing_content);
         }else{
-            if(!empty($horario)){
-            $response = my_contact_form_generate_response("error", $missing_horario);
+            if( empty($horario)){
+                $response = my_contact_form_generate_response("error", $missing_horario);
             }else{
                 $sent = wp_mail($to, $subject, strip_tags($message), $headers);
                 if($sent){
@@ -68,10 +68,6 @@ Template name: Terminar Proyecto
             }
         }
     }
-
-
-
-
 
 @endphp
 @loop

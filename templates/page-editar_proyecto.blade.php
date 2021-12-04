@@ -30,6 +30,11 @@ Template Name: Editar Proyecto
     $eliminada = wp_delete_attachment( $attachment_id, true );
     $mensaje =  'La foto ha sido eliminada.';
 }
+    if(isset($_POST['submitpost2'])){
+        $post_status = 'draft';
+    }else{
+        $post_status = 'publish';
+    }
 
 if($proyectoID){
 
@@ -56,7 +61,8 @@ if($proyectoID){
         $post = array(
             'ID'           => $proyectoID,
             'post_title'   => $project_title,
-            'post_content' => $post_content
+            'post_content' => $post_content,
+            'post_status'  => $post_status,
         );
         wp_update_post( $post );
 
@@ -92,25 +98,28 @@ if($proyectoID){
 }    
 
     $args = array(
-        'post_type' => 'proyectos',
-        'author' => get_current_user_id(),
-        'posts_per_page' => -1,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post__in' => array($proyectoID)
+        'post_type'         => 'proyectos',
+        'author'            => get_current_user_id(),
+        'post__in'          => array($proyectoID),
+        'post_status'       => 'any',
+        
     );
     $proyectos = new WP_Query($args); 
     if ( $proyectos->have_posts() ) { 
         while ( $proyectos->have_posts() ) {
             $proyectos->the_post();    
             $url            = get_the_post_thumbnail_url( $featured_post->ID );
-            $thumbnail_id    = get_post_thumbnail_id($featured_post->ID);
+            $thumbnail_id   = get_post_thumbnail_id($featured_post->ID);
             $tallerID       = get_field('taller');
             $postID         = get_the_ID();
             $project_title  = get_the_title();
             $post_content   = get_the_content();
             $permalink      = get_permalink();
+            $post_status    = get_post_status();
         }
+    }else{
+        wp_redirect( home_url() .'/no-existe' );
+        exit;
     }
     $course_title       = get_the_title($tallerID);
     $imagen_banner_taller = $url;
@@ -186,9 +195,16 @@ $volver = '/mis-proyectos/';
 
     
             <div class="w-full my-4 text-center">
-                <input type="submit" class="h-12 px-24 cursor-pointer block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Actualizar Proyecto" name="submitpost" />
+
+                @if($post_status == 'draft')
+                <input type="submit" class="h-12 px-24 cursor-pointer inline-block mx-auto leading-12 text-center border border-gris bg-gris border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase mr-2" value="Guardar Proyecto" name="submitpost2" />
+                <input type="submit" class="h-12 px-24 cursor-pointer inline-block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Publicar Proyecto" name="submitpost" />
+                @else  
+                <input type="submit" class="h-12 px-24 cursor-pointer inline-block mx-auto leading-12 text-center border border-naranjo bg-naranjo border-solid text-beige hover:bg-negro hover:border-negro transition duration-200 uppercase" value="Actualizar Proyecto" name="submitpost" />
+                @endif
                 
-                <a href="{{$permalink}}" class="mt-4 inline-block h-12 px-24 mx-auto leading-12 text-center bg-beige border-solid text-naranjo hover:text-negro  transition duration-200 uppercase">Ir al proyecto</a>
+                
+                <a href="{{$permalink}}" class="mt-4 block h-12 px-24 mx-auto leading-12 text-center bg-beige border-solid text-naranjo hover:text-negro  transition duration-200 uppercase">Ir al proyecto</a>
             </div>
         </form>
 

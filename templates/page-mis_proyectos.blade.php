@@ -42,7 +42,8 @@ if (isset($_GET['proyecto'])) {
                 'author' => get_current_user_id(),
                 'posts_per_page' => -1,
                 'orderby' => 'date',
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'post_status' => 'any'
             );
             $proyectos = new WP_Query($args); 
             if ( $proyectos->have_posts() ) { 
@@ -53,11 +54,16 @@ if (isset($_GET['proyecto'])) {
                     $course_title   = get_the_title($tallerID);
                     $url2           = get_the_permalink( $tallerID );
                     $postID         = get_the_ID();
+                    $post_status    = get_post_status($postID);
         ?>
         
             <div class="flex flex-col md:flex-row relative border-b border-gris7 py-4 px-4 my-4 hover:bg-beige transition duration-200">
                 <div class="w-3/12 md:w-1/12 flex-none mb-2">
-                    <a href="<?php the_permalink(); ?>" class="">
+                    <a href="<?php the_permalink(); ?>" class="relative">
+                        
+                        @if($post_status == 'draft')
+                            <span class="absolute -top-2 -left-2 bg-azul text-white p-2 z-10 text-xs ">Borrador</span>
+                        @endif
     					<?php echo get_the_post_thumbnail( $postID, 'thumbnail', array( 'class' => 'w-full' ) ); ?>
                     </a>
                 </div>
