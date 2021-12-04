@@ -302,6 +302,9 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply text-naranjo  
     }
 
+    .woocommerce div.product p.stock.out-of-stock{
+        @apply text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs
+    }
 
 }
 @screen lg{

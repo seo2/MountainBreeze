@@ -40,14 +40,19 @@ Template name: Terminar Proyecto
     //user posted variables
     $name            = $_POST['message_name'];
     $email           = $_POST['message_email'];
-    $message         = $_POST['message_text'];
+    $message         = '<h3>Nueva cita para reunión del taller: '.$course_title.'</h3>';
+    $message         .= '<p><strong>Nombre: </strong>'.$_POST['message_name'].'</p>';
+    $message         .= '<p><strong>Email: </strong>'.$_POST['message_email'].'</p>';
+    $message         .= '<p><strong>Mensaje: </strong>'.$_POST['message_text'].'</p>';
+    $message         .= '<p><strong>Horario: </strong>'.$_POST['message_horario'].'</p>';
+    $message         .= '<p><small>Envíado desde <a href="https://herenciacolectiva.com">Herencia Colectiva</a></small></p>';
     $horario         = $_POST['message_horario'];
 
     //php mailer variables
     $to         = get_option('admin_email');
     $subject    = "Agendar una reunión: Taller ".$course_title;
     $headers    = array('Content-Type: text/html; charset=UTF-8','From: Herencia Colectiva <hola@herenciacolectiva.com>','Reply-To: '.$name .' <'. $email .'>');
-
+    
     //validate email
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $response = my_contact_form_generate_response("error", $email_invalid);
@@ -59,7 +64,8 @@ Template name: Terminar Proyecto
             if( empty($horario)){
                 $response = my_contact_form_generate_response("error", $missing_horario);
             }else{
-                $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+                $sent = wp_mail($to, $subject, $message, $headers);
+                $sent = wp_mail('hola@herenciacolectiva.com', $subject, $message, $headers);
                 if($sent){
                     $response = my_contact_form_generate_response("success", $message_sent);
                 }else{

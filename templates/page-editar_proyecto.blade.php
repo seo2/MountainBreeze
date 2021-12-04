@@ -71,7 +71,6 @@ if($proyectoID){
             update_post_meta($proyectoID, '_thumbnail_id', $attach_id);
         }
 
-
         $files = $_FILES["image_gallery"];  // Array of files
         if(!empty($files)){
             $filesCount = count($files["name"]);
@@ -89,8 +88,6 @@ if($proyectoID){
                 }
             }
         }
-
-
     }
 }else{
     wp_redirect( home_url() .'/no-existe' );
@@ -124,7 +121,6 @@ if($proyectoID){
     $course_title       = get_the_title($tallerID);
     $imagen_banner_taller = $url;
 
-    
 $volver = '/mis-proyectos/';
 
 @endphp
