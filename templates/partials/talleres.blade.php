@@ -46,7 +46,7 @@
             ?>  
                 <div class="relative">
                     @if (wc_get_stock_html( $product ))
-                    <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">Pronto</span>
+                    <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">{!!wc_get_stock_html( $product )!!}</span>
                     @endif
                     <a href="<?php the_permalink();?>"><img src="<?php  echo $image[0]; ?>" alt="<?php the_title();?>"></a>
                     <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
@@ -117,7 +117,7 @@
                     ?>  
                         <div class="relative">
                             @if (wc_get_stock_html( $product ))
-                            <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">Agotado</span>
+                            <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">{!!wc_get_stock_html( $product )!!}</span>
                             @endif
                             <a href="<?php the_permalink();?>"><img src="<?php  echo $image[0]; ?>" alt="<?php the_title();?>"></a>
                             <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
