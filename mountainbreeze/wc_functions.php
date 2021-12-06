@@ -304,3 +304,10 @@ add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
 		'crop'   => 1,
 	);
 } );
+
+add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_show_stock_shop', 10 );
+  
+function bbloomer_show_stock_shop() {
+   global $product;
+   echo wc_get_stock_html( $product );
+}

@@ -45,6 +45,9 @@
             }
             ?>  
                 <div class="relative">
+                    @if (wc_get_stock_html( $product ))
+                    <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">Pronto</span>
+                    @endif
                     <a href="<?php the_permalink();?>"><img src="<?php  echo $image[0]; ?>" alt="<?php the_title();?>"></a>
                     <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
                         <a href="/?add-to-cart=<?php echo $product->get_id(); ?>" data-quantity="1" class="product_type_course add_to_cart_button ajax_add_to_cart  inline-block mr-4 mb-4 w-10 h-10 leading-10 text-center text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full " data-product_id="274" data-product_sku="" aria-label="Lee más sobre “Huerto Creativo”" rel="nofollow"><i class="fak fa-add-bag"></i></a>
@@ -94,9 +97,12 @@
                     ); // (1)
                         $wc_query = new WP_Query($params); // (2)
                         $i=0;
+                        // get woocommerce product status
                     ?>
                     <?php if ($wc_query->have_posts()) : // (3) ?>
                     <?php while ($wc_query->have_posts()) : // (4)
+                    
+                    print_r($product_status);
                         $i++;
                         $wc_query->the_post(); // (4.1) 
                         global $woocommerce;
@@ -110,6 +116,9 @@
                     }
                     ?>  
                         <div class="relative">
+                            @if (wc_get_stock_html( $product ))
+                            <span class="text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs">Agotado</span>
+                            @endif
                             <a href="<?php the_permalink();?>"><img src="<?php  echo $image[0]; ?>" alt="<?php the_title();?>"></a>
                             <p class="product woocommerce add_to_cart_inline absolute bottom-0 right-0 " style="">
                                 <a href="/?add-to-cart=<?php echo $product->get_id(); ?>" data-quantity="1" class="product_type_course add_to_cart_button ajax_add_to_cart  inline-block mr-4 mb-4 w-10 h-10 leading-10 text-center text-blanco bg-azul hover:bg-rosado hover:text-fondooscuro transition duration-200 rounded-full " data-product_id="274" data-product_sku="" aria-label="Lee más sobre “Huerto Creativo”" rel="nofollow"><i class="fak fa-add-bag"></i></a>
