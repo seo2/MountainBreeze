@@ -75,6 +75,8 @@ Template name: Terminar Proyecto
         }
     }
 
+
+
 @endphp
 @loop
 

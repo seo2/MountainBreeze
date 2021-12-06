@@ -306,6 +306,13 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply text-beige bg-azuloscuro p-2 absolute -right-1 -top-1 text-xs
     }
 
+    #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
+        padding: 12px 16px 12px;
+        width: 170px;
+    }
+
+
+
 }
 @screen lg{
 
