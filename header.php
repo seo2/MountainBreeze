@@ -7,6 +7,17 @@
     <link rel="icon" type="image/svg+xml" href="<?php bloginfo('template_url') ?>/dist/img/isotipo.svg">
     <?php wp_head(); ?>
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/665255aeb907e62c6320dfe41/41c9332e97c61342682389440.js");</script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWZJM58SN2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VWZJM58SN2');
+    </script>
+
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
