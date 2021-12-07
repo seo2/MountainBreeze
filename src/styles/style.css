@@ -303,7 +303,7 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     .woocommerce div.product p.stock.out-of-stock{
-        @apply text-negro bg-beige p-2 absolute -right-1 -top-1 text-xs
+        @apply text-negro bg-rosado p-2 absolute -right-1 -top-1 text-xs
     }
 
     #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
