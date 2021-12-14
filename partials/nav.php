@@ -30,7 +30,7 @@
                 <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
               </svg>
           </a>
-          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48 text-left">
+          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48 text-left z-50">
               <div class="px-2 py-2 bg-negro shadow dark-mode:bg-gray-800">  
                 <?php $menu_location = 'menu-talleres'; ?>
                 <?php if ( has_nav_menu( $menu_location ) ): ?>

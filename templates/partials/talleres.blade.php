@@ -2,8 +2,8 @@
     <div class="container mx-auto lg:px-12">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 text-center lg:mb-8">
-                <h2 class="font-festivo6 text-4xl lg:text-6xl text-beige leading-none"  style="background: url('<?php bloginfo('template_url') ?>/dist/img/trazo.svg') center center no-repeat; background-size: contain;">
-                    Talleres:
+                <h2 class="font-festivo6 text-4xl lg:text-6xl text-negro leading-none" >
+                    Talleres
                 </h2>
             </div>
         </div>
