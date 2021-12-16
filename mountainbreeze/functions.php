@@ -558,3 +558,13 @@ function my_handle_attachment($file_handler,$post_id,$set_thu=false) {
     }
     return $attach_id;
   }
+
+
+
+    function add_site_favicon() {
+        echo '<link rel="shortcut icon"
+    href="http://herenciacolectiva.test/wp-content/themes/mountainbreeze/dist/img/isotipo.svg" />';
+    }
+       
+    add_action('login_head', 'add_site_favicon');
+    add_action('admin_head', 'add_site_favicon');
