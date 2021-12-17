@@ -149,7 +149,7 @@ function wc_before_main_content() {
 			<div class="w-full ">';
 	}else{
 		echo '<section class="mt-36">
-		<div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left px-4 md:px-6 lg:px-12">
+		<div class="flex container flex-col max-w-screen-xl mx-auto lg:items-center justify-left px-4 md:px-6 lg:px-12">
 			<div class="w-full>';
 	}	
 }

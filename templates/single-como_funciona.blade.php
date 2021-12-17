@@ -11,9 +11,9 @@ Template name: Cómo funciona
 
 @section('content') 
 @loop
-<section class="w-full bg-beige pt-36 pb-48 lg:pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_naranjo_top.png');" id="comoFunciona1">
+<section class="w-full bg-beige pt-36 pb-32 lg:pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_naranjo_top.png');" id="comoFunciona1">
     <div class=" w-5/6  lg:w-1/2 mx-auto lg:text-center relative">
-        <span class="absolute lg:relative -top-8 -right-2 lg:top-auto lg:right-auto transform -rotate-45 text-negro text-9xl lg:text-6xl"><i class="fak fa-llama"></i></span>
+        <span class="hidden md:block absolute lg:relative -top-8 -right-2 lg:top-auto lg:right-auto transform -rotate-45 text-negro text-9xl lg:text-6xl"><i class="fak fa-llama"></i></span>
         <h1 class="text-beige font-festivo6 text-5xl lg:text-6xl uppercase mb-5 w-3/4 lg:w-full">@php the_title();@endphp</h1>
         @php the_content(); @endphp
     </div>
@@ -45,35 +45,33 @@ Template name: Cómo funciona
                 </div>
             </div>
             <div class="col-span-7 -mt-8 lg:mt-auto">
-                <div class="mb-8 relative">
-                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat absolute text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_1.svg');">
+                <div class="w-full grid grid-cols-9 gap-4">
+                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_1.svg');">
                         1.
                     </div>
-                    <div class="pl-16 text-gris text-sm">
+                    <div class="text-gris text-sm col-span-8">
                         @php the_field('paso_1') @endphp
                     </div>
-                </div>
-                <div class="mb-8 relative">
-                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat absolute text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_2.svg');">
+                    
+                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_2.svg');">
                         2.
                     </div>
-                    <div class="pl-16 text-gris text-sm">
+                    <div class="text-gris text-sm col-span-8">
                         @php the_field('paso_2') @endphp
                     </div>
-                </div>
-                <div class="mb-8 relative">
-                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat absolute text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_3.svg');">
+                    
+                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_3.svg');">
                         3.
                     </div>
-                    <div class="pl-16 text-gris text-sm">
+                    <div class="text-gris text-sm col-span-8">
                         @php the_field('paso_3') @endphp
                     </div>
-                </div>
-                <div class="relative">
-                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat absolute text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_4.svg');">
+                    
+                
+                    <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_4.svg');">
                         4.
                     </div>
-                    <div class="pl-16 text-gris text-sm">
+                    <div class="text-gris text-sm col-span-8">
                         @php the_field('paso_4') @endphp
                     </div>
                 </div>
