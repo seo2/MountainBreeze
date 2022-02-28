@@ -23,28 +23,68 @@ Template name: El Cambio
     </div>
 </section>
 <section class="w-full pb-48">
-    <div class="container">
-        <div class="grid grid-cols-12 flex items-end -mt-12 lg:-mt-24">
-            <div class="col-start-2 col-span-10 lg:col-start-6 lg:col-span-6 lg:hidden mb-4">
-                <img src="<?php bloginfo('template_url') ?>/dist/img/VIDEO.jpg" alt="" class="w-full">
-            </div>
+    <div class="container  mx-auto lg:px-12">
+        <div class="grid grid-cols-12 items-end -mt-12 ">
             <div class="col-start-2 col-span-10 lg:col-start-2 lg:col-span-3">
-                <a href="@php bloginfo('url'); @endphp/herencia-colectiva" class="btn mb-4">Herencia Colectiva</a>
-                <a href="@php bloginfo('url'); @endphp/como-funciona" class="btn">Cómo funciona</a>
+                @php
+                        $rows = get_field('botones');
+                        if($rows)
+                        {
+                            foreach($rows as $row)
+                            {
+                                $texto_del_boton  =  $row['texto_del_boton'];
+                                $enlace_del_boton =  $row['enlace_del_boton'];
+                @endphp
+                                    <a href="{{$enlace_del_boton}}" class="btn mb-4">{{$texto_del_boton}}</a>
+                @php
+                            }
+                        }
+                @endphp
             </div>
-            <div class="col-start-2 col-span-10 lg:col-start-6 lg:col-span-6 hidden lg:block">
-                <img src="<?php bloginfo('template_url') ?>/dist/img/VIDEO.jpg" alt="" class="w-full">
+            <div class="col-start-2 col-span-10 lg:col-start-6 lg:col-span-6 order-1 lg:order-2 lg:block mb-4 lg:-mt-36">
+                <div class="flex items-center justify-center relative cursor-pointer text-beige hover:text-negro transition duration-200" id="imagenVideo">
+                    <i class="fa-solid fa-circle-play absolute z-10 text-7xl "></i>
+                        <img src="{{get_field('imagen_video')}}" alt="" class="w-full">
+                </div>
             </div>
+
         </div>
     </div>
 </section>
+
+            
+<!- embed video modal -->
+<div class="hidden fixed w-full min-h-full bg-black bg-opacity-50 top-0 left-0 z-50 flex justify-center items-center" id="videoModal">
+    <div class="modal-content w-11/12 md:w-3/5 relative">
+        <button class="modal-close is-large text-beige text-4xl absolute -top-12 right-0 md:top-0 md:-right-12 hover:text-rosado transition-all ease-in transitio" aria-label="close"><i class="fa-solid fa-circle-xmark"></i></button>
+        <div class="aspect-w-16 aspect-h-9 shadow-xl">
+            <iframe src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
 
 @endloop
 
 @endsection
 
+
 @section('footer')
 
     @include('partials.suscribirse')
+    <script>
+        $(document).ready(function(){
+            $('.modal-close').on('click', function(){
+                $('#videoModal').addClass('hidden');
+                $('body').removeClass('overflow-hidden');
+            });
+            $('#imagenVideo').on('click', function(){
+                $('#videoModal').removeClass('hidden');
+                $('body').addClass('overflow-hidden');
+            });
+        });
+    </script>
 
+
+    
 @endsection  
