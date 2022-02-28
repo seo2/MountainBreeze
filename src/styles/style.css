@@ -537,12 +537,8 @@ body .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_pri
 .woocs_price_info{
     @apply hidden
 }
-.favorite-toggle{
+.favorite-toggle, .subscription-toggle{
     @apply inline-block px-6 py-3 bg-negro text-beige font-sans mb-4 uppercase hover:bg-naranjo transition duration-200 cursor-pointer
-}
-
-.subscription-toggle{
-    @apply inline-block px-6 py-2 bg-negro text-beige font-sans mb-4 uppercase hover:bg-naranjo transition duration-200 cursor-pointer text-sm
 }
 .bbpress-wrapper{
     @apply lg:px-20
@@ -563,6 +559,9 @@ body .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_pri
 .bbp-reply-content p{
     @apply text-base
 }
+span.bbp-admin-links a {
+    @apply text-sm
+}
 
 @media (max-width:767px) {
     #bbpress-forums #subscription-toggle {
@@ -573,3 +572,6 @@ body .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_pri
 .learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link{
     @apply hidden !important
 }
+
+
+

@@ -20,7 +20,7 @@ if ( have_posts() ) {
 </section>
 
 <section class="mt-12 mb-48">
-    <div class="container max-w-screen-xl mx-auto md:px-6 lg:px-32">
+    <div class="container max-w-screen-xl mx-auto md:px-6 lg:px-12">
         <div class="w-full">
 
         <?php
