@@ -28,9 +28,9 @@ Template name: Herencia Colectiva
                     <img class="absolute z-10 right-80 top-48" src="<?php bloginfo('template_url') ?>/dist/img/scotch.png" alt="cinta adhesiva">
                     <img class="absolute z-10 left-4 top-8" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas_horizontales.svg" alt="cinta adhesiva">
                     <img class="absolute z-10 right-4 -bottom-16" src="<?php bloginfo('template_url') ?>/dist/img/rayas_rosas.svg" alt="cinta adhesiva">
-                    
-                    <img class="ml-auto relative z-1" src="<?php bloginfo('template_url') ?>/dist/img/hc1.jpg" alt="Origen">
-                    <img class="-mt-4" src="<?php bloginfo('template_url') ?>/dist/img/hc2.jpg" alt="Somos Herencia">
+
+                    <img class="ml-auto relative z-1 w-3/4" src="{{ get_field('foto_horizontal') }}" alt="Origen">
+                    <img class="-mt-4 w-3/4" src="{{ get_field('foto_vertical') }}" alt="Somos Herencia">
                 </div>
             </div>
             <div class="" id="herencia-colectiva">

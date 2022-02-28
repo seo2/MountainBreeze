@@ -12,6 +12,7 @@
         $course_title   = get_the_title($tallerID);
         $bg_color       = 'bg-rosado';
         $txt_color      = 'text-negro';
+    // }elseif(){
     }else{
         $imagen_banner_taller = get_field('imagen_banner_taller');
         $volver               = '/mis-talleres/';

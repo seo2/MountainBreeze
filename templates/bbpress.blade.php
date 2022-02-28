@@ -11,7 +11,7 @@ if ( have_posts() ) {
 <section class="w-full flex mt-32 pt-6 pb-6 h-48 bg-azul  ">
     <div class="container flex flex-row h-100 max-w-screen-xl mx-auto justify-between lg:px-32">
         <div class="relative w-2/3">
-            <a href="/mis-talleres/" class="text-blanco uppercase relative top-0 hover:text-beige transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
+            <a href="javascript:history.back();" class="text-blanco uppercase relative top-0 hover:text-beige transition duration-200"><i class="fak fa-back mr-4"></i> Volver</a>
             <h1 class="text-beige font-festivo6 text-2xl lg:text-4xl absolute bottom-0">{{ the_title() }}</h1>
         </div> 
         <div class="w-1/3 flex justify-center content-center items-center">
@@ -20,7 +20,7 @@ if ( have_posts() ) {
 </section>
 
 <section class="mt-12 mb-48">
-    <div class="flex container flex-col md:flex-row max-w-screen-xl mx-auto lg:items-center justify-left md:px-6 lg:px-12">
+    <div class="container max-w-screen-xl mx-auto md:px-6 lg:px-32">
         <div class="w-full">
 
         <?php
