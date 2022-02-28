@@ -6,7 +6,6 @@ module.exports = {
       "./src/**/*.html",
       "./*.html",
       "./partials/*.php",
-      "./partials/*.php",
       "./mountainbreeze/*.php",
       "./woocommerce/*.php",
       "./woocommerce/**/*.php",
