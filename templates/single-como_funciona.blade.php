@@ -20,8 +20,8 @@ Template name: Cómo funciona
 
 <section class="w-full lg:pt-12 pb-12 lg:pb-48 bg-beige relative overflow-hidden">
     <div class="container lg:px-32">
-        <div class="grid lg:grid-cols-12 gap-16 w-5/6 mx-auto lg:w-full">
-            <div class="col-span-5 relative flex flex-col flex-wrap">
+        <div class="grid grid-cols-12 lg:gap-16 w-5/6 mx-auto lg:w-full">
+            <div class="col-span-12 lg:col-span-5 relative flex flex-col flex-wrap">
                 <div class="flex-grow">
                     <h2 class="text-negro font-festivo8 text-7xl uppercase lg:mb-4">@php the_field('titulo') @endphp</h2>
                     <img src="<?php bloginfo('template_url') ?>/dist/img/oxoxox.svg" alt="x_x" class="hidden lg:block">
@@ -43,26 +43,26 @@ Template name: Cómo funciona
                 @endphp
                 </div>
             </div>
-            <div class="col-span-7 -mt-8 lg:mt-auto">
-                <div class="w-full grid grid-cols-9 gap-4">
+            <div class="col-span-12 lg:col-span-7 mt-8 lg:mt-auto">
+                <div class="w-full grid grid-cols-4 lg:grid-cols-9 gap-2">
                     <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_1.svg');">
                         1.
                     </div>
-                    <div class="text-gris text-sm col-span-8">
+                    <div class="text-gris text-sm col-span-3 lg:col-span-8">
                         @php the_field('paso_1') @endphp
                     </div>
                     
                     <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_2.svg');">
                         2.
                     </div>
-                    <div class="text-gris text-sm col-span-8">
+                    <div class="text-gris text-sm col-span-3 lg:col-span-8">
                         @php the_field('paso_2') @endphp
                     </div>
                     
                     <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_3.svg');">
                         3.
                     </div>
-                    <div class="text-gris text-sm col-span-8">
+                    <div class="text-gris text-sm col-span-3 lg:col-span-8">
                         @php the_field('paso_3') @endphp
                     </div>
                     
@@ -70,9 +70,25 @@ Template name: Cómo funciona
                     <div class="w-10 h-10 leading-10 text-center bg-contain bg-no-repeat col-span-1 text-negro"  style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/circulo_4.svg');">
                         4.
                     </div>
-                    <div class="text-gris text-sm col-span-8">
+                    <div class="text-gris text-sm col-span-3 lg:col-span-8">
                         @php the_field('paso_4') @endphp
                     </div>
+                </div>
+                <div class="block lg:hidden my-12">
+                @php
+                        $rows = get_field('botones');
+                        if($rows)
+                        {
+                            foreach($rows as $row)
+                            {
+                                $texto_del_boton  =  $row['texto_del_boton'];
+                                $enlace_del_boton =  $row['enlace_del_boton'];
+                @endphp
+                                    <a href="{{$enlace_del_boton}}" class="btn mb-4">{{$texto_del_boton}}</a>
+                @php
+                            }
+                        }
+                @endphp
                 </div>
             </div>        
         </div>
