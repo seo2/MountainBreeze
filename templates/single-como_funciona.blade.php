@@ -1,4 +1,3 @@
-
 @php
 /*
 
@@ -24,7 +23,7 @@ Template name: Cómo funciona
         <div class="grid lg:grid-cols-12 gap-16 w-5/6 mx-auto lg:w-full">
             <div class="col-span-5 relative flex flex-col flex-wrap">
                 <div class="flex-grow">
-                    <h2 class="text-negro font-festivo8 text-7xl uppercase lg:mb-4">Pasos</h2>
+                    <h2 class="text-negro font-festivo8 text-7xl uppercase lg:mb-4">@php the_field('titulo') @endphp</h2>
                     <img src="<?php bloginfo('template_url') ?>/dist/img/oxoxox.svg" alt="x_x" class="hidden lg:block">
                 </div>
                 <div class="hidden lg:block">
