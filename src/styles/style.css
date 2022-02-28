@@ -577,3 +577,5 @@ span.bbp-admin-links a {
 
 .ld-tab-content > a,
 .ld-tab-content > ul > li > a{ @apply text-naranjo underline }
+
+#herenciaColectiva p{@apply text-negro mb-2}

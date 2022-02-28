@@ -10,13 +10,11 @@ Template name: Herencia Colectiva
 
 @section('content') 
 
-<section class="w-full bg-beige pt-36 @if(is_user_logged_in()) lg:pt-48 @endif  pb-48 lg:pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_rosado_top.png');">
+<section class="w-full bg-beige pt-36 @if(is_user_logged_in()) lg:pt-48 @endif  pb-48 lg:pb-24 lg:bg-cover bg-left-bottom lg:bg-bottom bg-no-repeat " style="background-image: url('<?php bloginfo('template_url') ?>/dist/img/bg_rosado_top.png');" id="herenciaColectiva">
     <div class=" w-4/5  lg:w-1/2 mx-auto lg:text-center">
         <span class="absolute -right-2 transform -rotate-45 lg:relative text-beige text-9xl lg:text-6xl hidden"><i class="fak fa-espiga"></i></span>
-        <h1 class="text-negro font-festivo6 text-5xl lg:text-6xl uppercase mb-5">Herencia Colectiva</h1>
-        <p class="text-negro mb-2">Los saberes son reliquias, son formas de ver el mundo, de imaginarlo, de sentirlo y experienciarlo. </p>
-        <p class="text-negro mb-2">Estos saberes habitan en quienes han sabido guardarlos, preservarlos, rescatarlos y reactualizarlos. Son las reliquias de una herencia circular, colaborativa y común. </p>
-        <p class="text-negro">Son las reliquias de una herencia colectiva. </p>
+        <h1 class="text-negro font-festivo6 text-5xl lg:text-6xl uppercase mb-5">@php the_title();@endphp</h1>
+        @php the_content(); @endphp
     </div>
 </section>
 
