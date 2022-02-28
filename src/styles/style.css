@@ -573,5 +573,6 @@ span.bbp-admin-links a {
     @apply hidden !important
 }
 
+#bbpress-forums li.bbp-header ul{font-size: 12px;}
 
-
+.ld-tab-content > ul > li > a{ @apply text-naranjo underline }
