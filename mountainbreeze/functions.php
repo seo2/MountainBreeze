@@ -562,9 +562,15 @@ function my_handle_attachment($file_handler,$post_id,$set_thu=false) {
 
 
     function add_site_favicon() {
-        echo '<link rel="shortcut icon"
-    href="http://herenciacolectiva.test/wp-content/themes/mountainbreeze/dist/img/isotipo.svg" />';
+        echo "<link rel='shortcut icon' type='image/svg+xml' href='" . get_stylesheet_directory_uri() . "/dist/img/isotipo.svg' />" . "\n";
     }
        
     add_action('login_head', 'add_site_favicon');
     add_action('admin_head', 'add_site_favicon');
+
+
+
+add_action( 'wp_head', 'ilc_favicon');
+function ilc_favicon(){
+    echo "<link rel='shortcut icon' type='image/svg+xml' href='" . get_stylesheet_directory_uri() . "/dist/img/isotipo.svg' />" . "\n";
+}
