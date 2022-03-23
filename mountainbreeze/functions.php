@@ -574,3 +574,7 @@ add_action( 'wp_head', 'ilc_favicon');
 function ilc_favicon(){
     echo "<link rel='shortcut icon' type='image/svg+xml' href='" . get_stylesheet_directory_uri() . "/dist/img/isotipo.svg' />" . "\n";
 }
+
+
+
+

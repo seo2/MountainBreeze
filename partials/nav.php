@@ -18,39 +18,51 @@
       </nav>
     </div>
     <nav :class="{'flex ': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row uppercase md:text-center">
-      <a class="px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200 md:hidden" href="<?php bloginfo('url'); ?>">Inicio</a>
-      <div @click.away="open = false" class="relative" x-data="{ open: false }">
-          <a @click="open = !open" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
-              <span class="uppercase">Talleres</span>
-              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="hidden md:inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-              </svg>
-              <svg viewBox="0 0 27 32" fill="none" class="inline md:hidden h-8 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                <path d="M10.2248 1L24.919 15.9954L10.2248 30.9846" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
-                <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
-              </svg>
-          </a>
-          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48 text-left z-50">
-              <div class="px-2 py-2 bg-negro shadow dark-mode:bg-gray-800">  
-                <?php $menu_location = 'menu-talleres'; ?>
-                <?php if ( has_nav_menu( $menu_location ) ): ?>
-                <?php $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) ); ?>
-                <?php foreach ( $menu_items as $menu_item ): ?>   
-                <a class="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ) ?> block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php echo esc_url( $menu_item->url ) ?>" target="<?php echo esc_attr( $menu_item->target ?: '_self' ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
-                <?php endforeach; ?>
-                <?php endif; ?>     
-                <a class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php bloginfo('url'); ?>/talleres">Todos los talleres</a>
-              </div>
-          </div>
-      </div> 
-      <!-- Current: text-gray-900 bg-gray-200 dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 -->
-      <?php $menu_location = 'menu-principal'; ?>
-      <?php if ( has_nav_menu( $menu_location ) ): ?>
-      <?php $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) ); ?>
-      <?php foreach ( $menu_items as $menu_item ): ?>   
-      <a class="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ) ?> px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php echo esc_url( $menu_item->url ) ?>" target="<?php echo esc_attr( $menu_item->target ?: '_self' ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
+      <?php 
+        $menu_location      = 'menu-principal';  // Define el menu a ser usado
+        if ( has_nav_menu( $menu_location ) ):
+          $menu_items = wp_get_nav_menu_items( wp_get_nav_menu_name( $menu_location ) );
+          $dropdown = 0;
+          foreach ( $menu_items as $menu_item ):      
+            $menu_item_id     = $menu_item->id;
+            $menu_item_parent = $menu_item->menu_item_parent; 
+            $clase            = $menu_item->classes[0]; 
+            if($dropdown == 1 && $menu_item_parent == 0){
+              echo '</div></div></div>';
+              $dropdown = 0;
+            }
+            if ($menu_item_parent == 0) { 
+              if($clase == 'dropdown'){  
+                $dropdown = 1;  
+              ?>
+          <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <a @click="open = !open" class="block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200">
+                    <span class="uppercase"><?php echo esc_html( $menu_item->title ) ?></span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="hidden md:inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg viewBox="0 0 27 32" fill="none" class="inline md:hidden h-8 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                      <path d="M10.2248 1L24.919 15.9954L10.2248 30.9846" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+                      <path d="M0 16L25 16" stroke="#FEACA1" stroke-width="2" stroke-miterlimit="10"/>
+                    </svg>
+                </a>    
+              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-left rounded-md shadow-lg md:w-48 text-left z-50">
+                  <div class="px-2 py-2 bg-negro shadow dark-mode:bg-gray-800">                  
+        <?php
+              }else{
+        ?>
+            <a class="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ) ?> px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php echo esc_url( $menu_item->url ) ?>" target="<?php echo esc_attr( $menu_item->target ?: '_self' ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
+        <?php
+              } 
+            }else{ 
+        ?>
+
+            <a class="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ) ?> block px-3 py-2 mt-2 text-beige md:text-gris6 text-3xl md:text-sm font-festivo6 md:font-sans md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline transition duration-200" href="<?php echo esc_url( $menu_item->url ) ?>" target="<?php echo esc_attr( $menu_item->target ?: '_self' ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
+      <?php } ?>
       <?php endforeach; ?>
-      <?php endif; ?>      
+      <?php endif; ?>     
+      
+       
       <div class="w-full text-center py-6 md:hidden">
         <a href="https://www.instagram.com/herencia_colectiva/" target="_blank" class="mx-6 text-fondooscuro bg-rosado rounded-full w-8 h-8 leading-8 text-center inline-block text-xl"><i class="fab fa-instagram"></i></a></li>
         <a href="https://vimeo.com"                             target="_blank" class="mx-6 text-fondooscuro bg-rosado rounded-full w-8 h-8 leading-8 text-center inline-block text-xl"><i class="fab fa-vimeo-v"></i></a></li>
