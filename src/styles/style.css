@@ -116,6 +116,20 @@ All credit goes to the authors of the respective packages for their amazing cont
     .woocommerce-Tabs-panel p{
         @apply mb-4 text-negro
     } 
+
+
+    #taller p a,
+    #tallerista p a,
+    .woocommerce-Tabs-panel p a{
+        @apply text-naranjo  transition duration-200 ease-in-out
+    } 
+    #taller p a:hover,
+    #tallerista p a:hover,
+    .woocommerce-Tabs-panel p a:hover{
+        @apply underline
+    } 
+
+
     #taller hr,
     #tallerista hr,
     .woocommerce-Tabs-panel hr{
