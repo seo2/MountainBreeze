@@ -92,7 +92,7 @@
             <img src="@php echo $thumbnail_url[0]; @endphp" alt="@php the_title(); @endphp">
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
-                  echo do_shortcode("[course_notstarted course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_notstarted]");
+                  echo do_shortcode("[course_notstarted course_id='$post_id']<div class='empezarTaller'>[uo_course_resume course_id='$post_id']</div>[/course_notstarted]");
             @endphp
 
             {{ the_content() }}
@@ -138,6 +138,8 @@
         }
         // change .learndash-resume-button input value to "Continuar Taller"
         $('.learndash-resume-button input').val('Continuar taller');
+        $('.empezarTaller .learndash-resume-button input').val('Empezar taller');
+        
         $('.learndash-wrapper .ld-course-navigation .ld-course-navigation-actions .ld-home-link').css('display', 'none');
     }); 
 </script>
