@@ -187,7 +187,7 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
 
     #bbpress-forums{
-        @apply text-base
+        @apply text-base mt-10
     }
 
     #bbpress-forums ul.bbp-topics{
