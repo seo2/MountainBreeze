@@ -53,6 +53,9 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply hidden;
     }
 
+    .woocommerce-NoticeGroup-checkout ul.woocommerce-error{
+        @apply hidden;
+    }
     .woocommerce-error a, .woocommerce-info a, .woocommerce-message a {
         @apply underline hover:no-underline ;
     }
