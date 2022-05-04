@@ -53,6 +53,10 @@ All credit goes to the authors of the respective packages for their amazing cont
         @apply hidden;
     }
 
+    .woocommerce-error a, .woocommerce-info a, .woocommerce-message a {
+        @apply underline hover:no-underline ;
+    }
+
    
     .woocommerce-product-gallery__wrapper img {
         @apply w-full !important;
