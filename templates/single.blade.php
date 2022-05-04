@@ -92,6 +92,7 @@
             <img src="@php echo $thumbnail_url[0]; @endphp" alt="@php the_title(); @endphp">
             @php
                   echo do_shortcode("[course_inprogress course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_inprogress]");
+                  echo do_shortcode("[course_notstarted course_id='$post_id'][uo_course_resume course_id='$post_id'][/course_notstarted]");
             @endphp
 
             {{ the_content() }}
