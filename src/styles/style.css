@@ -207,7 +207,13 @@ All credit goes to the authors of the respective packages for their amazing cont
     }
     #bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic{
         @apply bg-white !important border-none
+    }   
+
+    .bbp-topic-meta span{
+        @apply text-base
     }
+
+
     .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea,
     #bbpress-forums fieldset.bbp-form input[type=text], #bbpress-forums fieldset.bbp-form select{
         @apply appearance-none rounded-none mb-3 relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-negro focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
